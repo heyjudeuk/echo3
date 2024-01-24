@@ -1,0 +1,43 @@
+{
+    "Name": "echo3.co",
+    "Description": "AKA Jude Sudbury",
+    "Image": "../photo.jpg",
+    "Socials": [
+               {
+            "Link": "https://www.twitter.com/Louisload",
+            "Icon": "/icon/linkedin.svg",
+            "AltText": "LinkedIn"
+        }
+    ],
+    "List": [
+        {
+            "Type": "text",
+            "Content": "I'm an IT professional who's like a Swiss-Army-Knife for micro and small businesses. I love problem solving, efficiency, new and old school technology, and composing strict tempo music that people can dance to. 💾 🎹 👾",
+            "HtmlClasses": "anotherClassSoICanOverrideStyles"
+        },
+        {
+            "Type": "link",
+            "Link": "https://distrokid.com/hyperfollow/louisload/memrias-de-peixe-2",
+            "Icon": "/lt/memorias.jpg",
+            "AltText": "Memórias de Peixe",
+            "Content": "My latest album: Memórias de Peixe",
+            "OpenNewTab": true
+        },
+        {
+            "Type": "link",
+            "Link": "https://demising.faith",
+            "Icon": "/lt/demisingfaith.jpg",
+            "AltText": "Demising Faith",
+            "Content": "Demising Faith",
+            "OpenNewTab": true
+        },
+        {
+            "Type": "link",
+            "Link": "https://youtube.com/@louisload",
+            "Icon": "/icon/film.svg",
+            "AltText": "Film Reel",
+            "Content": "Weird films",
+            "OpenNewTab": true
+        }
+    ]
+}
