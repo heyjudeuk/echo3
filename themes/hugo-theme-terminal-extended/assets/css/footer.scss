@@ -42,3 +42,19 @@
     }
   }
 }
+
+@media (#{ $phone }) {
+  .footer__inner {
+    width: auto; /* Adjust width for smaller phone screens */
+    padding: 15px; /* Further reduce padding for phone screens */
+    flex-direction: column; /* Ensure elements are stacked vertically */
+  }
+
+  .footer a {
+    font-size: 0.75rem; /* Even smaller font size for links on phone screens */
+  }
+
+  .footer .copyright {
+    font-size: 0.75rem; /* Even smaller font size for copyright text on phone screens */
+  }
+}
