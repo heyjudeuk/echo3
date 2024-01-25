@@ -1,7 +1,8 @@
 +++
-title = "[14] IT asset tracking"
+title = "[14] IT ASSET TRACKING"
 date = ""
-portfolioCover = "inventory.png"
+portfolioCover = "/portfolio/inventory.webp"
+cover = "/cover/inventory.webp"
 +++
 # 🛠️ IT Asset Tracking: Keeping Tabs on Your Technology
 
@@ -16,3 +17,6 @@ I provide IT asset tracking services to ensure you always know where your techno
 - **Custom Reporting:** I'll provide you with customized reports, giving you a clear and comprehensive view of your IT assets at any given time. These reports can be tailored to your specific needs, whether it's a high-level overview or detailed analytics.
 
 IT asset tracking will give you peace of mind and a firm control over your technological investments.
+
+[WhatsApp](https://wa.me/447413678040)
+[jude@echo3.co](mailto:jude@echo3.co)

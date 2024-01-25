@@ -1,7 +1,7 @@
 {
     "Name": "echo3.co",
     "Description": "AKA Jude Sudbury",
-    "Image": "../photo.jpg",
+    "Image": "../kind_of_like_me.webp",
     "Socials": [
 	
 		{
@@ -24,13 +24,13 @@
         },
 		{
             "Type": "text",
-            "Content": "🚧🚧🚧 This site is under construction, so expect broken links and AI generated text 🚧🚧🚧",
+            "Content": "🚧🚧🚧 This site is under construction, so expect broken links and Lorem ipsum dolor 🚧🚧🚧",
             "HtmlClasses": "anotherClassSoICanOverrideStyles"
         },
 		{
             "Type": "link",
             "Link": "../portfolio/",
-            "Icon": "../portfolio.svg",
+            "Icon": "../icon/portfolio.svg",
             "AltText": "Service Portfolio",
             "Content": "Browse my service portfolio here",
             "OpenNewTab": false
@@ -38,7 +38,7 @@
 		{
             "Type": "link",
             "Link": "https://outlook.office365.com/owa/calendar/BooktimewithJude@merdekaltd.co.uk/bookings/",
-            "Icon": "../calendar.svg",
+            "Icon": "../icon/calendar.svg",
             "AltText": "Bookings",
             "Content": "Book an IT service appointment",
             "OpenNewTab": true
@@ -46,7 +46,7 @@
 		{
             "Type": "link",
             "Link": "https://wa.me/447413678040",
-            "Icon": "../whatsapp.svg",
+            "Icon": "../icon/whatsapp.svg",
             "AltText": "WhatsApp Me",
             "Content": "Drop me a message on WhatsApp",
             "OpenNewTab": true

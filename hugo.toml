@@ -1,4 +1,4 @@
-baseurl = "https://echo3.co/"
+baseurl = "https://echo3.co"
 languageCode = "en-us"
 theme = "hugo-theme-terminal-extended"
 paginate = 5

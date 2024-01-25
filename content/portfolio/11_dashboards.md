@@ -1,8 +1,8 @@
 +++
-title = "[11] dashboarding"
+title = "[11] DASHBOARDING"
 date = ""
-portfolioCover = "dashboard.png"
-cover = "dashboard.webp"
+portfolioCover = "/portfolio/dashboard.webp"
+cover = "/cover/dashboard.webp"
 +++
 # Dashboarding: Unifying Your Data for Clear Insights
 
@@ -12,7 +12,10 @@ I'm here to help you gather and visualize your data from various sources, creati
 
 - **Power BI:** For those in the Microsoft ecosystem, I can craft bespoke, interactive dashboards in Power BI. This tool not only brings your data to life but also allows you to discover trends and insights that can drive strategic decisions.
 
-- **Google Data Studio (Looker):** If you're more aligned with Google's suite of tools, I'm also experienced in Google Data Studio (now part of Looker). I'll transform your raw data into visually appealing and easy-to-understand reports. Looker works well for embedding in company websites. Check out [Alibra Shipping Data](https://alibrashipping.com/data/)
+- **Google Data Studio (Looker):** If you're more aligned with Google's suite of tools, I'm also experienced in Google Data Studio (now part of Looker). I'll transform your raw data into visually appealing and easy-to-understand reports. 
+
+> Looker works well for embedding in company websites.  
+Check out [Alibra Shipping Dashboard](https://alibrashipping.com/data/)
 
 Whether it’s for tracking performance, understanding customer behavior, or making data-driven decisions, I’m here to guide you in creating dashboards that not only inform but also inspire action.
 
