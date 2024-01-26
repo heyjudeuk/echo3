@@ -3,7 +3,7 @@
       <div class="portfolio-grid-item">
           {{ if .Params.portfolioCover }}
             <div>
-              <img class="portfolio-grid-item-image" src="{{ .Params.portfolioCover | absURL }}" alt="{{ .Title | plainify | default " " }}" width="505" height="505" />
+              <img class="portfolio-grid-item-image" src="{{ .Params.portfolioCover | absURL }}" alt="{{ .Title | plainify | default " " }}" />
             </div>
           {{ end }}
           <div class="portfolio-grid-item-name">
@@ -16,7 +16,3 @@
           </div>
       </div>
     </a>
-<!--
-Original code. Replaced img class for portfolio images 505 pixels square to help with PageSpeed audit
-<img class="portfolio-grid-item-image" src="{{ .Params.portfolioCover | absURL }}" alt="{{ .Title | plainify | default " " }}" /> 
--->
