@@ -3,7 +3,7 @@ title = "How to fix the buffer time problem in Microsoft Bookings"
 date = "2024-01-31"
 author = "Jude Sudbury"
 cover = "/20240131/bookings_power_automate.webp"
-description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec interdum metus. Aenean rutrum ligula sodales ex auctor, sed tempus dui mollis. Curabitur ipsum dui, aliquet nec commodo at, tristique eget ante."
+description = "Using Microsoft Power Automate as a workaround for the buffer time issue in Microsoft Bookings."
 +++
 
 As I write this post I have just started using Microsoft Bookings. As an IT professional, having the ability for a client to visit my Bookings page and put an appointment in my diary is a great way of avoiding the usual back and forth via email to pin down a mutually convenient time. Out of the box, Bookings offers a good deal of flexibility, including the option of adding **'buffer time'** to allow for preparation, travel between appointments, avoding back to back appointments etc. However, as noted by many here [Calendar time vs Buffer time - Microsoft Community Hub](https://techcommunity.microsoft.com/t5/microsoft-bookings-ideas/calendar-time-vs-buffer-time/idi-p/2469887)

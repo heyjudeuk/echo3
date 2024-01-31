@@ -6,26 +6,71 @@
     <description>Recent content in Home on echo3.co</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 25 Jan 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://echo3.co/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 31 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://echo3.co/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Hello Friend</title>
-      <link>https://echo3.co/posts/hello/</link>
-      <pubDate>Fri, 25 Jan 2019 00:00:00 +0000</pubDate>
+      <title>How to fix the buffer time problem in Microsoft Bookings</title>
+      <link>https://echo3.co/posts/fixing-the-buffer-time-problem-in-microsoft-bookings/</link>
+      <pubDate>Wed, 31 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://echo3.co/posts/hello/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec interdum metus. Aenean rutrum ligula sodales ex auctor, sed tempus dui mollis. Curabitur ipsum dui, aliquet nec commodo at, tristique eget ante. Donec quis dolor nec nunc mollis interdum vel in purus. Sed vitae leo scelerisque, sollicitudin elit sed, congue ante. In augue nisl, vestibulum commodo est a, tristique porttitor est. Proin laoreet iaculis ornare. Nullam ut neque quam.
-Fusce pharetra suscipit orci nec tempor.</description>
-      <content>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec interdum metus. Aenean rutrum ligula sodales ex auctor, sed tempus dui mollis. Curabitur ipsum dui, aliquet nec commodo at, tristique eget ante. &lt;strong&gt;Donec quis dolor nec nunc mollis interdum vel in purus&lt;/strong&gt;. Sed vitae leo scelerisque, sollicitudin elit sed, congue ante. In augue nisl, vestibulum commodo est a, tristique porttitor est. Proin laoreet iaculis ornare. Nullam ut neque quam.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Fusce pharetra suscipit orci nec tempor. Quisque vitae sem sit amet sem mollis consequat. Sed at imperdiet lorem. Vestibulum pharetra faucibus odio, ac feugiat tellus sollicitudin at. Pellentesque varius tristique mi imperdiet dapibus. Duis orci odio, sodales lacinia venenatis sit amet, feugiat et diam.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Sed a leo id risus venenatis vulputate non quis nulla. Aenean nisl quam, lacinia pulvinar orci sit amet, eleifend eleifend dui. Nulla tempor ligula leo, eu vehicula quam condimentum a. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla gravida tristique nunc sed semper. Morbi nec felis odio.&lt;/p&gt;
+      <guid>https://echo3.co/posts/fixing-the-buffer-time-problem-in-microsoft-bookings/</guid>
+      <description>As I write this post I have just started using Microsoft Bookings. As an IT professional, having the ability for a client to visit my Bookings page and put an appointment in my diary is a great way of avoiding the usual back and forth via email to pin down a mutually convenient time. Out of the box, Bookings offers a good deal of flexibility, including the option of adding &amp;lsquo;buffer time&amp;rsquo; to allow for preparation, travel between appointments, avoding back to back appointments etc.</description>
+      <content>&lt;p&gt;As I write this post I have just started using Microsoft Bookings. As an IT professional, having the ability for a client to visit my Bookings page and put an appointment in my diary is a great way of avoiding the usual back and forth via email to pin down a mutually convenient time. Out of the box, Bookings offers a good deal of flexibility, including the option of adding &lt;strong&gt;&amp;lsquo;buffer time&amp;rsquo;&lt;/strong&gt; to allow for preparation, travel between appointments, avoding back to back appointments etc. However, as noted by many here &lt;a href=&#34;https://techcommunity.microsoft.com/t5/microsoft-bookings-ideas/calendar-time-vs-buffer-time/idi-p/2469887&#34;&gt;Calendar time vs Buffer time - Microsoft Community Hub&lt;/a&gt;
+, this feature is flawed: The first appointment that was created by the system resulted in me ringing my client 30 minutes early, because the buffer time set simply &lt;em&gt;extends&lt;/em&gt; the event in the calendar; the reminder pops up and then I must remember to ring my client 30 minutes later. The &amp;rsquo;time with client&amp;rsquo; is buried in the event notes. Not great &amp;hellip;&lt;/p&gt;
+&lt;h1 id=&#34;-a-workaround-using-microsoft-power-automate&#34;&gt;➡️🔄 A workaround using Microsoft Power Automate&lt;/h1&gt;
+&lt;p&gt;By leveraging Power Automate, we can create a flow that automatically adds a &amp;lsquo;buffer time&amp;rsquo; event around the booking, ensuring that reminders and scheduling reflect the actual appointment times, not the buffer periods. Here&amp;rsquo;s how:&lt;/p&gt;
+&lt;h4 id=&#34;step-1-add-the-power-automate-integration-to-microsoft-bookings&#34;&gt;Step 1: Add the Power Automate integration to Microsoft Bookings&lt;/h4&gt;
+&lt;p&gt;Turn off your buffer time for all services in Microsoft Bookings and click the Integrations button in the sidebar:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://echo3.co/20240131/step_01.webp&#34; alt=&#34;Selecting the &amp;lsquo;Create a flow&amp;rsquo; option in Power Automate to begin fixing the buffer time issue in Microsoft Bookings&#34;&gt;&lt;/p&gt;
+&lt;p&gt;As of writing, this is the only integration offered:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://echo3.co/20240131/step_02.webp&#34; alt=&#34;Select Power Automate as a connector for Microsoft Bookings&#34;&gt;&lt;/p&gt;
+&lt;p&gt;then click &amp;lsquo;Go to Setup&amp;rsquo;:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://echo3.co/20240131/step_03.webp&#34; alt=&#34;Select Go to setup&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;step-2-create-the-trigger&#34;&gt;Step 2: Create the trigger&lt;/h4&gt;
+&lt;p&gt;We want our flow to trigger when a new appointment is created:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://echo3.co/20240131/step_04.webp&#34; alt=&#34;Create a Flow trigger when an appointment is created in Microsoft Bookings&#34;&gt;&lt;/p&gt;
+&lt;p&gt;You should then be presented with Power Automate&amp;rsquo;s design grid with a sole trigger event &amp;lsquo;When a appointment is Created&amp;rsquo; (spot the gramatical errors!). There will be an alarming &lt;em&gt;&amp;lsquo;Invalid parameters&amp;rsquo;&lt;/em&gt; warninig. Just click it:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://echo3.co/20240131/step_05.webp&#34; alt=&#34;The trigger shows an invalid parameters warning&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Using the dropdown, select the appropriate booking page. When an appointment is made using this Bookings page, it will trigger your flow automation. I only have one setup in this example.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://echo3.co/20240131/step_06.webp&#34; alt=&#34;In the trigger properties, select the appropriate bookings page&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;step-3-calculate-buffer-times&#34;&gt;Step 3: Calculate buffer times&lt;/h4&gt;
+&lt;p&gt;In this step we are going to create two calculated variables that will define the start and end time of our buffer appointment. In my example, I am using a pre and post meeting buffer time of 30 minutes.&lt;/p&gt;
+&lt;p&gt;First, click the plus button directly below your trigger in the flow grid:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://echo3.co/20240131/step_07.webp&#34; alt=&#34;Add the first variable after the event trigger&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In the left hand flyout, search for &lt;strong&gt;&amp;lsquo;initialize variable&amp;rsquo;&lt;/strong&gt; and click it:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://echo3.co/20240131/step_08.webp&#34; alt=&#34;Find and select initialize variable&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Under the parameters tab, enter &lt;strong&gt;PreMeetingBuffer&lt;/strong&gt; under Name, use the dropdown to select &lt;strong&gt;String&lt;/strong&gt; under Type and next to Value, click the fx button:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://echo3.co/20240131/step_09.webp&#34; alt=&#34;Fill in the variable parameters&#34;&gt;&lt;/p&gt;
+&lt;p&gt;And copy and paste the following code. We are using the addMinutes function to subtract 30 minutes from the start time of the appointment that triggered the flow:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;addMinutes&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;triggerOutputs&lt;/span&gt;()&lt;span style=&#34;color:#f92672&#34;&gt;?&lt;/span&gt;[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;body/StartTime&amp;#39;&lt;/span&gt;], &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;30&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now click &lt;strong&gt;Add&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://echo3.co/20240131/step_10.webp&#34; alt=&#34;Commit the variable by clicking Add&#34;&gt;&lt;/p&gt;
+&lt;p&gt;You now need to add another variable, following the steps above, this time clicking the plus sign under the newly appeared &lt;strong&gt;&amp;lsquo;Initialize variable&amp;rsquo;&lt;/strong&gt; action. Call this new variable &lt;strong&gt;PostMeetingBuffer&lt;/strong&gt; and use the following function to calculate the end of our buffer appointment:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;addMinutes&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;triggerOutputs&lt;/span&gt;()&lt;span style=&#34;color:#f92672&#34;&gt;?&lt;/span&gt;[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;body/EndTime&amp;#39;&lt;/span&gt;], &lt;span style=&#34;color:#ae81ff&#34;&gt;30&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In my example, the buffer appointment will be 30 minutes longer than the triggering event booking.&lt;/p&gt;
+&lt;p&gt;You should now have three objects in your Flow: A trigger and &lt;strong&gt;two variables&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;step-4-create-a-buffer-calendar-event&#34;&gt;Step 4: Create a buffer calendar event&lt;/h4&gt;
+&lt;p&gt;Click the plus sign below the last action you created (the second variable, which should be called &lt;strong&gt;Initialize variable 1&lt;/strong&gt; by default. In the flyout on the left, search for &lt;strong&gt;create event&lt;/strong&gt; and add it:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://echo3.co/20240131/step_11.webp&#34; alt=&#34;Add the create event action in Microsoft Power Automate&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Under the parameters tab, select your calendar from the dropdown (normally just called &lt;strong&gt;Calendar&lt;/strong&gt;) and give it a name under Subject (I&amp;rsquo;m calling mine &lt;strong&gt;Booking Buffer&lt;/strong&gt;). Click the lightning bolt symbol next to the Start Time:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://echo3.co/20240131/step_12.webp&#34; alt=&#34;Click the lightning bolt symbol next to Start Time&#34;&gt;&lt;/p&gt;
+&lt;p&gt;And select the &lt;strong&gt;PreMeetingBuffer&lt;/strong&gt; variable we created earlier:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://echo3.co/20240131/step_13.webp&#34; alt=&#34;Select the PreMeetingBuffer variable&#34;&gt;&lt;/p&gt;
+&lt;p&gt;For the End time, select the &lt;strong&gt;PostMeetingBuffer&lt;/strong&gt; variable. Under advanced parameters I&amp;rsquo;ve also done the following:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Sed efficitur, lacus ac scelerisque pellentesque, lectus risus dignissim nisl, fermentum semper lectus diam eget lacus.&lt;/li&gt;
-&lt;li&gt;Nunc ornare purus enim, id eleifend mauris vestibulum volutpat.&lt;/li&gt;
-&lt;li&gt;Aenean facilisis ut ipsum condimentum ultrices.&lt;/li&gt;
-&lt;li&gt;Fusce sed metus vulputate, lobortis purus et, finibus purus. Suspendisse quis posuere lorem. Vivamus vulputate nec risus in pulvinar.&lt;/li&gt;
+&lt;li&gt;Turned reminders OFF&lt;/li&gt;
+&lt;li&gt;Show as Busy (by default any event created using this action would show as available)&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://echo3.co/20240131/step_14.webp&#34; alt=&#34;Configure the create event action&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In the end, your flow should look like this:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://echo3.co/20240131/flow_overview.webp&#34; alt=&#34;Final flow overview&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Save your flow and then test it by creating a booking via your Bookings page. You should end up with something like this:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://echo3.co/20240131/final_step.webp&#34; alt=&#34;A calendar with a buffer appointment around it&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The buffer appointment won&amp;rsquo;t trigger a reminder (if you configured the advanced parameters above) but it will prevent back to back bookings (make sure you configure the &amp;lsquo;busy&amp;rsquo; parameter above) and you will only receive calendar notifications for the actual events generated by your Bookings page.&lt;/p&gt;
+&lt;p&gt;I haven&amp;rsquo;t looked at creating flows for deleting or amending these automatically generated buffer events if the original booking is cancelled or amended. Something for another day!&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;NB: I did try the Copilot AI to help create the flow, but it wasn&amp;rsquo;t helpful, so I ended up having to use my brain! 🧠&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;☕️ If you found this post helpful, I&amp;rsquo;d appreciate it if you would &lt;a href=&#34;https://www.buymeacoffee.com/heyjudeuk&#34;&gt;buy me a coffee&lt;/a&gt;&lt;/p&gt;
 </content>
     </item>
     
@@ -485,6 +530,18 @@ Objective Insights: Whether it&amp;rsquo;s interpreting an official-looking emai
 &lt;p&gt;Think of me as your all-around advisor, here to offer support, clarity, and resolution in those areas that don&amp;rsquo;t quite fit into a standard category; it&amp;rsquo;s good to talk! 💬&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://wa.me/447413678040&#34;&gt;WhatsApp&lt;/a&gt;
 &lt;a href=&#34;mailto:jude@echo3.co&#34;&gt;jude@echo3.co&lt;/a&gt;&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>About me</title>
+      <link>https://echo3.co/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://echo3.co/about/</guid>
+      <description>Hi there 🚧🚧🚧 This section is WIP!</description>
+      <content>&lt;h1 id=&#34;hi-there&#34;&gt;Hi there&lt;/h1&gt;
+&lt;p&gt;🚧🚧🚧 This section is WIP!&lt;/p&gt;
 </content>
     </item>
     
