@@ -78,7 +78,7 @@ You should now have three objects in your Flow: A trigger and **two variables**
 
 #### Step 4: Create a buffer calendar event
 
-Click the plus sign below the last action you created (the second variable, which should be called **Initialize variable 1** by default. In the flyout on the left, search for **create event** and add it:
+Click the plus sign below the last action you created (the second variable, which should be called **Initialize variable 1** by default). In the flyout on the left, search for **create event** and add it:
 
 ![Add the create event action in Microsoft Power Automate](/20240131/step_11.webp)
 

@@ -49,7 +49,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In my example, the buffer appointment will be 30 minutes longer than the triggering event booking.&lt;/p&gt;
 &lt;p&gt;You should now have three objects in your Flow: A trigger and &lt;strong&gt;two variables&lt;/strong&gt;&lt;/p&gt;
 &lt;h4 id=&#34;step-4-create-a-buffer-calendar-event&#34;&gt;Step 4: Create a buffer calendar event&lt;/h4&gt;
-&lt;p&gt;Click the plus sign below the last action you created (the second variable, which should be called &lt;strong&gt;Initialize variable 1&lt;/strong&gt; by default. In the flyout on the left, search for &lt;strong&gt;create event&lt;/strong&gt; and add it:&lt;/p&gt;
+&lt;p&gt;Click the plus sign below the last action you created (the second variable, which should be called &lt;strong&gt;Initialize variable 1&lt;/strong&gt; by default). In the flyout on the left, search for &lt;strong&gt;create event&lt;/strong&gt; and add it:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://echo3.co/20240131/step_11.webp&#34; alt=&#34;Add the create event action in Microsoft Power Automate&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Under the parameters tab, select your calendar from the dropdown (normally just called &lt;strong&gt;Calendar&lt;/strong&gt;) and give it a name under Subject (I&amp;rsquo;m calling mine &lt;strong&gt;Booking Buffer&lt;/strong&gt;). Click the lightning bolt symbol next to the Start Time:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://echo3.co/20240131/step_12.webp&#34; alt=&#34;Click the lightning bolt symbol next to Start Time&#34;&gt;&lt;/p&gt;
