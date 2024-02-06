@@ -6,7 +6,7 @@ cover = "/20240131/bookings_power_automate.webp"
 description = "Using Microsoft Power Automate as a workaround for the buffer time issue in Microsoft Bookings."
 +++
 
-As I write this post I have just started using Microsoft Bookings. As an IT professional, having the ability for a client to visit my Bookings page and put an appointment in my diary is a great way of avoiding the usual back and forth via email to pin down a mutually convenient time. Out of the box, Bookings offers a good deal of flexibility, including the option of adding **'buffer time'** to allow for preparation, travel between appointments, avoding back to back appointments etc. However, as noted by many here [Calendar time vs Buffer time - Microsoft Community Hub](https://techcommunity.microsoft.com/t5/microsoft-bookings-ideas/calendar-time-vs-buffer-time/idi-p/2469887)
+As I write this post I have just started using Microsoft Bookings. As an IT professional, having the ability for a client to visit my Bookings page and put an appointment in my diary is a great way of avoiding the usual back and forth via email to pin down a mutually convenient time. Out of the box, Bookings offers a good deal of flexibility, including the option of adding **'buffer time'** to allow for preparation, travel between appointments, avoiding back to back appointments etc. However, as noted by many here [Calendar time vs Buffer time - Microsoft Community Hub](https://techcommunity.microsoft.com/t5/microsoft-bookings-ideas/calendar-time-vs-buffer-time/idi-p/2469887)
 , this feature is flawed: The first appointment that was created by the system resulted in me ringing my client 30 minutes early, because the buffer time set simply *extends* the event in the calendar; the reminder pops up and then I must remember to ring my client 30 minutes later. The 'time with client' is buried in the event notes. Not great ...
 
 # ➡️🔄 A workaround using Microsoft Power Automate
@@ -33,7 +33,7 @@ We want our flow to trigger when a new appointment is created:
 
 ![Create a Flow trigger when an appointment is created in Microsoft Bookings](/20240131/step_04.webp)
 
-You should then be presented with Power Automate's design grid with a sole trigger event 'When a appointment is Created' (spot the gramatical errors!). There will be an alarming *'Invalid parameters'* warninig. Just click it:
+You should then be presented with Power Automate's design grid with a sole trigger event 'When a appointment is Created' (spot the grammatical errors!). There will be an alarming *'Invalid parameters'* warning. Just click it:
 
 ![The trigger shows an invalid parameters warning](/20240131/step_05.webp)
 
