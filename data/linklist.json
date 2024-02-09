@@ -22,11 +22,7 @@
             "Content": "I'm an IT professional who's like a Swiss Army Knife for entrepreneurs and small businesses. I love problem solving using off-the-shelf technology and out of the box thinking, and composing strict tempo music that people can dance to. 💾 🎹 👾",
             "HtmlClasses": "anotherClassSoICanOverrideStyles"
         },
-		{
-            "Type": "text",
-            "Content": "🚧🚧🚧 This site is under construction, so expect broken links and Lorem ipsum dolor 🚧🚧🚧",
-            "HtmlClasses": "anotherClassSoICanOverrideStyles"
-        },
+		
 		{
             "Type": "link",
             "Link": "../portfolio/",

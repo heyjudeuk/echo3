@@ -1,7 +1,9 @@
 {{ define "main" }}
-  <h1 class="page-title">
-    <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
-  </h1>
+  {{ if ne .Type "portfolio" }}
+    <h1 class="page-title">
+      <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+    </h1>
+  {{ end }}
 
   {{ with .Content }}
     <div class="index-content">
