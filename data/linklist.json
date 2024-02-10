@@ -5,7 +5,7 @@
     "Socials": [
 	
 		{
-            "Link": "linkedin.com/in/jude-sudbury-9074a743",
+            "Link": "https://linkedin.com/in/jude-sudbury-9074a743",
             "Icon": "/icon/linkedin.svg",
             "AltText": "LinkedIn"
         },
@@ -19,7 +19,7 @@
     "List": [
         {
             "Type": "text",
-            "Content": "I'm an IT professional who's like a Swiss Army Knife for entrepreneurs and small businesses. I love problem solving using off-the-shelf technology and out of the box thinking, and composing strict tempo music that people can dance to. 💾 🎹 👾",
+            "Content": "I'm an IT professional dedicated to helping entrepreneurs, small and medium businesses. I love problem solving using off-the-shelf technology and out of the box thinking, and composing strict tempo music that people can dance to. 💾 🎹 👾",
             "HtmlClasses": "anotherClassSoICanOverrideStyles"
         },
 		
