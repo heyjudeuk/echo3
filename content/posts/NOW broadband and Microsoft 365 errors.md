@@ -18,7 +18,7 @@ And when asked to sign out and back in to the Windows OneDrive app, this happene
 
 One Drive refused to sign back in, just hanging forever with the words 'signing in' with a spinning circle.
 
-All three reported no issues when back at the office. What did each of these people have in common? They are all using NOW broadband (Sky). As part of my troubleshooting, I ran IPconfig to check IP details, in particular to see what DNS servers they were using. However, the local IP returned for each was an [IPv6 address](https://en.wikipedia.org/wiki/IPv6). It's nice to see Sky advancing internet technology, however Microsoft doesn't appear to like it. I disabled IPv6 on each computer and all the errors disappeared immediatley and service was restored. Not even a reboot was required.
+All three reported no issues when back at the office. What did each of these people have in common? They are all using NOW broadband (Sky). As part of my troubleshooting, I ran IPconfig to check IP details, in particular to see what DNS servers they were using. However, the local IP returned for each was an [IPv6 address](https://en.wikipedia.org/wiki/IPv6). It's nice to see Sky advancing internet technology, however Microsoft doesn't appear to like it. I disabled IPv6 on each computer and all the errors disappeared immediately and service was restored. Not even a reboot was required.
 
 Since I wasn't able to log into any of my clients' routers to see whether it was possible to disable IPv6 at the source, I had to disable it via the Windows control panel:
 
