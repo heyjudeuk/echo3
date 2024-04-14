@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Continuous Marquee</title>
+<style>
+    body, html { margin: 0; padding: 0; overflow: hidden; height: 100%; }
+    .marquee {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        background-color: #000; /* Background color */
+    }
+    .marquee-content {
+        display: block;
+        width: auto;
+        white-space: nowrap;
+        position: absolute;
+        animation: marquee 10s linear infinite;
+        color: white; /* Text color */
+    }
+    @keyframes marquee {
+        0% { left: 100%; }
+        100% { left: -100%; }
+    }
+</style>
+</head>
+<body>
+<div class="marquee">
+    <span class="marquee-content">COMMERCIAL STREET ∙ MUSICAL THEATRE ∙ HIP HOP ∙ DRAMA ∙ BALLET ∙ TAP ∙ CONTEMPORARY</span>
+</div>
+</body>
+</html>
