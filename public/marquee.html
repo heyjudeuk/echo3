@@ -2,32 +2,47 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Continuous Marquee</title>
+<title>Scrolling Text</title>
 <style>
-    body, html { margin: 0; padding: 0; overflow: hidden; height: 100%; }
-    .marquee {
-        width: 100%;
+    body, html {
+        margin: 0;
+        padding: 0;
         overflow: hidden;
+        background-color: #000; /* Black background */
+        color: white; /* White text */
+        font-family: Arial, sans-serif;
+    }
+    #marquee {
         position: relative;
-        background-color: #000; /* Background color */
-    }
-    .marquee-content {
-        display: block;
-        width: auto;
         white-space: nowrap;
-        position: absolute;
-        animation: marquee 10s linear infinite;
-        color: white; /* Text color */
-    }
-    @keyframes marquee {
-        0% { left: 100%; }
-        100% { left: -100%; }
+        overflow: hidden;
+        width: 100%;
     }
 </style>
 </head>
 <body>
-<div class="marquee">
-    <span class="marquee-content">COMMERCIAL STREET ∙ MUSICAL THEATRE ∙ HIP HOP ∙ DRAMA ∙ BALLET ∙ TAP ∙ CONTEMPORARY</span>
+<div id="marquee">
+    <div id="text">COMMERCIAL STREET ∙ MUSICAL THEATRE ∙ HIP HOP ∙ DRAMA ∙ BALLET ∙ TAP ∙ CONTEMPORARY</div>
 </div>
+<script>
+    const marquee = document.getElementById('marquee'),
+          text = document.getElementById('text');
+    let textWidth = text.offsetWidth,
+        startPos = marquee.offsetWidth,
+        endPos = -textWidth;
+
+    function scrollText() {
+        if (startPos < endPos) {
+            startPos = marquee.offsetWidth;
+        } else {
+            startPos -= 1;
+        }
+        text.style.left = startPos + 'px';
+        requestAnimationFrame(scrollText);
+    }
+    text.style.position = 'absolute';
+    text.style.left = marquee.offsetWidth + 'px';
+    scrollText();
+</script>
 </body>
 </html>
