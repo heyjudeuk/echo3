@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Scrolling Text</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #000; /* Black background */
+        color: white; /* White text */
+        font-family: Arial, sans-serif;
+    }
+    #marquee {
+        position: relative;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 100%;
+    }
+</style>
+</head>
+<body>
+<div id="marquee">
+    <div id="text">COMMERCIAL STREET ∙ MUSICAL THEATRE ∙ HIP HOP ∙ DRAMA ∙ BALLET ∙ TAP ∙ CONTEMPORARY</div>
+</div>
+<script>
+    const marquee = document.getElementById('marquee'),
+          text = document.getElementById('text');
+    let textWidth = text.offsetWidth,
+        startPos = marquee.offsetWidth,
+        endPos = -textWidth;
+
+    function scrollText() {
+        if (startPos < endPos) {
+            startPos = marquee.offsetWidth;
+        } else {
+            startPos -= 1;
+        }
+        text.style.left = startPos + 'px';
+        requestAnimationFrame(scrollText);
+    }
+    text.style.position = 'absolute';
+    text.style.left = marquee.offsetWidth + 'px';
+    scrollText();
+</script>
+</body>
+</html>
