@@ -15,9 +15,10 @@ As your web and content manager, I bring a creative touch and technical know-how
 - **Website Updates and Blogging:** The digital world is dynamic, and so is your website’s content. From updating web pages to business blogging, I ensure your site stays fresh, relevant, and engaging for your audience.
 
 > **Example sites I've deployed and manage:**    
-[Rushmon Homes (a Wix Editor X site)](https://www.rushmonhomes.co.uk)  
-[Silbury Finance (a Wix Editor X site)](https://silburyfinance.com)  
-[Intertype Studio (a Wordpress site)](https://www.intertypestudio.com)
+[Rushmon Homes](https://www.rushmonhomes.co.uk)  
+[Silbury Finance](https://silburyfinance.com)  
+[Intertype Studio](https://www.intertypestudio.com)  
+[Quantum Development Finance](https://quantumdf.com)  
 
 [WhatsApp](https://wa.me/447413678040)
 [jude@echo3.co](mailto:jude@echo3.co)

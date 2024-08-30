@@ -15,11 +15,11 @@ Here’s what you can expect with me:
 
 - **Instant Access:** Reach out in your preferred way and get immediate help. No formalities, no ticket numbers.
 - **A Personal Connection:** When you call or message, you’re talking to someone who understands your business and its unique tech needs.
-- **Proactive Problem-Solving:** I'm here to nip those IT issues in the bud, keeping your business running without a hitch.
+- **Proactive Problem-Solving:** Through years of experience and exposure to many organisations of varying sizes across a range of industries, I've developed a best-practice approach to deploying and managing IT resources. My aim is to streamline your IT setup, ensuring it runs as smoothly as possible and allowing you to focus on your business without worrying about tech headaches.
 
-> **"But what if you're on holiday or sick?"** Great question! I've got that covered. While I don't take on high-risk clients where immediate support is critical (like businesses with their own on-premise computer networks), I'm all about handling the 'small stuff'. And for those times when I'm not available, I've teamed up with other IT freelancers who provide cover. So, you can rest easy knowing that there's always someone reliable to turn to.
+> **"But what if you're on holiday or sick?"** For those times when I'm not available, I've teamed up with other IT freelancers who provide cover. So, you can rest easy knowing that there's always someone reliable to turn to.
 
-So, why get bogged down by traditional IT support when you can have your own personal tech guru? Let's make IT support as easy and friendly as a conversation with a friend!
+So, why get bogged down by traditional IT support when you can have your own personal tech guru? Let's make IT support as easy as a conversation with a friend!
 
 **Ready to enjoy hassle-free IT support tailored just for your business?** Let’s chat about how I can help you.
 
