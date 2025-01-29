@@ -8,7 +8,7 @@ description = "MTU"
 
 **Fix: Xero and Web Pages Not Loading on Toob Broadband**
 
-Recently, a client approached me with a peculiar problem: web apps like Xero, Bankline, Tesco’s website, and even Toob wouldn’t fully load on their Windows 11 laptop using Chrome or Edge. Refreshing the browser sometimes resolved the issue, but it wasn’t reliable. He told me that the problem started after switching his ISP from Virgin to Toob. After troubleshooting—clearing the browser cache, disabling extensions and ad-blockers, and resetting the network stack—I turned to Google and discovered a Reddit thread ([link here](https://www.reddit.com/r/Southampton/comments/19c2vrm/anyone_else_having_connectivity_issues_with_toob/)) that described someone with exactly the same issue. He suggested changing the MTU to 1280; implementing this fix resolved my client’s issue entirely.
+Recently, a client approached me with a peculiar problem: web apps like Xero, Bankline, and Tesco wouldn’t fully load on their Windows 11 laptop using Chrome or Edge. Refreshing the browser sometimes resolved the issue, but it wasn’t reliable. He told me that the problem started after switching his ISP from Virgin to Toob. After troubleshooting—clearing the browser cache, disabling extensions and ad-blockers, and resetting the network stack—I turned to Google and discovered a Reddit thread ([link here](https://www.reddit.com/r/Southampton/comments/19c2vrm/anyone_else_having_connectivity_issues_with_toob/)) that described someone with exactly the same issue. He suggested changing the MTU to 1280; implementing this fix resolved my client’s issue entirely.
 
 **What is MTU and Why Does it Matter?**
 
