@@ -2,69 +2,583 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Home on echo3.co</title>
-    <link>https://echo3.co/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content in Home on echo3.co</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 31 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://echo3.co/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fix: Xero and Web Pages Not Loading on Toob Broadband</title>
+      <link>http://localhost:1313/posts/xero-and-other-sites-not-loading-on-toob-braodband/</link>
+      <pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/xero-and-other-sites-not-loading-on-toob-braodband/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Fix: Xero and Web Pages Not Loading on Toob Broadband&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Recently, a client approached me with a peculiar problem: web apps like Xero, Bankline, and Tesco wouldn’t fully load on their Windows 11 laptop using Chrome or Edge. Refreshing the browser sometimes resolved the issue, but it wasn’t reliable. He told me that the problem started after switching his ISP from Virgin to Toob. After troubleshooting—clearing the browser cache, disabling extensions and ad-blockers, and resetting the network stack—I turned to Google and discovered a Reddit thread (&lt;a href=&#34;https://www.reddit.com/r/Southampton/comments/19c2vrm/anyone_else_having_connectivity_issues_with_toob/&#34;&gt;link here&lt;/a&gt;) that described someone with exactly the same issue. He suggested changing the MTU to 1280; implementing this fix resolved my client’s issue entirely.&lt;/p&gt;</description>
+      <content>&lt;p&gt;&lt;strong&gt;Fix: Xero and Web Pages Not Loading on Toob Broadband&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Recently, a client approached me with a peculiar problem: web apps like Xero, Bankline, and Tesco wouldn’t fully load on their Windows 11 laptop using Chrome or Edge. Refreshing the browser sometimes resolved the issue, but it wasn’t reliable. He told me that the problem started after switching his ISP from Virgin to Toob. After troubleshooting—clearing the browser cache, disabling extensions and ad-blockers, and resetting the network stack—I turned to Google and discovered a Reddit thread (&lt;a href=&#34;https://www.reddit.com/r/Southampton/comments/19c2vrm/anyone_else_having_connectivity_issues_with_toob/&#34;&gt;link here&lt;/a&gt;) that described someone with exactly the same issue. He suggested changing the MTU to 1280; implementing this fix resolved my client’s issue entirely.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What is MTU and Why Does it Matter?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;MTU (Maximum Transmission Unit) defines the maximum size of a data packet that can be sent over your network. If the MTU size is too large for your internet connection, it can cause packet fragmentation or drops, leading to incomplete data transfer. This can result in web pages failing to load correctly or web apps behaving erratically.&lt;/p&gt;
+&lt;p&gt;For some networks, especially those with VPNs, certain ISPs (like Toob), or firewalls, an MTU setting that’s too high can cause these connectivity issues. Reducing the MTU is often a simple fix that ensures data packets are small enough to travel without being fragmented. Why 1280? I found subsequent threads on Reddit that claim Toob support have stipulated 1280, which is also the minimum allowed by IPv6. I checked his router interface and found that the MTU for both IPv4 and IPv6 were both set to &amp;lsquo;auto&amp;rsquo;.If the router negotiates an MTU size of 1280, Windows’ default MTU of 1500 can cause packet fragmentation for outgoing traffic. This is generally not an issue for basic browsing if data received from webservers via the router is in smaller packets than Windows is configured to handle. However, for interactive web applications like Xero, which involve bidirectional communication, fragmentation of outbound traffic can interfere with critical processes like HTTPS or TLS handshakes. This can cause issues such as incomplete page loading or erratic app behavior.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;how-to-set-the-mtu-to-1280-on-windows&#34;&gt;&lt;strong&gt;How to Set the MTU to 1280 on Windows&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Follow these steps to adjust the MTU size on a Windows 10 or 11 laptop:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Open Command Prompt as Administrator&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Press &lt;code&gt;Win + S&lt;/code&gt; and type “Command Prompt”.&lt;/li&gt;
+&lt;li&gt;Right-click on &lt;strong&gt;Command Prompt&lt;/strong&gt; and select “Run as administrator”.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Find Your Network Adapter Name&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;In the Command Prompt, type:
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;netsh interface ipv4 show subinterfaces
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;Press Enter. You’ll see a list of network adapters. Look for the one you’re using (e.g., Wi-Fi or Ethernet).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Set the MTU Size&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use the following command to set the MTU to 1280:
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;netsh interface ipv4 set subinterface &amp;#34;&amp;lt;Adapter Name&amp;gt;&amp;#34; mtu=1280 store=persistent
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;Replace &lt;code&gt;&amp;lt;Adapter Name&amp;gt;&lt;/code&gt; with the name of your network adapter. For example:
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;netsh interface ipv4 set subinterface &amp;#34;Wi-Fi&amp;#34; mtu=1280 store=persistent
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Verify the Change&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Run the following command to confirm the MTU has been updated:
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;netsh interface ipv4 show subinterfaces
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;Check that the MTU for your adapter now shows 1280.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Restart Your Computer&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Reboot your device to ensure the changes take effect. This is not strictly necessary when changing MTU size, however.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;why-this-fix-works&#34;&gt;&lt;strong&gt;Why This Fix Works&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;By reducing the MTU to 1280, you’re aligning the laptop’s outgoing packet size with the router and ISP’s negotiated limits (assuming the internet&amp;rsquo;s claim that Toob support have given a figure of 1280). This ensures that packets are not fragmented at the router, avoiding issues with outgoing traffic that could interfere with critical processes like HTTPS or TLS handshakes. While incoming data from web servers is generally unaffected by an MTU mismatch, setting the MTU consistently prevents outgoing fragmentation, which is crucial for web apps like Xero that rely on bidirectional communication. This fix resolved my client’s page loading and interaction issues entirely.&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Why MFA Isn’t Enough: The Need for Stronger Security Measures in Microsoft 365</title>
+      <link>http://localhost:1313/posts/why-mfa-isnt-enough/</link>
+      <pubDate>Tue, 03 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/why-mfa-isnt-enough/</guid>
+      <description>&lt;h3 id=&#34;why-mfa-isnt-enough-the-need-for-stronger-security-measures-in-microsoft-365&#34;&gt;Why MFA Isn’t Enough: The Need for Stronger Security Measures in Microsoft 365&lt;/h3&gt;
+&lt;p&gt;Multi-Factor Authentication (MFA) is a robust solution for protecting online accounts, including those within Microsoft 365. It adds an extra layer of security beyond just a password, typically requiring a second factor like a text message code or an app-based approval. However, relying solely on MFA can lead to a false sense of security. While MFA is a significant improvement over password-only protection, it has vulnerabilities that can be exploited by determined attackers using a blend of social engineering and readily available (and easy-to-use) software.&lt;/p&gt;</description>
+      <content>&lt;h3 id=&#34;why-mfa-isnt-enough-the-need-for-stronger-security-measures-in-microsoft-365&#34;&gt;Why MFA Isn’t Enough: The Need for Stronger Security Measures in Microsoft 365&lt;/h3&gt;
+&lt;p&gt;Multi-Factor Authentication (MFA) is a robust solution for protecting online accounts, including those within Microsoft 365. It adds an extra layer of security beyond just a password, typically requiring a second factor like a text message code or an app-based approval. However, relying solely on MFA can lead to a false sense of security. While MFA is a significant improvement over password-only protection, it has vulnerabilities that can be exploited by determined attackers using a blend of social engineering and readily available (and easy-to-use) software.&lt;/p&gt;
+&lt;h3 id=&#34;evilginx&#34;&gt;Evilginx&lt;/h3&gt;
+&lt;p&gt;Evilginx is a phishing framework that can steal credentials and session cookies even when MFA is in place. Evilginx acts as a man-in-the-middle, intercepting traffic between the user and the legitimate website. This allows attackers to capture not only the username and password but also the MFA token. An MFA token, or session cookie, is a file stored on a user&amp;rsquo;s device after successful authentication that prevents the need to re-enter MFA credentials repeatedly during the same session. Once in possession of a target&amp;rsquo;s login credentials and session cookie, the hacker can log in to the compromised account. Once inside, they can add their own MFA device to the hacked account, ensuring easy access in the future. Evilginx’s &lt;a href=&#34;https://help.evilginx.com/docs/getting-started/quick-start&#34;&gt;quick start guide&lt;/a&gt; promises to teach would-be hackers (ethical or otherwise) how to use the tool in just 5 minutes.&lt;/p&gt;
+&lt;h3 id=&#34;the-role-of-social-engineering&#34;&gt;The Role of Social Engineering&lt;/h3&gt;
+&lt;p&gt;Social engineering remains a powerful weapon in the attacker’s arsenal. Even the most secure systems can be compromised if a user is tricked into giving away their credentials or clicking on a malicious link. Phishing attacks, as they are known, have become increasingly sophisticated, often mimicking legitimate communications so well that even trained and/or cautious users can be fooled.&lt;/p&gt;
+&lt;h3 id=&#34;6-steps-to-hacking&#34;&gt;6 Steps to Hacking&lt;/h3&gt;
+&lt;h4 id=&#34;1-setting-up-evilginx&#34;&gt;1. &lt;strong&gt;Setting Up Evilginx:&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;The attacker sets up a server running Evilginx. This server will act as a reverse proxy, sitting between the victim and the legitimate website (e.g., Google, Microsoft, etc.).&lt;/li&gt;
+&lt;li&gt;The attacker configures Evilginx to impersonate the login page of the target website by cloning the legitimate website&amp;rsquo;s HTML, CSS, and JavaScript content.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;2-creating-the-phishing-link&#34;&gt;2. &lt;strong&gt;Creating the Phishing Link:&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Once Evilginx is set up, the attacker generates a phishing URL that points to the Evilginx server. This URL will look like it belongs to the legitimate website but will actually direct the victim to the attacker&amp;rsquo;s server.&lt;/li&gt;
+&lt;li&gt;To make the URL less suspicious, attackers often use techniques like typosquatting (e.g., &amp;ldquo;g00gle.com&amp;rdquo; instead of &amp;ldquo;google.com&amp;rdquo;), URL shortening services, or even legitimate-looking domain names with subtle changes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;3-sending-the-phishing-email&#34;&gt;3. &lt;strong&gt;Sending the Phishing Email:&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;The attacker crafts an email that looks legitimate, possibly impersonating a trusted entity (e.g., a colleague, IT department, or known service provider).&lt;/li&gt;
+&lt;li&gt;In the email, they include a link to the &amp;lsquo;important document&amp;rsquo; or other urgent content, which is actually the phishing URL pointing to the Evilginx server.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;4-victim-clicks-the-link&#34;&gt;4. &lt;strong&gt;Victim Clicks the Link:&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;When the victim clicks on the link, they are directed to the Evilginx server. Evilginx, acting as a reverse proxy, forwards the victim&amp;rsquo;s traffic to the legitimate website in real time.&lt;/li&gt;
+&lt;li&gt;The victim sees the actual login page of the legitimate website, making the phishing attempt harder to detect.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;5-capturing-credentials-and-session-cookies&#34;&gt;5. &lt;strong&gt;Capturing Credentials and Session Cookies:&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;When the victim enters their login credentials on the spoofed page, Evilginx captures these details before passing them on to the legitimate website.&lt;/li&gt;
+&lt;li&gt;If the victim uses two-factor authentication (2FA)/multi-factor authentication (MFA), Evilginx captures the MFA token as well.&lt;/li&gt;
+&lt;li&gt;The legitimate website then creates a session for the user (e.g., setting cookies), which is also captured by Evilginx. This allows the attacker to hijack the session and access the victim&amp;rsquo;s account without needing the login credentials again.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;6-redirecting-the-victim&#34;&gt;6. &lt;strong&gt;Redirecting the Victim:&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;After capturing the credentials and session data, Evilginx usually redirects the victim to the legitimate website or a legitimate document, so the victim may not realise they&amp;rsquo;ve been phished.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;why-do-hackers-do-it&#34;&gt;Why Do Hackers Do It?&lt;/h3&gt;
+&lt;p&gt;In the earlier days of hacking and computer viruses, the motivations of hackers and virus creators were often different from those seen today. Early hackers were driven by a mix of curiosity, challenge, experimentation, and, in some cases, a desire for recognition or notoriety. Modern cybercriminals frequently seek financial gain through ransomware, data theft, and other malicious activities.&lt;/p&gt;
+&lt;p&gt;Once a hacker gains access to a victim&amp;rsquo;s account, their primary focus is often on the victim&amp;rsquo;s email. Typically, the hacker will create inbox rules to filter or hide specific incoming emails from the legitimate user, ensuring that their activities go unnoticed. They may also delete sent emails to cover their tracks. The hacker’s goal is to remain undetected for as long as possible, potentially engaging in a &amp;ldquo;long game&amp;rdquo; by interacting with third parties known to the victim. Their ultimate aim might be to extort money by redirecting payments for an outstanding invoice to a bank account they control. This type of stealthy and insidious behaviour can result in significant financial loss.&lt;/p&gt;
+&lt;p&gt;On the other hand, some hackers are less cautious and use the compromised account to send thousands of spam or phishing emails. This more blatant misuse often leads to a quicker discovery, as third parties frequently report the suspicious activity back to the victim, often through non-email channels, alerting them to the breach.&lt;/p&gt;
+&lt;h3 id=&#34;user-training-important-but-not-sufficient&#34;&gt;User Training: Important but Not Sufficient&lt;/h3&gt;
+&lt;p&gt;Many organisations emphasise user training as the first line of defence against these kinds of attacks; it’s not possible to use Evilginx to simply hack an account—the hacker must trick the target into visiting the fake website and entering their credentials. While educating users on recognising phishing attempts and maintaining good security hygiene is crucial, it’s arguably not enough. Humans are fallible, and even well-trained individuals can make mistakes. Social engineering attacks are designed to exploit this very weakness. Therefore, relying solely on user training as a defence mechanism is risky.&lt;/p&gt;
+&lt;h3 id=&#34;the-case-for-hard-controls-conditional-access-and-device-compliance&#34;&gt;The Case for Hard Controls: Conditional Access and Device Compliance&lt;/h3&gt;
+&lt;p&gt;Given the limitations of MFA and the susceptibility of users to social engineering, it’s clear that stronger, more technical controls are necessary. One of the most effective strategies is implementing Conditional Access policies that restrict access to Microsoft 365 resources based on device compliance.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What does this mean?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;It means that only devices that meet certain security criteria—such as being enrolled in Intune, Microsoft’s device management platform—are allowed to access corporate resources. Enrolling devices into Intune ensures that they are compliant with your organisation’s security policies, such as having up-to-date antivirus software, operating systems, encryption, and other protections. This approach significantly reduces the risk of unauthorised access, as attackers would need to compromise a compliant device (i.e., gain remote control or have physical access to it) to gain entry, which is far more challenging than bypassing MFA.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Corporate-Owned vs. Personal Devices&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;While it’s ideal for all devices accessing corporate resources to be company-owned and tightly controlled, the reality is that many employees prefer to use their personal mobile devices for work, especially for checking email. To accommodate this, organisations can offer users the option to enrol their personal devices in Intune. This allows IT to enforce security policies on personal devices without compromising the user’s privacy for non-work-related activities. However, users should be aware that enrolling their personal devices means the organisation can enforce security requirements, such as mandatory updates and the ability to remotely wipe the device if it’s lost or stolen. The remote wipe of personally owned, enrolled devices is normally selective, i.e., only corporate data is removed.&lt;/p&gt;
+&lt;h3 id=&#34;conclusion-the-need-for-a-multi-layered-approach&#34;&gt;Conclusion: The Need for a Multi-Layered Approach&lt;/h3&gt;
+&lt;p&gt;While MFA is a crucial component of a secure Microsoft 365 environment, it should not be relied on in isolation. The combination of easily accessible hacking tools like Evilginx, the prevalence of social engineering attacks, and the fallibility of human users means that organisations must implement stronger controls. Conditional Access policies that ensure only compliant devices can access corporate resources offer a more reliable defence against unauthorised access.&lt;/p&gt;
+&lt;p&gt;By enrolling devices into Intune, organisations can ensure that security policies are consistently enforced, reducing the risk of a breach. In today’s threat landscape, a multi-layered approach that includes hard technical controls is essential to safeguarding your Microsoft 365 environment.&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Windows 10 Remote Desktop Connection Fix: The system administrator has restricted the types of logon (network or interactive) that you may use</title>
+      <link>http://localhost:1313/posts/remote-desktop-connection-restricted-logon-error/</link>
+      <pubDate>Thu, 23 May 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/remote-desktop-connection-restricted-logon-error/</guid>
+      <description>&lt;p&gt;A client of mine was attempting to access a Windows 10 Enterprise workstation from a laptop using RDP but encountered this error:&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;The system administrator has restricted the types of logon (network or interactive) that you may use. For assistance, contact your system administrator or technical support&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240523/rdp-error.png&#34; alt=&#34;Screen shot of this error: The system administrator has restricted the types of logon (network or interactive) that you may use. For assistance, contact your system administrator or technical support&#34;&gt;&lt;/p&gt;</description>
+      <content>&lt;p&gt;A client of mine was attempting to access a Windows 10 Enterprise workstation from a laptop using RDP but encountered this error:&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;The system administrator has restricted the types of logon (network or interactive) that you may use. For assistance, contact your system administrator or technical support&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240523/rdp-error.png&#34; alt=&#34;Screen shot of this error: The system administrator has restricted the types of logon (network or interactive) that you may use. For assistance, contact your system administrator or technical support&#34;&gt;&lt;/p&gt;
+&lt;p&gt;I checked the usual:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Remote access is enabled&lt;/li&gt;
+&lt;li&gt;The user account used for remote access is local is a member of the local administrators group&lt;/li&gt;
+&lt;li&gt;He had turned off NLA and the firewall (for troubleshooting purposes)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;All settings were correct. I eventually started digging around the local security policy (run secpol.msc or search for &amp;rsquo;local security policy&amp;rsquo; in the windows menu) with the aim of checking that the &amp;lsquo;Allow log on through Remote Desktop Services&amp;rsquo; had the administrators group listed. It did. While there, however, I noticed that under &amp;lsquo;&lt;strong&gt;Deny&lt;/strong&gt; log on through Remote Desktop Services&amp;rsquo; there was an entry for &amp;rsquo;local account&amp;rsquo;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Find/ open local security policy app&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240523/search-for-local-security-policy.png&#34; alt=&#34;Find/ open local security policy app.&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Find Deny log on through Remote Desktop Services&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240523/local-sec-policy.png&#34; alt=&#34;Find Deny log on through Remote Desktop Services.&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Remove &amp;ldquo;Local account&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240523/local-sec-policy-2.png&#34; alt=&#34;Remove “Local account”.&#34;&gt;&lt;/p&gt;
+&lt;p&gt;That was it, problem solved! This security policy appears to be a default for the Enterprise edition of Windows, most likely because Microsoft expect the computer to be domain joined (this particular workstation was standalone). Note also that &amp;ldquo;Deny access to this computer from the network&amp;rdquo; also contained the Local account object.&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Email delivery failure from Microsoft 365 to Yahoo</title>
+      <link>http://localhost:1313/posts/email-delivery-failure-from-microsoft-365-to-yahoo/</link>
+      <pubDate>Tue, 12 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/email-delivery-failure-from-microsoft-365-to-yahoo/</guid>
+      <description>&lt;p&gt;I had a customer report today that all emails they were sending from their Microsoft 365 account to all Yahoo email addresses were eventually bouncing as non deliverable.&lt;/p&gt;
+&lt;p&gt;A message trace reveals this rather unhelpful information:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;3/10/2024 10:38:41 AM - Server at LO6P123MB7159.GBRP123.PROD.OUTLOOK.COM returned &amp;lsquo;550 5.4.300 Message expired -&amp;gt; 451 4.4.400 Error communicating with frontend host or destination host. -&amp;gt; 421 4.4.2 Connection dropped due to SocketError&amp;rsquo;
+3/10/2024 10:33:39 AM - Server at mx-eu.mail.am0.yahoodns.net (188.125.72.73) returned &amp;lsquo;451 4.4.400 Error communicating with frontend host or destination host. -&amp;gt; 421 4.4.2 Connection dropped due to SocketError&amp;rsquo;&lt;/p&gt;</description>
+      <content>&lt;p&gt;I had a customer report today that all emails they were sending from their Microsoft 365 account to all Yahoo email addresses were eventually bouncing as non deliverable.&lt;/p&gt;
+&lt;p&gt;A message trace reveals this rather unhelpful information:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;3/10/2024 10:38:41 AM - Server at LO6P123MB7159.GBRP123.PROD.OUTLOOK.COM returned &amp;lsquo;550 5.4.300 Message expired -&amp;gt; 451 4.4.400 Error communicating with frontend host or destination host. -&amp;gt; 421 4.4.2 Connection dropped due to SocketError&amp;rsquo;
+3/10/2024 10:33:39 AM - Server at mx-eu.mail.am0.yahoodns.net (188.125.72.73) returned &amp;lsquo;451 4.4.400 Error communicating with frontend host or destination host. -&amp;gt; 421 4.4.2 Connection dropped due to SocketError&amp;rsquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;It turns out that Yahoo seem to &lt;em&gt;require&lt;/em&gt; all sending domains to use DKIM and to have a valid DMARC record.&lt;/p&gt;
+&lt;h4 id=&#34;setting-up-dkim-on-microsoft-365&#34;&gt;Setting up DKIM on Microsoft 365&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/email-authentication-dkim-configure?view=o365-worldwide&#34;&gt;How to use DKIM for email in your custom domain | Microsoft Learn&lt;/a&gt; to For instructions on setting up DKIM.&lt;/p&gt;
+&lt;h4 id=&#34;create-a-dmarc-record&#34;&gt;Create a DMARC record&lt;/h4&gt;
+&lt;p&gt;There are several tools online to help you generate a DMARC record which is then published using DNS:
+&lt;a href=&#34;https://dmarcian.com/dmarc-record-wizard/&#34;&gt;DMARC record generator&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;3rd-party-domain-spoofing&#34;&gt;3rd party domain spoofing&lt;/h4&gt;
+&lt;p&gt;If you also use 3rd party services, like Mailchimp for example, that will send emails from your domain then ensure they a) support DKIM signing and b) follow their instructions on setting this up; more DNS records will be required.&lt;/p&gt;
+&lt;h4 id=&#34;double-check-your-spf-record&#34;&gt;Double check your SPF record&lt;/h4&gt;
+&lt;p&gt;Linked with the above point regarding 3rd party &amp;lsquo;spoofers&amp;rsquo;, make sure your SPF record includes all entries for all 3rd parties sending mail on your behalf. This is especially important if you&amp;rsquo;ve created a strict DMARC policy that requires SPF and DMARC alignment.&lt;/p&gt;
+&lt;p&gt;Sorry for the brief post. If none of this means anything and you&amp;rsquo;re having mail delivery issues. Then reach out to me!&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Handling null properties in JSON payloads in Power Automate</title>
+      <link>http://localhost:1313/posts/handling-null-properties-in-json-payloads-in-power-automate/</link>
+      <pubDate>Fri, 08 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/handling-null-properties-in-json-payloads-in-power-automate/</guid>
+      <description>&lt;p&gt;Following on from my previous article on querying the Companies House API in Microsoft Power Automate, in this article I&amp;rsquo;ll explore an option for handling missing JSON properties in a given payload that are necessary for subsequent actions in your flow.&lt;/p&gt;
+&lt;h4 id=&#34;the-problem&#34;&gt;The Problem&lt;/h4&gt;
+&lt;p&gt;As an overview, this is what my flow does:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;From a source Excel spreadsheet, iterate through a list of company registration numbers that I&amp;rsquo;m interested in finding charge information for.&lt;/p&gt;</description>
+      <content>&lt;p&gt;Following on from my previous article on querying the Companies House API in Microsoft Power Automate, in this article I&amp;rsquo;ll explore an option for handling missing JSON properties in a given payload that are necessary for subsequent actions in your flow.&lt;/p&gt;
+&lt;h4 id=&#34;the-problem&#34;&gt;The Problem&lt;/h4&gt;
+&lt;p&gt;As an overview, this is what my flow does:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;From a source Excel spreadsheet, iterate through a list of company registration numbers that I&amp;rsquo;m interested in finding charge information for.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;In this loop, there is an HTTP GET action that constructs a URI from the current row of the Excel spreadsheet.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Following this is a Parse JSON action, the contents of which are used to set up another (nested) loop which iterates through all &amp;lsquo;charges&amp;rsquo; listed against that company&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;There is then a 3rd nested loop (a loop within a loop within a loop) that iterates through &amp;lsquo;persons entitled&amp;rsquo;, which is an array associated with each charge.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The data is written to a SQL database using an Insert Row action.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;However, during the course of testing my flow, I noticed that some of the JSON payloads were causing the flow to fail. Why? Because some charges (very old ones) registered on Companies House have no persons entitled listed. This means the JSON property &amp;lsquo;persons_entitled&amp;rsquo; was completely missing. Without this, the 3rd loop, which required this property to exist, would fail.&lt;/p&gt;
+&lt;p&gt;Power Automate doesn&amp;rsquo;t have a failsafe mechanism for dealing with null entities, so we have to be a little creative.&lt;/p&gt;
+&lt;h4 id=&#34;the-solution&#34;&gt;The Solution&lt;/h4&gt;
+&lt;p&gt;The solution I used was to create a condition action:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240308/condition.png&#34; alt=&#34;The condition action in Power Automate&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Here you can see my flow. The condition action sits directly below the loop which iterates through the list of charges in the Companies House JSON payload. Its job is to check the existence of the &amp;lsquo;persons_entitled&amp;rsquo; property. If it exists, then continue with the inner most loop (IteratePersonsEntitled), if not, then effectively do nothing (I have a compose action here that simply concatinates a string; it&amp;rsquo;s merely there so &lt;em&gt;something&lt;/em&gt; happens in the false branch).&lt;/p&gt;
+&lt;p&gt;The condition contains the following expression:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;contains&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;items&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;IterateCharges&amp;#39;&lt;/span&gt;), &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;persons_entitled&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The contains function inspects items from the IterateCharges loop, looking for the existence of the persons_entitled array. If this property was missing entirely from the JSON payload (for a given charge) then that array will be absent and the function will return false.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240308/function.png&#34; alt=&#34;Condition expression configuration&#34;&gt;&lt;/p&gt;
+&lt;p&gt;So you can see the logic. If the persons_entitled array is present, the contains function returns true. The condition expression states that if the expression = true then proceed with the actions in the true branch, else follow the false branch.&lt;/p&gt;
+&lt;p&gt;Now my flow can continue without falling over in the event of a missing property!&lt;/p&gt;
+&lt;h4 id=&#34;other-tweaks&#34;&gt;Other Tweaks&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;I had to amend the JSON schema I posted in my &lt;a href=&#34;https://echo3.co/posts/using-power-automate-with-the-companies-house-api/&#34;&gt;previous article&lt;/a&gt;, removing several required properties, notably &amp;rsquo;links&amp;rsquo; and &amp;lsquo;persons_entitled&amp;rsquo; since this was also causing my flow to fail when these were not included in the JSON payload.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Some companies queried via the API do not have any charges listed, so the API returns a 404 not found error. To handle this in Power Automate, you must configure the &amp;lsquo;run after&amp;rsquo; setting for the action directly following the HTTP action:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240308/runafter.png&#34; alt=&#34;Configuring run after in Power Automate&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In my flow, I have a delay action that I added to avoid the 600 queries per 5 minutes imposed by the Companies House API. Here I ticked the &amp;lsquo;Has failed&amp;rsquo; option under Run After under the HTTP action.&lt;/p&gt;
+&lt;p&gt;☕️ If you found this post helpful, I&amp;rsquo;d appreciate it if you would &lt;a href=&#34;https://www.buymeacoffee.com/heyjudeuk&#34;&gt;buy me a coffee&lt;/a&gt;&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>NOW / Sky broadband and Microsoft 365 connectivity errors</title>
+      <link>http://localhost:1313/posts/now-broadband-and-microsoft-365-errors/</link>
+      <pubDate>Wed, 21 Feb 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/now-broadband-and-microsoft-365-errors/</guid>
+      <description>&lt;p&gt;Recently I&amp;rsquo;ve had three people from different households have weird errors while working from home. All involved connecting to OneDrive or attempting to save an Office document back to Sharepoint or OneDrive. The error thrown by (Excel in this example) is rather enigmatic:&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;The server you are trying to access is using an authentication protocol not supported by this version of Office.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240221/error_message.webp&#34; alt=&#34;The server you are trying to access is using an authentication protocol not supported by this version of Office.&#34;&gt;&lt;/p&gt;</description>
+      <content>&lt;p&gt;Recently I&amp;rsquo;ve had three people from different households have weird errors while working from home. All involved connecting to OneDrive or attempting to save an Office document back to Sharepoint or OneDrive. The error thrown by (Excel in this example) is rather enigmatic:&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;The server you are trying to access is using an authentication protocol not supported by this version of Office.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240221/error_message.webp&#34; alt=&#34;The server you are trying to access is using an authentication protocol not supported by this version of Office.&#34;&gt;&lt;/p&gt;
+&lt;p&gt;And when asked to sign out and back in to the Windows OneDrive app, this happened:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240221/one_drive_error.png&#34; alt=&#34;OneDrive signing in hangs.&#34;&gt;&lt;/p&gt;
+&lt;p&gt;One Drive refused to sign back in, just hanging forever with the words &amp;lsquo;signing in&amp;rsquo; with a spinning circle.&lt;/p&gt;
+&lt;p&gt;All three reported no issues when back at the office. What did each of these people have in common? They are all using NOW broadband (Sky). As part of my troubleshooting, I ran IPconfig to check IP details, in particular to see what DNS servers they were using. However, the local IP returned for each was an &lt;a href=&#34;https://en.wikipedia.org/wiki/IPv6&#34;&gt;IPv6 address&lt;/a&gt;. It&amp;rsquo;s nice to see Sky advancing internet technology, however Microsoft doesn&amp;rsquo;t appear to like it. I disabled IPv6 on each computer and all the errors disappeared immediately and service was restored. Not even a reboot was required.&lt;/p&gt;
+&lt;p&gt;Since I wasn&amp;rsquo;t able to log into any of my clients&amp;rsquo; routers to see whether it was possible to disable IPv6 at the source, I had to disable it via the Windows control panel:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Press the Windows button on the left side of the keyboard&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Type: &lt;strong&gt;ncpa.cpl&lt;/strong&gt; and press return&lt;/li&gt;
+&lt;li&gt;Right click the network adapter you are using (this is wired, but you may be using a wireless adapater):&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240221/step01.png&#34; alt=&#34;Ethernet adapter in Windows&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Click &lt;strong&gt;properties&lt;/strong&gt; and untick Internet Protocol Version 6:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240221/step02.png&#34; alt=&#34;Windows IPv6&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Click &lt;strong&gt;OK&lt;/strong&gt; and you&amp;rsquo;re done.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Just remember you&amp;rsquo;ve done this because at some point in the future, the future is IPv6 😉&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Using Power Automate with the Companies House API</title>
+      <link>http://localhost:1313/posts/using-power-automate-with-the-companies-house-api/</link>
+      <pubDate>Fri, 09 Feb 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/using-power-automate-with-the-companies-house-api/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Why this picture? Like all the pixel art on my website, this one is generated by OpenAI&amp;rsquo;s DALL·E 2. The prompt for this was &amp;ldquo;A row of Victorian clerks with a robot stealing a ledger in a sneaky way&amp;rdquo;. How does this relate to this article? Companies House evokes (in my mind at least) a huge library of records meticulously maintained by hardworking scribes beavering away with quill and ink while the robot symbolises our modern web tech filching their data. Yeah, my mind is a peculiar place!&lt;/p&gt;</description>
+      <content>&lt;blockquote&gt;
+&lt;p&gt;Why this picture? Like all the pixel art on my website, this one is generated by OpenAI&amp;rsquo;s DALL·E 2. The prompt for this was &amp;ldquo;A row of Victorian clerks with a robot stealing a ledger in a sneaky way&amp;rdquo;. How does this relate to this article? Companies House evokes (in my mind at least) a huge library of records meticulously maintained by hardworking scribes beavering away with quill and ink while the robot symbolises our modern web tech filching their data. Yeah, my mind is a peculiar place!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;A client asked whether I could investigate pulling data from Companies House using their API. This is still work in progress since ultimately the data harvested will be dumped into a database for later reporting using PowerBI. However, I thought it might be useful to document the process of using Microsoft Power Automate (my chosen tool for this task) to perform HTML GET operations via the Companies House API and parsing the subsequent JSON payload.&lt;/p&gt;
+&lt;h4 id=&#34;step-1-create-an-application--api-key&#34;&gt;Step 1: Create an application &amp;amp; API key&lt;/h4&gt;
+&lt;p&gt;Visit: &lt;a href=&#34;https://developer.company-information.service.gov.uk/manage-applications/add&#34;&gt;this link&lt;/a&gt; to create an application in your Companies House &amp;lsquo;Developer Hub&amp;rsquo;. If you don&amp;rsquo;t have an account, you will need to register first (it&amp;rsquo;s free). You can&amp;rsquo;t use your webfiling account (if you have one).&lt;/p&gt;
+&lt;p&gt;Fill in the new application form. It&amp;rsquo;s fine to choose &amp;lsquo;Live&amp;rsquo; under &amp;lsquo;Choose an environment for your application&amp;rsquo;. Click the application name you&amp;rsquo;ve just created. In my example, it&amp;rsquo;s called GCF:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240209/step01.webp&#34; alt=&#34;Create an application in Companies House&#34;&gt;&lt;/p&gt;
+&lt;p&gt;If you can&amp;rsquo;t find this page, here&amp;rsquo;s &lt;a href=&#34;https://developer.company-information.service.gov.uk/manage-applications&#34;&gt;a handy link&lt;/a&gt;. On the next page, there should be a green &lt;strong&gt;Create new key&lt;/strong&gt; button under the heading &lt;strong&gt;&amp;lsquo;Keys for this application&amp;rsquo;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Give the key a name, a description and select &lt;strong&gt;REST&lt;/strong&gt; as the API type and leave the remaining fields blank:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240209/step01b.webp&#34; alt=&#34;Create an API key in Companies House&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Then click the green &lt;strong&gt;Create Key&lt;/strong&gt; button. On the next page, copy the API key. There is a &amp;lsquo;Copy&amp;rsquo; link, but this didn&amp;rsquo;t work for me at the time of writing, so I had to highlight and copy the key manually:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240209/step01c.webp&#34; alt=&#34;Copy API key&#34;&gt;&lt;/p&gt;
+&lt;p&gt;You must now convert this key into base64 which will be used to authorise the GET request in Power Automate later.&lt;/p&gt;
+&lt;p&gt;Head over to &lt;a href=&#34;https://www.base64encode.org/&#34;&gt;base64encode.org&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;And paste your API key &lt;strong&gt;plus a colon&lt;/strong&gt; (:). This is important because the API uses Basic Authentication without a password. The trailing colon is important because it adheres to the Basic Authentication standard, ensuring that the server can correctly parse the base64 encoded string and identify the username (or API key in this case) without expecting a password. Without the colon, the server might interpret the entire base64 encoded string as the username, leading to authentication errors.&lt;/p&gt;
+&lt;p&gt;Click the &lt;strong&gt;ENCODE&lt;/strong&gt; button and you should end up with something that looks like this: OTExNWVjNTQtYTA5NC00MDQ2LTlmYmMtMDcwNDg4YjhkOWZmOg==
+Don&amp;rsquo;t try and use this key as it will be deleted by the time you read this article!&lt;/p&gt;
+&lt;h4 id=&#34;step-2-create-a-new-flow-in-power-automate&#34;&gt;Step 2: Create a new flow in Power Automate&lt;/h4&gt;
+&lt;p&gt;Note that to use HTTP GET (required for this task), you will need a premium license. In my example, I&amp;rsquo;m going to use a simple manually triggered flow to see who holds charges for a given company on Companies House. In the future I will develop this flow to iterate through a spreadsheet of companies that my client is interested in, dumping out the retrieved data into an Azure SQL database for later reporting. But for now, we&amp;rsquo;ll keep it simple.&lt;/p&gt;
+&lt;p&gt;From your &lt;a href=&#34;https://make.powerautomate.com/&#34;&gt;Power Automate homepage&lt;/a&gt; create a flow, using a manual trigger. Start from a blank &amp;lsquo;Instant cloud flow&amp;rsquo;:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240209/step02.webp&#34; alt=&#34;Create a flow&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Name your flow and select &amp;lsquo;Manually trigger a flow&amp;rsquo;, then click &lt;strong&gt;Create&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240209/step02b.webp&#34; alt=&#34;Create a flow step 2&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;step-3-create-an-html-get-action&#34;&gt;Step 3: Create an HTML GET action&lt;/h4&gt;
+&lt;p&gt;First, click on the &amp;lsquo;Manually trigger a flow&amp;rsquo; action and in the flyout on the left, click &amp;lsquo;add an input&amp;rsquo;. Select &lt;strong&gt;Number&lt;/strong&gt;, and type RegNo in the Number field, leaving &amp;lsquo;Please enter a number&amp;rsquo; as the default. We will use this company registration number to query Companies House via their API to get the data we want:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240209/step03.webp&#34; alt=&#34;Configure the manual trigger&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Next, add an action in your flow by clicking the + button under the manual trigger. In the flyout, search for HTTP and select the HTTP action:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240209/step03b.webp&#34; alt=&#34;Add the HTTP action&#34;&gt;&lt;/p&gt;
+&lt;p&gt;We are going to use the &amp;lsquo;charges&amp;rsquo; &amp;rsquo;list&amp;rsquo; API request to return a list of charges for a company:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer-specs.company-information.service.gov.uk/companies-house-public-data-api/reference/charges/list?v=latest&#34;&gt;https://developer-specs.company-information.service.gov.uk/companies-house-public-data-api/reference/charges/list&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Click the newly added HTTP action in the Flow designer and paste this URL into the URI field:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;https://api.company-information.service.gov.uk/company//charges
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;We need to supply the company registration number in our request, so click the space inbetween the forward slashes after company and before charges and select &lt;strong&gt;insert dynamic content&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240209/step03c.webp&#34; alt=&#34;Configure the GET request&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In the pop up menu, click &lt;strong&gt;See More&lt;/strong&gt; next &amp;lsquo;Manually trigger a flow&amp;rsquo;, then select &lt;strong&gt;RegNo&lt;/strong&gt; in the list.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240209/step03d.webp&#34; alt=&#34;Insert a dynamic field&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Select &lt;strong&gt;GET&lt;/strong&gt; in the Method dropdown and type &lt;strong&gt;Authorization&lt;/strong&gt; in the first Headers box where it says &amp;lsquo;Enter Key&amp;rsquo;. In the box next to it, type &lt;strong&gt;Basic&lt;/strong&gt; then a space and then paste your base64 API key where is says &amp;lsquo;Enter Value&amp;rsquo;. You should end up with something like this:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240209/step03e.webp&#34; alt=&#34;Fully configured HTTP GET request&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;step-4-parse-json&#34;&gt;Step 4: Parse JSON&lt;/h4&gt;
+&lt;p&gt;Add another step directly below your HTTP action, search for and add the &lt;strong&gt;Parse JSON&lt;/strong&gt; action. In the configuration box on the left, click into &amp;lsquo;Content&amp;rsquo; and click the lightning bolt icon to open the dynamic picker menu. Under HTTP select &lt;strong&gt;Body&lt;/strong&gt;. The JSON schema we need to provide is a little tricky since Companies House don&amp;rsquo;t provide a JSON schema and the JSON chargeList resource they give cannot be used to generate one (you &lt;em&gt;can&lt;/em&gt; generate a schema from it, but your flow will fail!). In the end I had to run my flow with just the manual trigger and HTTP action, examine the raw output from the HTTP action (the JSON payload sent by Companies House) and use that to generate the JSON schema. Once I had the JSON output, I added the Parse JSON action back and then clicked the &amp;lsquo;Use sample payload to generate schema&amp;rsquo; in the Parse JSON action properties and it gave me this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;object&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;properties&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;etag&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;string&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;total_count&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;integer&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;unfiltered_count&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;integer&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;satisfied_count&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;integer&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;part_satisfied_count&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;integer&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;items&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;array&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;items&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;object&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;properties&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;etag&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;string&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;charge_code&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;string&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;classification&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;object&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;properties&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;string&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;description&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;string&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;charge_number&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;integer&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;status&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;string&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;delivered_on&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;string&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;created_on&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;string&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;satisfied_on&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;string&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;particulars&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;object&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;properties&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;string&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;description&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;string&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;contains_floating_charge&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;boolean&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;contains_fixed_charge&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;boolean&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;floating_charge_covers_all&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;boolean&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;contains_negative_pledge&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;boolean&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;persons_entitled&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;array&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;items&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;object&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;properties&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;string&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;required&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; [
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            ]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;transactions&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;array&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;items&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;object&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;properties&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;filing_type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;string&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;delivered_on&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;string&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;links&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;object&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;properties&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;filing&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                            &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;string&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;required&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; [
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;filing_type&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;delivered_on&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;links&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            ]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;links&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;object&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;properties&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;self&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;string&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;more_than_four_persons_entitled&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;boolean&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;required&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; [
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;etag&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;charge_code&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;classification&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;charge_number&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;status&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;delivered_on&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;created_on&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;particulars&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;persons_entitled&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;transactions&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;links&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                ]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Your configured Parse JSON action should look like this:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240209/step04.webp&#34; alt=&#34;Fully configured Parse JSON&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;step-5-setting-up-the-loops&#34;&gt;Step 5: Setting up the loops&lt;/h4&gt;
+&lt;p&gt;The JSON we are parsing has several nested arrays. We want to iterate through the list of charges for the company specified and then iterate through each charge to get the &amp;lsquo;persons entitled&amp;rsquo;. We are therefore going to have to set up two loops, one nested within the other.&lt;/p&gt;
+&lt;p&gt;Under the Parse JSON action, click the plus button and add an &lt;strong&gt;Apply to each&lt;/strong&gt; action. The usual configuration box pops up from the left. First, rename the action (click on Apply to each) to &lt;strong&gt;Outer&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Now click in &amp;lsquo;Select An Output From Previous Steps&amp;rsquo; and click the &lt;em&gt;fx&lt;/em&gt; icon to the right. In the function box type:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;outputs&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Parse_JSON&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;?&lt;/span&gt;[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;body&amp;#39;&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;?&lt;/span&gt;[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;items&amp;#39;&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then click &lt;strong&gt;Add&lt;/strong&gt;. Your final config should look like this:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240209/step05b.webp&#34; alt=&#34;Configuring the outer loop&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Next, click the plus button inside the grey box under the &amp;lsquo;Outer&amp;rsquo; action&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240209/step05c.webp&#34; alt=&#34;Adding the inner loop&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Add another &lt;strong&gt;Apply to each&lt;/strong&gt; action and name this one &lt;strong&gt;Inner&lt;/strong&gt;. Click in &amp;lsquo;Select An Output From Previous Steps&amp;rsquo; and click the &lt;em&gt;fx&lt;/em&gt; icon to the right. In the function box type:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;items&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Outer&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;?&lt;/span&gt;[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;persons_entitled&amp;#39;&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;step-6-create-an-add-row-to-an-excel-table-action&#34;&gt;Step 6: Create an add row to an Excel table action&lt;/h4&gt;
+&lt;p&gt;Create an Excel spreadsheet in OneDrive and create a table within this spreadsheet with the following headers: Reg_no, charge_ID and Persons_entitled_name. Now in your flow, click the plus button directly below the Inner loop, search for and add the &lt;strong&gt;Add a row into a table&lt;/strong&gt; (Excel) action.&lt;/p&gt;
+&lt;p&gt;In the configuration box, select your spreadsheet (you may be prompted to authenticate to OneDrive) and select your table within your spreadsheet. Under &amp;lsquo;Advanced parameters&amp;rsquo;, use the checkboxes to show the three headers above (Reg_no, charge_ID and Persons_entitled_name).&lt;/p&gt;
+&lt;p&gt;In &amp;lsquo;Reg_no&amp;rsquo;, click the lightning icon, scroll down through the picker and select &lt;strong&gt;RegNo&lt;/strong&gt; under &amp;lsquo;Manually trigger a flow&amp;rsquo;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240209/step06.webp&#34; alt=&#34;Configuring the add row action step 1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In &amp;lsquo;Charge_ID&amp;rsquo; click the &lt;em&gt;fx&lt;/em&gt; button and enter the following:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;items&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Outer&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;?&lt;/span&gt;[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;charge_code&amp;#39;&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In &amp;lsquo;Persons_entitled_name&amp;rsquo; click the &lt;em&gt;fx&lt;/em&gt; button and enter:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;items&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Inner&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;?&lt;/span&gt;[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;name&amp;#39;&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The final config should look like this for the &amp;lsquo;Add a row into a table&amp;rsquo; action:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240209/step06b.webp&#34; alt=&#34;Configuring the add row action final config&#34;&gt;&lt;/p&gt;
+&lt;p&gt;And the final flow should look like this:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240209/finalflow.webp&#34; alt=&#34;What the final flow looks like&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;step-7-save-and-run-your-flow&#34;&gt;Step 7: Save and run your flow!&lt;/h4&gt;
+&lt;p&gt;Click the Save button. Your flow will be validated and saved. Now click Test. Select &amp;lsquo;Manually&amp;rsquo;, enter a valid company registration number and then click the blue &lt;strong&gt;Run flow&lt;/strong&gt; button. If there are any charges for that company, the charge code will be written to the Excel table along with the &amp;rsquo;entitled persons&amp;rsquo;.&lt;/p&gt;
+&lt;h4 id=&#34;further-considerations&#34;&gt;Further considerations&lt;/h4&gt;
+&lt;p&gt;Future development of this flow will involve iterating through a list of companies my client is interested in, rather than having to manually enter a company registration number each time. Some error handling will need to be added to account for 404 &amp;rsquo;not found&amp;rsquo; returns by the API and some consideration will be needed for the default API limit of 600 requests within a five minute period.&lt;/p&gt;
+&lt;p&gt;☕️ If you found this post helpful, I&amp;rsquo;d appreciate it if you would &lt;a href=&#34;https://www.buymeacoffee.com/heyjudeuk&#34;&gt;buy me a coffee&lt;/a&gt;&lt;/p&gt;
+</content>
+    </item>
+    
     <item>
       <title>How to fix the buffer time problem in Microsoft Bookings</title>
-      <link>https://echo3.co/posts/fixing-the-buffer-time-problem-in-microsoft-bookings/</link>
+      <link>http://localhost:1313/posts/fixing-the-buffer-time-problem-in-microsoft-bookings/</link>
       <pubDate>Wed, 31 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://echo3.co/posts/fixing-the-buffer-time-problem-in-microsoft-bookings/</guid>
-      <description>As I write this post I have just started using Microsoft Bookings. As an IT professional, having the ability for a client to visit my Bookings page and put an appointment in my diary is a great way of avoiding the usual back and forth via email to pin down a mutually convenient time. Out of the box, Bookings offers a good deal of flexibility, including the option of adding &amp;lsquo;buffer time&amp;rsquo; to allow for preparation, travel between appointments, avoding back to back appointments etc.</description>
-      <content>&lt;p&gt;As I write this post I have just started using Microsoft Bookings. As an IT professional, having the ability for a client to visit my Bookings page and put an appointment in my diary is a great way of avoiding the usual back and forth via email to pin down a mutually convenient time. Out of the box, Bookings offers a good deal of flexibility, including the option of adding &lt;strong&gt;&amp;lsquo;buffer time&amp;rsquo;&lt;/strong&gt; to allow for preparation, travel between appointments, avoding back to back appointments etc. However, as noted by many here &lt;a href=&#34;https://techcommunity.microsoft.com/t5/microsoft-bookings-ideas/calendar-time-vs-buffer-time/idi-p/2469887&#34;&gt;Calendar time vs Buffer time - Microsoft Community Hub&lt;/a&gt;
+      <guid>http://localhost:1313/posts/fixing-the-buffer-time-problem-in-microsoft-bookings/</guid>
+      <description>&lt;p&gt;As I write this post I have just started using Microsoft Bookings. As an IT professional, having the ability for a client to visit my Bookings page and put an appointment in my diary is a great way of avoiding the usual back and forth via email to pin down a mutually convenient time. Out of the box, Bookings offers a good deal of flexibility, including the option of adding &lt;strong&gt;&amp;lsquo;buffer time&amp;rsquo;&lt;/strong&gt; to allow for preparation, travel between appointments, avoiding back to back appointments etc. However, as noted by many here &lt;a href=&#34;https://techcommunity.microsoft.com/t5/microsoft-bookings-ideas/calendar-time-vs-buffer-time/idi-p/2469887&#34;&gt;Calendar time vs Buffer time - Microsoft Community Hub&lt;/a&gt;
+, this feature is flawed: The first appointment that was created by the system resulted in me ringing my client 30 minutes early, because the buffer time set simply &lt;em&gt;extends&lt;/em&gt; the event in the calendar; the reminder pops up and then I must remember to ring my client 30 minutes later. The &amp;rsquo;time with client&amp;rsquo; is buried in the event notes. Not great &amp;hellip;&lt;/p&gt;</description>
+      <content>&lt;p&gt;As I write this post I have just started using Microsoft Bookings. As an IT professional, having the ability for a client to visit my Bookings page and put an appointment in my diary is a great way of avoiding the usual back and forth via email to pin down a mutually convenient time. Out of the box, Bookings offers a good deal of flexibility, including the option of adding &lt;strong&gt;&amp;lsquo;buffer time&amp;rsquo;&lt;/strong&gt; to allow for preparation, travel between appointments, avoiding back to back appointments etc. However, as noted by many here &lt;a href=&#34;https://techcommunity.microsoft.com/t5/microsoft-bookings-ideas/calendar-time-vs-buffer-time/idi-p/2469887&#34;&gt;Calendar time vs Buffer time - Microsoft Community Hub&lt;/a&gt;
 , this feature is flawed: The first appointment that was created by the system resulted in me ringing my client 30 minutes early, because the buffer time set simply &lt;em&gt;extends&lt;/em&gt; the event in the calendar; the reminder pops up and then I must remember to ring my client 30 minutes later. The &amp;rsquo;time with client&amp;rsquo; is buried in the event notes. Not great &amp;hellip;&lt;/p&gt;
 &lt;h1 id=&#34;-a-workaround-using-microsoft-power-automate&#34;&gt;➡️🔄 A workaround using Microsoft Power Automate&lt;/h1&gt;
 &lt;p&gt;By leveraging Power Automate, we can create a flow that automatically adds a &amp;lsquo;buffer time&amp;rsquo; event around the booking, ensuring that reminders and scheduling reflect the actual appointment times, not the buffer periods. Here&amp;rsquo;s how:&lt;/p&gt;
 &lt;h4 id=&#34;step-1-add-the-power-automate-integration-to-microsoft-bookings&#34;&gt;Step 1: Add the Power Automate integration to Microsoft Bookings&lt;/h4&gt;
 &lt;p&gt;Turn off your buffer time for all services in Microsoft Bookings and click the Integrations button in the sidebar:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://echo3.co/20240131/step_01.webp&#34; alt=&#34;Selecting the &amp;lsquo;Create a flow&amp;rsquo; option in Power Automate to begin fixing the buffer time issue in Microsoft Bookings&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240131/step_01.webp&#34; alt=&#34;Selecting the ‘Create a flow’ option in Power Automate to begin fixing the buffer time issue in Microsoft Bookings&#34;&gt;&lt;/p&gt;
 &lt;p&gt;As of writing, this is the only integration offered:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://echo3.co/20240131/step_02.webp&#34; alt=&#34;Select Power Automate as a connector for Microsoft Bookings&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240131/step_02.webp&#34; alt=&#34;Select Power Automate as a connector for Microsoft Bookings&#34;&gt;&lt;/p&gt;
 &lt;p&gt;then click &amp;lsquo;Go to Setup&amp;rsquo;:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://echo3.co/20240131/step_03.webp&#34; alt=&#34;Select Go to setup&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240131/step_03.webp&#34; alt=&#34;Select Go to setup&#34;&gt;&lt;/p&gt;
 &lt;h4 id=&#34;step-2-create-the-trigger&#34;&gt;Step 2: Create the trigger&lt;/h4&gt;
 &lt;p&gt;We want our flow to trigger when a new appointment is created:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://echo3.co/20240131/step_04.webp&#34; alt=&#34;Create a Flow trigger when an appointment is created in Microsoft Bookings&#34;&gt;&lt;/p&gt;
-&lt;p&gt;You should then be presented with Power Automate&amp;rsquo;s design grid with a sole trigger event &amp;lsquo;When a appointment is Created&amp;rsquo; (spot the gramatical errors!). There will be an alarming &lt;em&gt;&amp;lsquo;Invalid parameters&amp;rsquo;&lt;/em&gt; warninig. Just click it:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://echo3.co/20240131/step_05.webp&#34; alt=&#34;The trigger shows an invalid parameters warning&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240131/step_04.webp&#34; alt=&#34;Create a Flow trigger when an appointment is created in Microsoft Bookings&#34;&gt;&lt;/p&gt;
+&lt;p&gt;You should then be presented with Power Automate&amp;rsquo;s design grid with a sole trigger event &amp;lsquo;When a appointment is Created&amp;rsquo; (spot the grammatical errors!). There will be an alarming &lt;em&gt;&amp;lsquo;Invalid parameters&amp;rsquo;&lt;/em&gt; warning. Just click it:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240131/step_05.webp&#34; alt=&#34;The trigger shows an invalid parameters warning&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Using the dropdown, select the appropriate booking page. When an appointment is made using this Bookings page, it will trigger your flow automation. I only have one setup in this example.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://echo3.co/20240131/step_06.webp&#34; alt=&#34;In the trigger properties, select the appropriate bookings page&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240131/step_06.webp&#34; alt=&#34;In the trigger properties, select the appropriate bookings page&#34;&gt;&lt;/p&gt;
 &lt;h4 id=&#34;step-3-calculate-buffer-times&#34;&gt;Step 3: Calculate buffer times&lt;/h4&gt;
 &lt;p&gt;In this step we are going to create two calculated variables that will define the start and end time of our buffer appointment. In my example, I am using a pre and post meeting buffer time of 30 minutes.&lt;/p&gt;
 &lt;p&gt;First, click the plus button directly below your trigger in the flow grid:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://echo3.co/20240131/step_07.webp&#34; alt=&#34;Add the first variable after the event trigger&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240131/step_07.webp&#34; alt=&#34;Add the first variable after the event trigger&#34;&gt;&lt;/p&gt;
 &lt;p&gt;In the left hand flyout, search for &lt;strong&gt;&amp;lsquo;initialize variable&amp;rsquo;&lt;/strong&gt; and click it:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://echo3.co/20240131/step_08.webp&#34; alt=&#34;Find and select initialize variable&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240131/step_08.webp&#34; alt=&#34;Find and select initialize variable&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Under the parameters tab, enter &lt;strong&gt;PreMeetingBuffer&lt;/strong&gt; under Name, use the dropdown to select &lt;strong&gt;String&lt;/strong&gt; under Type and next to Value, click the fx button:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://echo3.co/20240131/step_09.webp&#34; alt=&#34;Fill in the variable parameters&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240131/step_09.webp&#34; alt=&#34;Fill in the variable parameters&#34;&gt;&lt;/p&gt;
 &lt;p&gt;And copy and paste the following code. We are using the addMinutes function to subtract 30 minutes from the start time of the appointment that triggered the flow:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;addMinutes&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;triggerOutputs&lt;/span&gt;()&lt;span style=&#34;color:#f92672&#34;&gt;?&lt;/span&gt;[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;body/StartTime&amp;#39;&lt;/span&gt;], &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;30&lt;/span&gt;)
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now click &lt;strong&gt;Add&lt;/strong&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://echo3.co/20240131/step_10.webp&#34; alt=&#34;Commit the variable by clicking Add&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240131/step_10.webp&#34; alt=&#34;Commit the variable by clicking Add&#34;&gt;&lt;/p&gt;
 &lt;p&gt;You now need to add another variable, following the steps above, this time clicking the plus sign under the newly appeared &lt;strong&gt;&amp;lsquo;Initialize variable&amp;rsquo;&lt;/strong&gt; action. Call this new variable &lt;strong&gt;PostMeetingBuffer&lt;/strong&gt; and use the following function to calculate the end of our buffer appointment:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;addMinutes&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;triggerOutputs&lt;/span&gt;()&lt;span style=&#34;color:#f92672&#34;&gt;?&lt;/span&gt;[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;body/EndTime&amp;#39;&lt;/span&gt;], &lt;span style=&#34;color:#ae81ff&#34;&gt;30&lt;/span&gt;)
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In my example, the buffer appointment will be 30 minutes longer than the triggering event booking.&lt;/p&gt;
 &lt;p&gt;You should now have three objects in your Flow: A trigger and &lt;strong&gt;two variables&lt;/strong&gt;&lt;/p&gt;
 &lt;h4 id=&#34;step-4-create-a-buffer-calendar-event&#34;&gt;Step 4: Create a buffer calendar event&lt;/h4&gt;
 &lt;p&gt;Click the plus sign below the last action you created (the second variable, which should be called &lt;strong&gt;Initialize variable 1&lt;/strong&gt; by default). In the flyout on the left, search for &lt;strong&gt;create event&lt;/strong&gt; and add it:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://echo3.co/20240131/step_11.webp&#34; alt=&#34;Add the create event action in Microsoft Power Automate&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240131/step_11.webp&#34; alt=&#34;Add the create event action in Microsoft Power Automate&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Under the parameters tab, select your calendar from the dropdown (normally just called &lt;strong&gt;Calendar&lt;/strong&gt;) and give it a name under Subject (I&amp;rsquo;m calling mine &lt;strong&gt;Booking Buffer&lt;/strong&gt;). Click the lightning bolt symbol next to the Start Time:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://echo3.co/20240131/step_12.webp&#34; alt=&#34;Click the lightning bolt symbol next to Start Time&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240131/step_12.webp&#34; alt=&#34;Click the lightning bolt symbol next to Start Time&#34;&gt;&lt;/p&gt;
 &lt;p&gt;And select the &lt;strong&gt;PreMeetingBuffer&lt;/strong&gt; variable we created earlier:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://echo3.co/20240131/step_13.webp&#34; alt=&#34;Select the PreMeetingBuffer variable&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240131/step_13.webp&#34; alt=&#34;Select the PreMeetingBuffer variable&#34;&gt;&lt;/p&gt;
 &lt;p&gt;For the End time, select the &lt;strong&gt;PostMeetingBuffer&lt;/strong&gt; variable. Under advanced parameters I&amp;rsquo;ve also done the following:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Turned reminders OFF&lt;/li&gt;
 &lt;li&gt;Show as Busy (by default any event created using this action would show as available)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://echo3.co/20240131/step_14.webp&#34; alt=&#34;Configure the create event action&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240131/step_14.webp&#34; alt=&#34;Configure the create event action&#34;&gt;&lt;/p&gt;
 &lt;p&gt;In the end, your flow should look like this:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://echo3.co/20240131/flow_overview.webp&#34; alt=&#34;Final flow overview&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240131/flow_overview.webp&#34; alt=&#34;Final flow overview&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Save your flow and then test it by creating a booking via your Bookings page. You should end up with something like this:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://echo3.co/20240131/final_step.webp&#34; alt=&#34;A calendar with a buffer appointment around it&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/20240131/final_step.webp&#34; alt=&#34;A calendar with a buffer appointment around it&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The buffer appointment won&amp;rsquo;t trigger a reminder (if you configured the advanced parameters above) but it will prevent back to back bookings (make sure you configure the &amp;lsquo;busy&amp;rsquo; parameter above) and you will only receive calendar notifications for the actual events generated by your Bookings page.&lt;/p&gt;
 &lt;p&gt;I haven&amp;rsquo;t looked at creating flows for deleting or amending these automatically generated buffer events if the original booking is cancelled or amended. Something for another day!&lt;/p&gt;
 &lt;blockquote&gt;
@@ -76,12 +590,13 @@
     
     <item>
       <title>[01] TICKETLESS SUPPORT</title>
-      <link>https://echo3.co/portfolio/01_ticketless_support/</link>
+      <link>http://localhost:1313/portfolio/01_ticketless_support/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://echo3.co/portfolio/01_ticketless_support/</guid>
-      <description>🚀 Ticketless IT Support: Making Tech Help Friendly and Hassle-Free! Ever wished you had a tech-savvy friend you could just call, email, or WhatsApp whenever a pesky IT problem pops up? That&amp;rsquo;s me! I&amp;rsquo;m here to make getting IT help as easy and friendly as chatting with a buddy. No logging incidents, no waiting for ticket numbers – just direct, personal support, whenever you need it.
-How do I make this happen?</description>
+      <guid>http://localhost:1313/portfolio/01_ticketless_support/</guid>
+      <description>&lt;h1 id=&#34;-ticketless-it-support-making-tech-help-friendly-and-hassle-free&#34;&gt;🚀 Ticketless IT Support: Making Tech Help Friendly and Hassle-Free!&lt;/h1&gt;
+&lt;p&gt;Ever wished you had a tech-savvy friend you could just call, email, or WhatsApp whenever a pesky IT problem pops up? That&amp;rsquo;s me! I&amp;rsquo;m here to make getting IT help as easy and friendly as chatting with a buddy. No logging incidents, no waiting for ticket numbers – just direct, personal support, whenever you need it.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How do I make this happen?&lt;/strong&gt; By working with a manageable number of small businesses on a retainer basis, I make sure that you&amp;rsquo;re never just a number in a queue. Your tech troubles are my tech troubles, and I&amp;rsquo;m all about solving them quickly and efficiently.&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;-ticketless-it-support-making-tech-help-friendly-and-hassle-free&#34;&gt;🚀 Ticketless IT Support: Making Tech Help Friendly and Hassle-Free!&lt;/h1&gt;
 &lt;p&gt;Ever wished you had a tech-savvy friend you could just call, email, or WhatsApp whenever a pesky IT problem pops up? That&amp;rsquo;s me! I&amp;rsquo;m here to make getting IT help as easy and friendly as chatting with a buddy. No logging incidents, no waiting for ticket numbers – just direct, personal support, whenever you need it.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;How do I make this happen?&lt;/strong&gt; By working with a manageable number of small businesses on a retainer basis, I make sure that you&amp;rsquo;re never just a number in a queue. Your tech troubles are my tech troubles, and I&amp;rsquo;m all about solving them quickly and efficiently.&lt;/p&gt;
@@ -89,12 +604,12 @@ How do I make this happen?</description>
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Instant Access:&lt;/strong&gt; Reach out in your preferred way and get immediate help. No formalities, no ticket numbers.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;A Personal Connection:&lt;/strong&gt; When you call or message, you’re talking to someone who understands your business and its unique tech needs.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Proactive Problem-Solving:&lt;/strong&gt; I&amp;rsquo;m here to nip those IT issues in the bud, keeping your business running without a hitch.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Proactive Problem-Solving:&lt;/strong&gt; Through years of experience and exposure to many organisations of varying sizes across a range of industries, I&amp;rsquo;ve developed a best-practice approach to deploying and managing IT resources. My aim is to streamline your IT setup, ensuring it runs as smoothly as possible and allowing you to focus on your business without worrying about tech headaches.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;&amp;ldquo;But what if you&amp;rsquo;re on holiday or sick?&amp;rdquo;&lt;/strong&gt; Great question! I&amp;rsquo;ve got that covered. While I don&amp;rsquo;t take on high-risk clients where immediate support is critical (like businesses with their own on-premise computer networks), I&amp;rsquo;m all about handling the &amp;lsquo;small stuff&amp;rsquo;. And for those times when I&amp;rsquo;m not available, I&amp;rsquo;ve teamed up with other IT freelancers who provide cover. So, you can rest easy knowing that there&amp;rsquo;s always someone reliable to turn to.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&amp;ldquo;But what if you&amp;rsquo;re on holiday or sick?&amp;rdquo;&lt;/strong&gt; For those times when I&amp;rsquo;m not available, I&amp;rsquo;ve teamed up with other IT freelancers who provide cover. So, you can rest easy knowing that there&amp;rsquo;s always someone reliable to turn to.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;So, why get bogged down by traditional IT support when you can have your own personal tech guru? Let&amp;rsquo;s make IT support as easy and friendly as a conversation with a friend!&lt;/p&gt;
+&lt;p&gt;So, why get bogged down by traditional IT support when you can have your own personal tech guru? Let&amp;rsquo;s make IT support as easy as a conversation with a friend!&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Ready to enjoy hassle-free IT support tailored just for your business?&lt;/strong&gt; Let’s chat about how I can help you.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://wa.me/447413678040&#34;&gt;WhatsApp&lt;/a&gt;
 &lt;a href=&#34;mailto:jude@echo3.co&#34;&gt;jude@echo3.co&lt;/a&gt;&lt;/p&gt;
@@ -103,19 +618,20 @@ How do I make this happen?</description>
     
     <item>
       <title>[02] CLOUD TRANSFORMATION</title>
-      <link>https://echo3.co/portfolio/02_cloud_transformation/</link>
+      <link>http://localhost:1313/portfolio/02_cloud_transformation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://echo3.co/portfolio/02_cloud_transformation/</guid>
-      <description>☁️ Cloud Transformation: Streamlining Your Digital Sky! Ever feel like your business&amp;rsquo;s tech setup is a bit&amp;hellip; patchwork? Maybe you&amp;rsquo;ve got email tied to your domain host (yep, they were pretty convincing when you registered your domain), or perhaps all your crucial files are sitting on a local PC. It kind of works, but deep down, you know there&amp;rsquo;s a smoother, smarter way to handle things.
-That&amp;rsquo;s where I come in.</description>
+      <guid>http://localhost:1313/portfolio/02_cloud_transformation/</guid>
+      <description>&lt;h1 id=&#34;-cloud-transformation-streamlining-your-digital-sky&#34;&gt;☁️ Cloud Transformation: Streamlining Your Digital Sky!&lt;/h1&gt;
+&lt;p&gt;Ever feel like your business&amp;rsquo;s tech setup is a bit&amp;hellip; patchwork? Maybe you&amp;rsquo;ve got email tied to your domain host (yep, they were pretty convincing when you registered your domain), or perhaps all your crucial files are sitting on a local PC. It kind of works, but deep down, you know there&amp;rsquo;s a smoother, smarter way to handle things.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;That&amp;rsquo;s where I come in.&lt;/strong&gt; Using an approach to cloud adoption that&amp;rsquo;s as meticulous as it is effective, I&amp;rsquo;ve developed best-practice, proven setups that transform your IT operations into a model of efficiency.&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;-cloud-transformation-streamlining-your-digital-sky&#34;&gt;☁️ Cloud Transformation: Streamlining Your Digital Sky!&lt;/h1&gt;
 &lt;p&gt;Ever feel like your business&amp;rsquo;s tech setup is a bit&amp;hellip; patchwork? Maybe you&amp;rsquo;ve got email tied to your domain host (yep, they were pretty convincing when you registered your domain), or perhaps all your crucial files are sitting on a local PC. It kind of works, but deep down, you know there&amp;rsquo;s a smoother, smarter way to handle things.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;That&amp;rsquo;s where I come in.&lt;/strong&gt; Using an approach to cloud adoption that&amp;rsquo;s as meticulous as it is effective (let&amp;rsquo;s call it a bit OCD, in the best way possible), I&amp;rsquo;ve developed best-practice, proven setups that transform your IT operations into a model of efficiency.&lt;/p&gt;
-&lt;p&gt;Or, let&amp;rsquo;s say you&amp;rsquo;ve already dipped your toes in the cloud waters with GSuite, but now you&amp;rsquo;re eyeing Microsoft 365. Or maybe it&amp;rsquo;s the other way around. No problem! I specialize in helping you migrate between cloud vendors seamlessly. Think of me as your digital moving buddy, ensuring your transition is smooth, secure, and stress-free.&lt;/p&gt;
-&lt;p&gt;And it&amp;rsquo;s not just about switching platforms. Got a ton of data to move from, say, Dropbox to SharePoint? I&amp;rsquo;ve got your back. I&amp;rsquo;m here to help you shift large quantities of data between cloud providers without breaking a sweat.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;That&amp;rsquo;s where I come in.&lt;/strong&gt; Using an approach to cloud adoption that&amp;rsquo;s as meticulous as it is effective, I&amp;rsquo;ve developed best-practice, proven setups that transform your IT operations into a model of efficiency.&lt;/p&gt;
+&lt;p&gt;Or, let&amp;rsquo;s say you&amp;rsquo;ve already dipped your toes in the cloud waters with Google Workspace, but now you&amp;rsquo;re eyeing Microsoft 365. Or maybe it&amp;rsquo;s the other way around. No problem! I specialize in helping you migrate between cloud vendors.&lt;/p&gt;
+&lt;p&gt;And it&amp;rsquo;s not just about switching platforms. Do you need to shift a load of data from, say, Dropbox to SharePoint? My expertise ensures that large-scale data migrations between cloud providers are executed efficiently and without any disruptions.&lt;/p&gt;
 &lt;p&gt;So, if you&amp;rsquo;re looking to untangle your tech and streamline your digital world, you&amp;rsquo;re in the right place. Let&amp;rsquo;s elevate your business to the cloud in the most efficient way possible!&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Ready to transform your cloud experience?&lt;/strong&gt; Let&amp;rsquo;s chat about your cloud transformation journey and how I can make it as smooth as a clear, blue sky!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ready to transform your cloud experience?&lt;/strong&gt; Let&amp;rsquo;s chat about your cloud transformation journey!&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://wa.me/447413678040&#34;&gt;WhatsApp&lt;/a&gt;
 &lt;a href=&#34;mailto:jude@echo3.co&#34;&gt;jude@echo3.co&lt;/a&gt;&lt;/p&gt;
 </content>
@@ -123,21 +639,23 @@ That&amp;rsquo;s where I come in.</description>
     
     <item>
       <title>[03] CYBERSECURITY &amp; COMPLIANCE</title>
-      <link>https://echo3.co/portfolio/03_cybersecurity/</link>
+      <link>http://localhost:1313/portfolio/03_cybersecurity/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://echo3.co/portfolio/03_cybersecurity/</guid>
-      <description>🔒 Cyber Security and Compliance: Safeguarding Your Digital World! Navigating the complex world of cyber security can feel like trying to solve a puzzle without all the pieces. I’m here to help you put those pieces together. My focus is on setting up your IT systems with the robust Cyber Essentials framework in mind, ensuring your digital assets are well-protected and compliant.
-Here&amp;rsquo;s how I can be your cyber security ally:</description>
+      <guid>http://localhost:1313/portfolio/03_cybersecurity/</guid>
+      <description>&lt;h1 id=&#34;-cyber-security-and-compliance-safeguarding-your-digital-world&#34;&gt;🔒 Cyber Security and Compliance: Safeguarding Your Digital World!&lt;/h1&gt;
+&lt;p&gt;Navigating the complex world of cyber security can feel like trying to solve a puzzle without all the pieces. I’m here to help you put those pieces together. My focus is on setting up your IT systems with the robust &lt;a href=&#34;https://www.ncsc.gov.uk/cyberessentials/overview&#34;&gt;Cyber Essentials&lt;/a&gt; framework in mind, ensuring your digital assets are well-protected and compliant.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Here&amp;rsquo;s how I can be your cyber security ally:&lt;/strong&gt;&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;-cyber-security-and-compliance-safeguarding-your-digital-world&#34;&gt;🔒 Cyber Security and Compliance: Safeguarding Your Digital World!&lt;/h1&gt;
-&lt;p&gt;Navigating the complex world of cyber security can feel like trying to solve a puzzle without all the pieces. I’m here to help you put those pieces together. My focus is on setting up your IT systems with the robust Cyber Essentials framework in mind, ensuring your digital assets are well-protected and compliant.&lt;/p&gt;
+&lt;p&gt;Navigating the complex world of cyber security can feel like trying to solve a puzzle without all the pieces. I’m here to help you put those pieces together. My focus is on setting up your IT systems with the robust &lt;a href=&#34;https://www.ncsc.gov.uk/cyberessentials/overview&#34;&gt;Cyber Essentials&lt;/a&gt; framework in mind, ensuring your digital assets are well-protected and compliant.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Here&amp;rsquo;s how I can be your cyber security ally:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Tailored Cyber Essentials Setup:&lt;/strong&gt; I’ll work with you to tailor your IT systems in alignment with Cyber Essentials requirements. This isn’t about one-size-fits-all solutions; it’s about what works best for your unique business.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Guidance on Certification:&lt;/strong&gt; Looking to get Cyber Essentials certified? I’ve got you covered. Whether it&amp;rsquo;s assisting with self-evaluation questionnaires for the basic level or collaborating with an auditor for the Cyber Essentials Plus certification, I’m here every step of the way.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Guidance on Certification:&lt;/strong&gt; Seeking Cyber Essentials certification? Whether you need assistance with self-assessment questionnaires for the basic level or collaboration with an auditor for Cyber Essentials Plus, I’ll provide the support necessary to ensure successful certification.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Simplified Compliance:&lt;/strong&gt; The world of IT security compliance can be daunting, but I make it simple. I&amp;rsquo;ll guide you through the process, ensuring that you not only understand the steps but also why they&amp;rsquo;re important for your business.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;IT Process Documentation:&lt;/strong&gt; Comprehensive and well-structured IT process documentation is crucial for achieving certifications like Cyber Essentials and ISO 27001. I can create detailed documentation that outlines your IT processes, policies, and procedures. This includes everything from access control and data management to incident response and recovery plans. By ensuring that all necessary documentation is in place, I help you meet the stringent requirements of these certifications, providing a clear roadmap for compliance and ongoing security management.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Getting Cyber Essentials certified isn’t just about ticking boxes; it’s about genuinely safeguarding your business in the digital landscape. And that’s exactly what I aim to help you achieve. Whether you&amp;rsquo;re taking your first steps towards cyber security or looking to enhance your existing measures, I&amp;rsquo;m here to make the process as seamless and stress-free as possible.&lt;/p&gt;
+&lt;p&gt;Getting Cyber Essentials certified isn’t just about ticking boxes; it’s about genuinely safeguarding your business in the digital landscape. And that’s exactly what I aim to help you achieve.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Ready to step up your cyber security game and achieve peace of mind?&lt;/strong&gt; Let’s chat about how I can help you navigate the path to Cyber Essentials certification and beyond!&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://wa.me/447413678040&#34;&gt;WhatsApp&lt;/a&gt;
 &lt;a href=&#34;mailto:jude@echo3.co&#34;&gt;jude@echo3.co&lt;/a&gt;&lt;/p&gt;
@@ -146,11 +664,13 @@ Here&amp;rsquo;s how I can be your cyber security ally:</description>
     
     <item>
       <title>[04] CLOUD SERVICES HUB</title>
-      <link>https://echo3.co/portfolio/04_cloud_services/</link>
+      <link>http://localhost:1313/portfolio/04_cloud_services/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://echo3.co/portfolio/04_cloud_services/</guid>
-      <description>🌐 Cloud Services Hub: Simplifying Your Digital Experience TL;DR: My Cloud Services Hub offers a convenient one-stop solution for all your cloud needs with a single monthly bill. Services include productivity tools like Microsoft 365, Teams, and email signature customization, as well as BitTitan MigrationWiz for easy data transfer. Transform your business with secure and scalable cloud infrastructure solutions, such as transitioning to Microsoft Azure. Additionally, robust web content filtering ensures online safety, and third-party cloud backup services provide a safety net for your data.</description>
+      <guid>http://localhost:1313/portfolio/04_cloud_services/</guid>
+      <description>&lt;h1 id=&#34;-cloud-services-hub-simplifying-your-digital-experience&#34;&gt;🌐 Cloud Services Hub: Simplifying Your Digital Experience&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;TL;DR:&lt;/strong&gt; My Cloud Services Hub offers a convenient one-stop solution for all your cloud needs with a single monthly bill. Services include productivity tools like Microsoft 365, Teams, and email signature customization, as well as BitTitan MigrationWiz for easy data transfer. Transform your business with secure and scalable cloud infrastructure solutions, such as transitioning to Microsoft Azure. Additionally, robust web content filtering ensures online safety, and third-party cloud backup services provide a safety net for your data. Enjoy the convenience, customization, and expert support that come with these comprehensive digital solutions.&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;-cloud-services-hub-simplifying-your-digital-experience&#34;&gt;🌐 Cloud Services Hub: Simplifying Your Digital Experience&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;TL;DR:&lt;/strong&gt; My Cloud Services Hub offers a convenient one-stop solution for all your cloud needs with a single monthly bill. Services include productivity tools like Microsoft 365, Teams, and email signature customization, as well as BitTitan MigrationWiz for easy data transfer. Transform your business with secure and scalable cloud infrastructure solutions, such as transitioning to Microsoft Azure. Additionally, robust web content filtering ensures online safety, and third-party cloud backup services provide a safety net for your data. Enjoy the convenience, customization, and expert support that come with these comprehensive digital solutions.&lt;/p&gt;
@@ -187,13 +707,18 @@ Here&amp;rsquo;s how I can be your cyber security ally:</description>
     
     <item>
       <title>[05] SYSTEM ADMIN</title>
-      <link>https://echo3.co/portfolio/05_sysadmin/</link>
+      <link>http://localhost:1313/portfolio/05_sysadmin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://echo3.co/portfolio/05_sysadmin/</guid>
-      <description>System Admin: Your Tech Command Center Welcome to your very own Tech Command Center! As your dedicated System Admin, here&amp;rsquo;s what I bring to the table:
-Seamless Onboarding &amp;amp; Offboarding: I&amp;rsquo;ll manage the arrival of new team members and the departure of others, ensuring a smooth transition in both cases. Your team&amp;rsquo;s digital setup will be ready to go from day one, and securely wrapped up when they leave.
-Vigilant Security Monitoring: I&amp;rsquo;ll keep an eye on security alerts like risky sign-ins, acting as your first line of defense against potential threats.</description>
+      <guid>http://localhost:1313/portfolio/05_sysadmin/</guid>
+      <description>&lt;h1 id=&#34;system-admin-your-tech-command-center&#34;&gt;System Admin: Your Tech Command Center&lt;/h1&gt;
+&lt;p&gt;Welcome to your very own Tech Command Center! As your dedicated System Admin, here&amp;rsquo;s what I bring to the table:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Seamless Onboarding &amp;amp; Offboarding:&lt;/strong&gt; I&amp;rsquo;ll manage the arrival of new team members and the departure of others, ensuring a smooth transition in both cases. Your team&amp;rsquo;s digital setup will be ready to go from day one, and securely wrapped up when they leave.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Vigilant Security Monitoring:&lt;/strong&gt; I&amp;rsquo;ll keep an eye on security alerts like risky sign-ins, acting as your first line of defense against potential threats. Your digital security is my top priority.&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;system-admin-your-tech-command-center&#34;&gt;System Admin: Your Tech Command Center&lt;/h1&gt;
 &lt;p&gt;Welcome to your very own Tech Command Center! As your dedicated System Admin, here&amp;rsquo;s what I bring to the table:&lt;/p&gt;
 &lt;ol&gt;
@@ -221,13 +746,18 @@ Vigilant Security Monitoring: I&amp;rsquo;ll keep an eye on security alerts like
     
     <item>
       <title>[06] NETWORKING</title>
-      <link>https://echo3.co/portfolio/06_networking/</link>
+      <link>http://localhost:1313/portfolio/06_networking/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://echo3.co/portfolio/06_networking/</guid>
-      <description>🌐 Networking: Your Connection to a Smoother Operation In the world of business, a reliable network is like the veins of your operation, keeping everything connected and running smoothly. Here&amp;rsquo;s what I offer in networking services:
-Set Up and Installation: Whether it&amp;rsquo;s wired networks for steadfast connections or wireless for flexibility and ease, I&amp;rsquo;ve got the expertise to set up your network infrastructure from the ground up.
-Firewall Implementation: I&amp;rsquo;ll ensure your network&amp;rsquo;s first line of defense is rock-solid, protecting your digital assets from external threats.</description>
+      <guid>http://localhost:1313/portfolio/06_networking/</guid>
+      <description>&lt;h1 id=&#34;-networking-your-connection-to-a-smoother-operation&#34;&gt;🌐 Networking: Your Connection to a Smoother Operation&lt;/h1&gt;
+&lt;p&gt;In the world of business, a reliable network is like the veins of your operation, keeping everything connected and running smoothly. Here&amp;rsquo;s what I offer in networking services:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Set Up and Installation:&lt;/strong&gt; Whether it&amp;rsquo;s wired networks for steadfast connections or wireless for flexibility and ease, I&amp;rsquo;ve got the expertise to set up your network infrastructure from the ground up.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Firewall Implementation:&lt;/strong&gt; I&amp;rsquo;ll ensure your network&amp;rsquo;s first line of defense is rock-solid, protecting your digital assets from external threats.&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;-networking-your-connection-to-a-smoother-operation&#34;&gt;🌐 Networking: Your Connection to a Smoother Operation&lt;/h1&gt;
 &lt;p&gt;In the world of business, a reliable network is like the veins of your operation, keeping everything connected and running smoothly. Here&amp;rsquo;s what I offer in networking services:&lt;/p&gt;
 &lt;ul&gt;
@@ -250,13 +780,18 @@ Firewall Implementation: I&amp;rsquo;ll ensure your network&amp;rsquo;s first li
     
     <item>
       <title>[07] WEB &amp; CONTENT MANAGEMENT</title>
-      <link>https://echo3.co/portfolio/07_web_and_content_management/</link>
+      <link>http://localhost:1313/portfolio/07_web_and_content_management/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://echo3.co/portfolio/07_web_and_content_management/</guid>
-      <description>🌟 Web &amp;amp; Content Management: Tailoring Your Digital Space As your web and content manager, I bring a creative touch and technical know-how to website design. My ability lies in skillfully using and adapting templates across platforms like Wix, WordPress, or Hugo (for static sites), to create visually appealing and user-friendly websites.
-Template Transformation: I’ll take a template and turn it into a masterpiece that perfectly reflects your brand.
-Content Development and Photography: Beyond just layout and design, I can assist in crafting compelling website content and sourcing the right imagery.</description>
+      <guid>http://localhost:1313/portfolio/07_web_and_content_management/</guid>
+      <description>&lt;h1 id=&#34;-web--content-management-tailoring-your-digital-space&#34;&gt;🌟 Web &amp;amp; Content Management: Tailoring Your Digital Space&lt;/h1&gt;
+&lt;p&gt;As your web and content manager, I bring a creative touch and technical know-how to website design. My ability lies in skillfully using and adapting templates across platforms like Wix, WordPress, or Hugo (for static sites), to create visually appealing and user-friendly websites.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Template Transformation:&lt;/strong&gt; I’ll take a template and turn it into a masterpiece that perfectly reflects your brand.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Content Development and Photography:&lt;/strong&gt; Beyond just layout and design, I can assist in crafting compelling website content and sourcing the right imagery. If needed, I can even capture original photographs to add a unique, personal touch to your site.&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;-web--content-management-tailoring-your-digital-space&#34;&gt;🌟 Web &amp;amp; Content Management: Tailoring Your Digital Space&lt;/h1&gt;
 &lt;p&gt;As your web and content manager, I bring a creative touch and technical know-how to website design. My ability lies in skillfully using and adapting templates across platforms like Wix, WordPress, or Hugo (for static sites), to create visually appealing and user-friendly websites.&lt;/p&gt;
 &lt;ul&gt;
@@ -272,9 +807,10 @@ Content Development and Photography: Beyond just layout and design, I can assist
 &lt;/ul&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Example sites I&amp;rsquo;ve deployed and manage:&lt;/strong&gt; &lt;br&gt;
-&lt;a href=&#34;https://www.rushmonhomes.co.uk&#34;&gt;Rushmon Homes (a Wix Editor X site)&lt;/a&gt;&lt;br&gt;
-&lt;a href=&#34;https://silburyfinance.com&#34;&gt;Silbury Finance (a Wix Editor X site)&lt;/a&gt;&lt;br&gt;
-&lt;a href=&#34;https://www.intertypestudio.com&#34;&gt;Intertype Studio (a Wordpress site)&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&#34;https://www.rushmonhomes.co.uk&#34;&gt;Rushmon Homes&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://silburyfinance.com&#34;&gt;Silbury Finance&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://www.intertypestudio.com&#34;&gt;Intertype Studio&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://quantumdf.com&#34;&gt;Quantum Development Finance&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;a href=&#34;https://wa.me/447413678040&#34;&gt;WhatsApp&lt;/a&gt;
 &lt;a href=&#34;mailto:jude@echo3.co&#34;&gt;jude@echo3.co&lt;/a&gt;&lt;/p&gt;
@@ -283,20 +819,26 @@ Content Development and Photography: Beyond just layout and design, I can assist
     
     <item>
       <title>[08] PROCESS STREAMLINING</title>
-      <link>https://echo3.co/portfolio/08_process_streamlining/</link>
+      <link>http://localhost:1313/portfolio/08_process_streamlining/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://echo3.co/portfolio/08_process_streamlining/</guid>
-      <description>🔄 Streamlining Processes: Your Path to Smarter Workflows Hey there! I&amp;rsquo;m all about making things easier and smarter in your business. Sometimes, it&amp;rsquo;s easy to get stuck in the &amp;lsquo;we&amp;rsquo;ve always done it this way&amp;rsquo; mindset. That’s where I come in – think of me as your efficiency detective, here to spot those time-consuming habits and give them a modern twist.
-A Fresh Take on Old Habits: I&amp;rsquo;ll dive into your current routines and find those sneaky inefficiencies.</description>
-      <content>&lt;h1 id=&#34;-streamlining-processes-your-path-to-smarter-workflows&#34;&gt;🔄 Streamlining Processes: Your Path to Smarter Workflows&lt;/h1&gt;
-&lt;p&gt;Hey there! I&amp;rsquo;m all about making things easier and smarter in your business. Sometimes, it&amp;rsquo;s easy to get stuck in the &amp;lsquo;we&amp;rsquo;ve always done it this way&amp;rsquo; mindset. That’s where I come in – think of me as your efficiency detective, here to spot those time-consuming habits and give them a modern twist.&lt;/p&gt;
+      <guid>http://localhost:1313/portfolio/08_process_streamlining/</guid>
+      <description>&lt;h1 id=&#34;-streamlining-processes-your-path-to-smarter-workflows&#34;&gt;🔄 Streamlining Processes: Your Path to Smarter Workflows&lt;/h1&gt;
+&lt;p&gt;I’m dedicated to helping you make your business operations more efficient and effective. It’s easy to fall into the routine of doing things the way they’ve always been done, but that’s where I come in. Think of me as your efficiency expert, here to identify time-consuming habits and introduce modern solutions.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;A Fresh Take on Old Habits:&lt;/strong&gt; I&amp;rsquo;ll dive into your current routines and find those sneaky inefficiencies.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Tech to the Rescue:&lt;/strong&gt; By bringing in just the right tech tools, I&amp;rsquo;ll transform how things are done.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Automate and Innovate:&lt;/strong&gt; With neat tricks like MS Flow or Zapier, and maybe a dash of custom coding, I’ll turn repetitive tasks into automated, smooth operations.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A Fresh Perspective:&lt;/strong&gt; I’ll review your current workflows to uncover hidden inefficiencies.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Technology Solutions:&lt;/strong&gt; I’ll implement the right technological tools to enhance your processes.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Automation and Innovation:&lt;/strong&gt; Using tools like MS Flow or Zapier, and perhaps some custom coding, I’ll automate repetitive tasks to create seamless operations.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Let&amp;rsquo;s make your business processes slick, quick, and a whole lot more fun. Ready to revamp the way you work? 🚀&lt;/p&gt;
+&lt;p&gt;Let’s work together to make your business processes more streamlined, efficient, and enjoyable. Ready to transform the way you work? 🚀&lt;/p&gt;</description>
+      <content>&lt;h1 id=&#34;-streamlining-processes-your-path-to-smarter-workflows&#34;&gt;🔄 Streamlining Processes: Your Path to Smarter Workflows&lt;/h1&gt;
+&lt;p&gt;I’m dedicated to helping you make your business operations more efficient and effective. It’s easy to fall into the routine of doing things the way they’ve always been done, but that’s where I come in. Think of me as your efficiency expert, here to identify time-consuming habits and introduce modern solutions.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;A Fresh Perspective:&lt;/strong&gt; I’ll review your current workflows to uncover hidden inefficiencies.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Technology Solutions:&lt;/strong&gt; I’ll implement the right technological tools to enhance your processes.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Automation and Innovation:&lt;/strong&gt; Using tools like MS Flow or Zapier, and perhaps some custom coding, I’ll automate repetitive tasks to create seamless operations.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Let’s work together to make your business processes more streamlined, efficient, and enjoyable. Ready to transform the way you work? 🚀&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://wa.me/447413678040&#34;&gt;WhatsApp&lt;/a&gt;
 &lt;a href=&#34;mailto:jude@echo3.co&#34;&gt;jude@echo3.co&lt;/a&gt;&lt;/p&gt;
 </content>
@@ -304,13 +846,18 @@ A Fresh Take on Old Habits: I&amp;rsquo;ll dive into your current routines and f
     
     <item>
       <title>[09] PROJECT MANAGEMENT</title>
-      <link>https://echo3.co/portfolio/09_project_management/</link>
+      <link>http://localhost:1313/portfolio/09_project_management/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://echo3.co/portfolio/09_project_management/</guid>
-      <description>📋 Project Management: Traditional Approach for Modern Success
-Need a hand in managing your projects? I&amp;rsquo;m available for small-scale project management, bringing a traditional yet effective approach.
-Structured and Steady: I use tools like MS Project and Smartsheets, depending on collaboration preferences, to keep your projects on track. Think of it as a well-planned road trip with a clear map. Focused Management: My style aligns with the traditional (sometimes called &amp;lsquo;waterfall&amp;rsquo;) approach, which means we&amp;rsquo;ll plan things out step-by-step, making sure every detail is accounted for.</description>
+      <guid>http://localhost:1313/portfolio/09_project_management/</guid>
+      <description>&lt;p&gt;📋 &lt;strong&gt;Project Management: Traditional Approach for Modern Success&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Need a hand in managing your projects? I&amp;rsquo;m available for small-scale project management, bringing a traditional yet effective approach.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Structured and Steady:&lt;/strong&gt; I use tools like MS Project and Smartsheets, depending on collaboration preferences, to keep your projects on track. Think of it as a well-planned road trip with a clear map.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Focused Management:&lt;/strong&gt; My style aligns with the traditional (sometimes called &amp;lsquo;waterfall&amp;rsquo;) approach, which means we&amp;rsquo;ll plan things out step-by-step, making sure every detail is accounted for.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;No-Nonsense Execution:&lt;/strong&gt; While I appreciate the fluidity of methodologies like Agile and Kanban, I find a structured approach brings clarity and predictability, which works well for most projects.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ready to see your projects managed with precision and care? Let’s get started!&lt;/p&gt;</description>
       <content>&lt;p&gt;📋 &lt;strong&gt;Project Management: Traditional Approach for Modern Success&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Need a hand in managing your projects? I&amp;rsquo;m available for small-scale project management, bringing a traditional yet effective approach.&lt;/p&gt;
 &lt;ul&gt;
@@ -326,11 +873,14 @@ Structured and Steady: I use tools like MS Project and Smartsheets, depending on
     
     <item>
       <title>[10] IT TRAINING</title>
-      <link>https://echo3.co/portfolio/10_training/</link>
+      <link>http://localhost:1313/portfolio/10_training/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://echo3.co/portfolio/10_training/</guid>
-      <description>Customized One-on-One Training: Your Path to Tech Proficiency Personalized Tech Coaching: My forte is in guiding those who find technology challenging, helping them become adept and self-assured in its use. The digital world is vast, filled with various software packages, mobile and desktop apps, and web-based SaaS platforms. While some, like me, can quickly adapt to new software, I understand that not everyone shares this ease. Many people, talented in other areas, might find technology a bit daunting, especially when it&amp;rsquo;s an essential part of their job.</description>
+      <guid>http://localhost:1313/portfolio/10_training/</guid>
+      <description>&lt;h1 id=&#34;customized-one-on-one-training-your-path-to-tech-proficiency&#34;&gt;Customized One-on-One Training: Your Path to Tech Proficiency&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Personalized Tech Coaching:&lt;/strong&gt; My forte is in guiding those who find technology challenging, helping them become adept and self-assured in its use. The digital world is vast, filled with various software packages, mobile and desktop apps, and web-based SaaS platforms. While some, like me, can quickly adapt to new software, I understand that not everyone shares this ease. Many people, talented in other areas, might find technology a bit daunting, especially when it&amp;rsquo;s an essential part of their job. My strength lies in rapidly absorbing new tech knowledge and effectively passing it on to others.&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;customized-one-on-one-training-your-path-to-tech-proficiency&#34;&gt;Customized One-on-One Training: Your Path to Tech Proficiency&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -350,13 +900,18 @@ Structured and Steady: I use tools like MS Project and Smartsheets, depending on
     
     <item>
       <title>[11] DASHBOARDING</title>
-      <link>https://echo3.co/portfolio/11_dashboards/</link>
+      <link>http://localhost:1313/portfolio/11_dashboards/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://echo3.co/portfolio/11_dashboards/</guid>
-      <description>Dashboarding: Unifying Your Data for Clear Insights I&amp;rsquo;m here to help you gather and visualize your data from various sources, creating clear and insightful dashboards.
-Data Aggregation: I can pull together data from multiple sources. Whether it&amp;rsquo;s sales figures, customer metrics, or operational stats, I&amp;rsquo;ll compile it all into one accessible place.
-Power BI: For those in the Microsoft ecosystem, I can craft bespoke, interactive dashboards in Power BI. This tool not only brings your data to life but also allows you to discover trends and insights that can drive strategic decisions.</description>
+      <guid>http://localhost:1313/portfolio/11_dashboards/</guid>
+      <description>&lt;h1 id=&#34;dashboarding-unifying-your-data-for-clear-insights&#34;&gt;Dashboarding: Unifying Your Data for Clear Insights&lt;/h1&gt;
+&lt;p&gt;I&amp;rsquo;m here to help you gather and visualize your data from various sources, creating clear and insightful dashboards.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Data Aggregation:&lt;/strong&gt; I can pull together data from multiple sources. Whether it&amp;rsquo;s sales figures, customer metrics, or operational stats, I&amp;rsquo;ll compile it all into one accessible place.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Power BI:&lt;/strong&gt; For those in the Microsoft ecosystem, I can craft bespoke, interactive dashboards in Power BI. This tool not only brings your data to life but also allows you to discover trends and insights that can drive strategic decisions.&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;dashboarding-unifying-your-data-for-clear-insights&#34;&gt;Dashboarding: Unifying Your Data for Clear Insights&lt;/h1&gt;
 &lt;p&gt;I&amp;rsquo;m here to help you gather and visualize your data from various sources, creating clear and insightful dashboards.&lt;/p&gt;
 &lt;ul&gt;
@@ -380,13 +935,18 @@ Check out &lt;a href=&#34;https://alibrashipping.com/data/&#34;&gt;Alibra Shippi
     
     <item>
       <title>[12] SETUP &amp; INSTALLATION</title>
-      <link>https://echo3.co/portfolio/12_setup_installation/</link>
+      <link>http://localhost:1313/portfolio/12_setup_installation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://echo3.co/portfolio/12_setup_installation/</guid>
-      <description>🛠️ Hands-On Services: Practical Tech Installations Alongside my digital expertise, I also bring a practical touch to physical tech installations.
-Meeting Room Setup: For conferencing, my preference is for Logitech equipment. It strikes a good balance between price and performance and is compatible with all mainstream platforms such as Meet, Teams and Zoom. I can wall mount TVs, cameras and neatly cable all necessary equipment.
-Security Installations: My services extend to setting up small-scale security solutions.</description>
+      <guid>http://localhost:1313/portfolio/12_setup_installation/</guid>
+      <description>&lt;h1 id=&#34;-hands-on-services-practical-tech-installations&#34;&gt;🛠️ Hands-On Services: Practical Tech Installations&lt;/h1&gt;
+&lt;p&gt;Alongside my digital expertise, I also bring a practical touch to physical tech installations.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Meeting Room Setup:&lt;/strong&gt; For conferencing, my preference is for Logitech equipment. It strikes a good balance between price and performance and is compatible with all mainstream platforms such as Meet, Teams and Zoom. I can wall mount TVs, cameras and neatly cable all necessary equipment.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Security Installations:&lt;/strong&gt; My services extend to setting up small-scale security solutions. This includes the installation of smart doorbells and network video cameras.&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;-hands-on-services-practical-tech-installations&#34;&gt;🛠️ Hands-On Services: Practical Tech Installations&lt;/h1&gt;
 &lt;p&gt;Alongside my digital expertise, I also bring a practical touch to physical tech installations.&lt;/p&gt;
 &lt;ul&gt;
@@ -411,13 +971,18 @@ Security Installations: My services extend to setting up small-scale security so
     
     <item>
       <title>[13] VoIP</title>
-      <link>https://echo3.co/portfolio/13_voip/</link>
+      <link>http://localhost:1313/portfolio/13_voip/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://echo3.co/portfolio/13_voip/</guid>
-      <description>📞 VoIP: Expertly Setting Up and Managing 3CX Telephony Systems I offer comprehensive setup and management services centered around the versatile and efficient 3CX system. Here&amp;rsquo;s why 3CX is an excellent choice for your business:
-Advanced Call Management: 3CX provides sophisticated call handling capabilities, including routing, queuing, and recording, all through a user-friendly interface. This elevates your ability to manage customer interactions and business communications effectively.
-Cost-Effective Solution: Opting for 3CX can lead to significant savings.</description>
+      <guid>http://localhost:1313/portfolio/13_voip/</guid>
+      <description>&lt;h1 id=&#34;-voip-expertly-setting-up-and-managing-3cx-telephony-systems&#34;&gt;📞 VoIP: Expertly Setting Up and Managing 3CX Telephony Systems&lt;/h1&gt;
+&lt;p&gt;I offer comprehensive setup and management services centered around the versatile and efficient 3CX system. Here&amp;rsquo;s why 3CX is an excellent choice for your business:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Advanced Call Management:&lt;/strong&gt; 3CX provides sophisticated call handling capabilities, including routing, queuing, and recording, all through a user-friendly interface. This elevates your ability to manage customer interactions and business communications effectively.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Cost-Effective Solution:&lt;/strong&gt; Opting for 3CX can lead to significant savings. It&amp;rsquo;s a software-based system compatible with existing hardware, reducing setup costs. Plus, with internet-based calls, you can enjoy reduced call charges.&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;-voip-expertly-setting-up-and-managing-3cx-telephony-systems&#34;&gt;📞 VoIP: Expertly Setting Up and Managing 3CX Telephony Systems&lt;/h1&gt;
 &lt;p&gt;I offer comprehensive setup and management services centered around the versatile and efficient 3CX system. Here&amp;rsquo;s why 3CX is an excellent choice for your business:&lt;/p&gt;
 &lt;ul&gt;
@@ -448,12 +1013,15 @@ Cost-Effective Solution: Opting for 3CX can lead to significant savings.</descri
     
     <item>
       <title>[14] IT ASSET TRACKING</title>
-      <link>https://echo3.co/portfolio/14_asset_tracking/</link>
+      <link>http://localhost:1313/portfolio/14_asset_tracking/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://echo3.co/portfolio/14_asset_tracking/</guid>
-      <description>🛠️ IT Asset Tracking: Keeping Tabs on Your Technology I provide IT asset tracking services to ensure you always know where your technology is and how it&amp;rsquo;s being used. Here&amp;rsquo;s how I can help:
-Inventory Management: I&amp;rsquo;ll create a detailed inventory of all your IT assets, including hardware, software, and any other technology-related equipment. This inventory will be your go-to resource for understanding what you have, where it is, and its current status.</description>
+      <guid>http://localhost:1313/portfolio/14_asset_tracking/</guid>
+      <description>&lt;h1 id=&#34;-it-asset-tracking-keeping-tabs-on-your-technology&#34;&gt;🛠️ IT Asset Tracking: Keeping Tabs on Your Technology&lt;/h1&gt;
+&lt;p&gt;I provide IT asset tracking services to ensure you always know where your technology is and how it&amp;rsquo;s being used. Here&amp;rsquo;s how I can help:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Inventory Management:&lt;/strong&gt; I&amp;rsquo;ll create a detailed inventory of all your IT assets, including hardware, software, and any other technology-related equipment. This inventory will be your go-to resource for understanding what you have, where it is, and its current status.&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;-it-asset-tracking-keeping-tabs-on-your-technology&#34;&gt;🛠️ IT Asset Tracking: Keeping Tabs on Your Technology&lt;/h1&gt;
 &lt;p&gt;I provide IT asset tracking services to ensure you always know where your technology is and how it&amp;rsquo;s being used. Here&amp;rsquo;s how I can help:&lt;/p&gt;
 &lt;ul&gt;
@@ -478,12 +1046,15 @@ Inventory Management: I&amp;rsquo;ll create a detailed inventory of all your IT 
     
     <item>
       <title>[15] MUSIC PRODUCTION</title>
-      <link>https://echo3.co/portfolio/15_music_production/</link>
+      <link>http://localhost:1313/portfolio/15_music_production/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://echo3.co/portfolio/15_music_production/</guid>
-      <description>🎶 Music Production: Crafting Your Sound Welcome to my world of music production, where creativity meets technology to create audio magic. Whether you&amp;rsquo;re looking for personalized songwriting or professional audio editing, I&amp;rsquo;ve got you covered.
-State-of-the-Art Tools: I use a blend of modern digital software like Logic and Presonus Studio One, complemented by the warm textures of outboard analogue gear from Drawmer. To add that unique analogue warmth to my productions, I also incorporate a Revox B77 reel-to-reel tape machine.</description>
+      <guid>http://localhost:1313/portfolio/15_music_production/</guid>
+      <description>&lt;h1 id=&#34;-music-production-crafting-your-sound&#34;&gt;🎶 Music Production: Crafting Your Sound&lt;/h1&gt;
+&lt;p&gt;Welcome to my world of music production, where creativity meets technology to create audio magic. Whether you&amp;rsquo;re looking for personalized songwriting or professional audio editing, I&amp;rsquo;ve got you covered.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;State-of-the-Art Tools:&lt;/strong&gt; I use a blend of modern digital software like Logic and Presonus Studio One, complemented by the warm textures of outboard analogue gear from Drawmer. To add that unique analogue warmth to my productions, I also incorporate a Revox B77 reel-to-reel tape machine.&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;-music-production-crafting-your-sound&#34;&gt;🎶 Music Production: Crafting Your Sound&lt;/h1&gt;
 &lt;p&gt;Welcome to my world of music production, where creativity meets technology to create audio magic. Whether you&amp;rsquo;re looking for personalized songwriting or professional audio editing, I&amp;rsquo;ve got you covered.&lt;/p&gt;
 &lt;ul&gt;
@@ -508,12 +1079,15 @@ State-of-the-Art Tools: I use a blend of modern digital software like Logic and 
     
     <item>
       <title>[16] EVERYTHING ELSE</title>
-      <link>https://echo3.co/portfolio/16_everything_else/</link>
+      <link>http://localhost:1313/portfolio/16_everything_else/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://echo3.co/portfolio/16_everything_else/</guid>
-      <description>🤝 &amp;ldquo;Everything Else&amp;rdquo;: Your Go-To for Impartial Opinion and Solutions Sometimes you just need a fresh set of eyes, or an impartial 3rd party to look at a situation or problem you might face during the course of running a business. I offer unbiased opinions, task assistance, and thoughtful solutions for those odd or unexpected challenges you might face.
-Objective Insights: Whether it&amp;rsquo;s interpreting an official-looking email or navigating a complex situation, I bring an impartial perspective to help you understand and respond effectively.</description>
+      <guid>http://localhost:1313/portfolio/16_everything_else/</guid>
+      <description>&lt;h1 id=&#34;-everything-else-your-go-to-for-impartial-opinion-and-solutions&#34;&gt;🤝 &amp;ldquo;Everything Else&amp;rdquo;: Your Go-To for Impartial Opinion and Solutions&lt;/h1&gt;
+&lt;p&gt;Sometimes you just need a fresh set of eyes, or an impartial 3rd party to look at a situation or problem you might face during the course of running a business. I offer unbiased opinions, task assistance, and thoughtful solutions for those odd or unexpected challenges you might face.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Objective Insights:&lt;/strong&gt; Whether it&amp;rsquo;s interpreting an official-looking email or navigating a complex situation, I bring an impartial perspective to help you understand and respond effectively.&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;-everything-else-your-go-to-for-impartial-opinion-and-solutions&#34;&gt;🤝 &amp;ldquo;Everything Else&amp;rdquo;: Your Go-To for Impartial Opinion and Solutions&lt;/h1&gt;
 &lt;p&gt;Sometimes you just need a fresh set of eyes, or an impartial 3rd party to look at a situation or problem you might face during the course of running a business. I offer unbiased opinions, task assistance, and thoughtful solutions for those odd or unexpected challenges you might face.&lt;/p&gt;
 &lt;ul&gt;
@@ -534,14 +1108,26 @@ Objective Insights: Whether it&amp;rsquo;s interpreting an official-looking emai
     </item>
     
     <item>
-      <title>About me</title>
-      <link>https://echo3.co/about/</link>
+      <title>About</title>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://echo3.co/about/</guid>
-      <description>Hi there 🚧🚧🚧 This section is WIP!</description>
-      <content>&lt;h1 id=&#34;hi-there&#34;&gt;Hi there&lt;/h1&gt;
-&lt;p&gt;🚧🚧🚧 This section is WIP!&lt;/p&gt;
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;h1 id=&#34;the-problem-solving-technologist-with-a-passion-for-people-and-variety&#34;&gt;The Problem-Solving Technologist with a Passion for People and Variety&lt;/h1&gt;
+&lt;p&gt;Since diving into the IT world in 1999 and embracing the freelance journey in 2011, &lt;strong&gt;I&amp;rsquo;ve carved out a niche as a versatile &amp;ldquo;general practitioner&amp;rdquo; in technology.&lt;/strong&gt; My love for variety means I thrive on the diverse challenges and projects that come my way, from streamlining complex processes to teaching tech skills. There&amp;rsquo;s no typical day in my life, and that&amp;rsquo;s just how I like it!&lt;/p&gt;</description>
+      <content>&lt;h1 id=&#34;the-problem-solving-technologist-with-a-passion-for-people-and-variety&#34;&gt;The Problem-Solving Technologist with a Passion for People and Variety&lt;/h1&gt;
+&lt;p&gt;Since diving into the IT world in 1999 and embracing the freelance journey in 2011, &lt;strong&gt;I&amp;rsquo;ve carved out a niche as a versatile &amp;ldquo;general practitioner&amp;rdquo; in technology.&lt;/strong&gt; My love for variety means I thrive on the diverse challenges and projects that come my way, from streamlining complex processes to teaching tech skills. There&amp;rsquo;s no typical day in my life, and that&amp;rsquo;s just how I like it!&lt;/p&gt;
+&lt;h4 id=&#34;turning-complexity-into-simplicity&#34;&gt;Turning Complexity into Simplicity&lt;/h4&gt;
+&lt;p&gt;One of my greatest joys is transforming what seems complex into something beautifully simple. Like the time recently where I replaced an entire manual process with a Google Sheet, a dash of code and Data Studio – not only saving a client from hiring an extra hand but also enhancing their website with an interactive dashboard. &lt;strong&gt;It&amp;rsquo;s about seeing beyond the conventional, finding clarity where others see complexity.&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;a-unique-perspective&#34;&gt;A Unique Perspective&lt;/h4&gt;
+&lt;p&gt;I&amp;rsquo;ve never been one to simply follow the crowd. Take this website, for example. Countless IT support company websites are filled with technobabble, stock photography, and generic images of people in suits or in offices, either laughing or staring intently at laptop screens. I wanted my website to stand out from that mold. There&amp;rsquo;s a nostalgic part of me that fondly recalls my early interactions with technology — think ZX Spectrums, BBC model Bs, and Atari STs. That&amp;rsquo;s why I chose a retro theme and pixel art for my site.&lt;/p&gt;
+&lt;p&gt;This distinct way of thinking isn&amp;rsquo;t just about aesthetics; it reflects how I approach business. By thinking outside the box, I generate unique ideas and solutions tailored to the specific needs of each client.&lt;/p&gt;
+&lt;h4 id=&#34;just-in-time-knowledge&#34;&gt;Just-in-Time Knowledge&lt;/h4&gt;
+&lt;p&gt;I firmly believe in &amp;ldquo;just-in-time&amp;rdquo; knowledge—learning what&amp;rsquo;s needed at the moment, applying it effectively, and then moving on to the next challenge. This approach allows me to stay agile and adaptable, always ready to tackle new and complex problems.&lt;/p&gt;
+&lt;h4 id=&#34;a-people-person-with-a-natural-teaching-ability&#34;&gt;A People Person with a Natural Teaching Ability&lt;/h4&gt;
+&lt;p&gt;I&amp;rsquo;m a natural teacher. I excel at breaking down complex concepts into understandable steps. My ability to demystify technology and make it accessible has literally &lt;strong&gt;saved careers&lt;/strong&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;my-unique-selling-point-diplomacy-with-a-dash-of-realness&#34;&gt;My Unique Selling Point: Diplomacy with a Dash of Realness&lt;/h4&gt;
+&lt;p&gt;What truly sets me apart is my combination of people skills and technical expertise. I&amp;rsquo;m diplomatic, straightforward, and committed to what&amp;rsquo;s genuinely best for my clients. I have a knack for communicating complex technical concepts in simple terms, making me a trusted advisor to those I work with. My approach is always people-first, tech-second – because at the end of the day, &lt;strong&gt;it&amp;rsquo;s not just about solving tech problems; it&amp;rsquo;s about helping people.&lt;/strong&gt;&lt;/p&gt;
 </content>
     </item>
     

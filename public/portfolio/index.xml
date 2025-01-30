@@ -2,19 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Service Portfolio on echo3.co</title>
-    <link>https://echo3.co/portfolio/</link>
+    <link>http://localhost:1313/portfolio/</link>
     <description>Recent content in Service Portfolio on echo3.co</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 19 Aug 2015 20:29:37 -0700</lastBuildDate><atom:link href="https://echo3.co/portfolio/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 19 Aug 2015 20:29:37 -0700</lastBuildDate><atom:link href="http://localhost:1313/portfolio/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[01] TICKETLESS SUPPORT</title>
-      <link>https://echo3.co/portfolio/01_ticketless_support/</link>
+      <link>http://localhost:1313/portfolio/01_ticketless_support/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://echo3.co/portfolio/01_ticketless_support/</guid>
-      <description>🚀 Ticketless IT Support: Making Tech Help Friendly and Hassle-Free! Ever wished you had a tech-savvy friend you could just call, email, or WhatsApp whenever a pesky IT problem pops up? That&amp;rsquo;s me! I&amp;rsquo;m here to make getting IT help as easy and friendly as chatting with a buddy. No logging incidents, no waiting for ticket numbers – just direct, personal support, whenever you need it.
-How do I make this happen?</description>
+      <guid>http://localhost:1313/portfolio/01_ticketless_support/</guid>
+      <description>&lt;h1 id=&#34;-ticketless-it-support-making-tech-help-friendly-and-hassle-free&#34;&gt;🚀 Ticketless IT Support: Making Tech Help Friendly and Hassle-Free!&lt;/h1&gt;
+&lt;p&gt;Ever wished you had a tech-savvy friend you could just call, email, or WhatsApp whenever a pesky IT problem pops up? That&amp;rsquo;s me! I&amp;rsquo;m here to make getting IT help as easy and friendly as chatting with a buddy. No logging incidents, no waiting for ticket numbers – just direct, personal support, whenever you need it.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How do I make this happen?&lt;/strong&gt; By working with a manageable number of small businesses on a retainer basis, I make sure that you&amp;rsquo;re never just a number in a queue. Your tech troubles are my tech troubles, and I&amp;rsquo;m all about solving them quickly and efficiently.&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;-ticketless-it-support-making-tech-help-friendly-and-hassle-free&#34;&gt;🚀 Ticketless IT Support: Making Tech Help Friendly and Hassle-Free!&lt;/h1&gt;
 &lt;p&gt;Ever wished you had a tech-savvy friend you could just call, email, or WhatsApp whenever a pesky IT problem pops up? That&amp;rsquo;s me! I&amp;rsquo;m here to make getting IT help as easy and friendly as chatting with a buddy. No logging incidents, no waiting for ticket numbers – just direct, personal support, whenever you need it.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;How do I make this happen?&lt;/strong&gt; By working with a manageable number of small businesses on a retainer basis, I make sure that you&amp;rsquo;re never just a number in a queue. Your tech troubles are my tech troubles, and I&amp;rsquo;m all about solving them quickly and efficiently.&lt;/p&gt;
@@ -22,12 +23,12 @@ How do I make this happen?</description>
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Instant Access:&lt;/strong&gt; Reach out in your preferred way and get immediate help. No formalities, no ticket numbers.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;A Personal Connection:&lt;/strong&gt; When you call or message, you’re talking to someone who understands your business and its unique tech needs.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Proactive Problem-Solving:&lt;/strong&gt; I&amp;rsquo;m here to nip those IT issues in the bud, keeping your business running without a hitch.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Proactive Problem-Solving:&lt;/strong&gt; Through years of experience and exposure to many organisations of varying sizes across a range of industries, I&amp;rsquo;ve developed a best-practice approach to deploying and managing IT resources. My aim is to streamline your IT setup, ensuring it runs as smoothly as possible and allowing you to focus on your business without worrying about tech headaches.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;&amp;ldquo;But what if you&amp;rsquo;re on holiday or sick?&amp;rdquo;&lt;/strong&gt; Great question! I&amp;rsquo;ve got that covered. While I don&amp;rsquo;t take on high-risk clients where immediate support is critical (like businesses with their own on-premise computer networks), I&amp;rsquo;m all about handling the &amp;lsquo;small stuff&amp;rsquo;. And for those times when I&amp;rsquo;m not available, I&amp;rsquo;ve teamed up with other IT freelancers who provide cover. So, you can rest easy knowing that there&amp;rsquo;s always someone reliable to turn to.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&amp;ldquo;But what if you&amp;rsquo;re on holiday or sick?&amp;rdquo;&lt;/strong&gt; For those times when I&amp;rsquo;m not available, I&amp;rsquo;ve teamed up with other IT freelancers who provide cover. So, you can rest easy knowing that there&amp;rsquo;s always someone reliable to turn to.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;So, why get bogged down by traditional IT support when you can have your own personal tech guru? Let&amp;rsquo;s make IT support as easy and friendly as a conversation with a friend!&lt;/p&gt;
+&lt;p&gt;So, why get bogged down by traditional IT support when you can have your own personal tech guru? Let&amp;rsquo;s make IT support as easy as a conversation with a friend!&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Ready to enjoy hassle-free IT support tailored just for your business?&lt;/strong&gt; Let’s chat about how I can help you.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://wa.me/447413678040&#34;&gt;WhatsApp&lt;/a&gt;
 &lt;a href=&#34;mailto:jude@echo3.co&#34;&gt;jude@echo3.co&lt;/a&gt;&lt;/p&gt;
@@ -36,19 +37,20 @@ How do I make this happen?</description>
     
     <item>
       <title>[02] CLOUD TRANSFORMATION</title>
-      <link>https://echo3.co/portfolio/02_cloud_transformation/</link>
+      <link>http://localhost:1313/portfolio/02_cloud_transformation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://echo3.co/portfolio/02_cloud_transformation/</guid>
-      <description>☁️ Cloud Transformation: Streamlining Your Digital Sky! Ever feel like your business&amp;rsquo;s tech setup is a bit&amp;hellip; patchwork? Maybe you&amp;rsquo;ve got email tied to your domain host (yep, they were pretty convincing when you registered your domain), or perhaps all your crucial files are sitting on a local PC. It kind of works, but deep down, you know there&amp;rsquo;s a smoother, smarter way to handle things.
-That&amp;rsquo;s where I come in.</description>
+      <guid>http://localhost:1313/portfolio/02_cloud_transformation/</guid>
+      <description>&lt;h1 id=&#34;-cloud-transformation-streamlining-your-digital-sky&#34;&gt;☁️ Cloud Transformation: Streamlining Your Digital Sky!&lt;/h1&gt;
+&lt;p&gt;Ever feel like your business&amp;rsquo;s tech setup is a bit&amp;hellip; patchwork? Maybe you&amp;rsquo;ve got email tied to your domain host (yep, they were pretty convincing when you registered your domain), or perhaps all your crucial files are sitting on a local PC. It kind of works, but deep down, you know there&amp;rsquo;s a smoother, smarter way to handle things.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;That&amp;rsquo;s where I come in.&lt;/strong&gt; Using an approach to cloud adoption that&amp;rsquo;s as meticulous as it is effective, I&amp;rsquo;ve developed best-practice, proven setups that transform your IT operations into a model of efficiency.&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;-cloud-transformation-streamlining-your-digital-sky&#34;&gt;☁️ Cloud Transformation: Streamlining Your Digital Sky!&lt;/h1&gt;
 &lt;p&gt;Ever feel like your business&amp;rsquo;s tech setup is a bit&amp;hellip; patchwork? Maybe you&amp;rsquo;ve got email tied to your domain host (yep, they were pretty convincing when you registered your domain), or perhaps all your crucial files are sitting on a local PC. It kind of works, but deep down, you know there&amp;rsquo;s a smoother, smarter way to handle things.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;That&amp;rsquo;s where I come in.&lt;/strong&gt; Using an approach to cloud adoption that&amp;rsquo;s as meticulous as it is effective (let&amp;rsquo;s call it a bit OCD, in the best way possible), I&amp;rsquo;ve developed best-practice, proven setups that transform your IT operations into a model of efficiency.&lt;/p&gt;
-&lt;p&gt;Or, let&amp;rsquo;s say you&amp;rsquo;ve already dipped your toes in the cloud waters with GSuite, but now you&amp;rsquo;re eyeing Microsoft 365. Or maybe it&amp;rsquo;s the other way around. No problem! I specialize in helping you migrate between cloud vendors seamlessly. Think of me as your digital moving buddy, ensuring your transition is smooth, secure, and stress-free.&lt;/p&gt;
-&lt;p&gt;And it&amp;rsquo;s not just about switching platforms. Got a ton of data to move from, say, Dropbox to SharePoint? I&amp;rsquo;ve got your back. I&amp;rsquo;m here to help you shift large quantities of data between cloud providers without breaking a sweat.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;That&amp;rsquo;s where I come in.&lt;/strong&gt; Using an approach to cloud adoption that&amp;rsquo;s as meticulous as it is effective, I&amp;rsquo;ve developed best-practice, proven setups that transform your IT operations into a model of efficiency.&lt;/p&gt;
+&lt;p&gt;Or, let&amp;rsquo;s say you&amp;rsquo;ve already dipped your toes in the cloud waters with Google Workspace, but now you&amp;rsquo;re eyeing Microsoft 365. Or maybe it&amp;rsquo;s the other way around. No problem! I specialize in helping you migrate between cloud vendors.&lt;/p&gt;
+&lt;p&gt;And it&amp;rsquo;s not just about switching platforms. Do you need to shift a load of data from, say, Dropbox to SharePoint? My expertise ensures that large-scale data migrations between cloud providers are executed efficiently and without any disruptions.&lt;/p&gt;
 &lt;p&gt;So, if you&amp;rsquo;re looking to untangle your tech and streamline your digital world, you&amp;rsquo;re in the right place. Let&amp;rsquo;s elevate your business to the cloud in the most efficient way possible!&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Ready to transform your cloud experience?&lt;/strong&gt; Let&amp;rsquo;s chat about your cloud transformation journey and how I can make it as smooth as a clear, blue sky!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ready to transform your cloud experience?&lt;/strong&gt; Let&amp;rsquo;s chat about your cloud transformation journey!&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://wa.me/447413678040&#34;&gt;WhatsApp&lt;/a&gt;
 &lt;a href=&#34;mailto:jude@echo3.co&#34;&gt;jude@echo3.co&lt;/a&gt;&lt;/p&gt;
 </content>
@@ -56,21 +58,23 @@ That&amp;rsquo;s where I come in.</description>
     
     <item>
       <title>[03] CYBERSECURITY &amp; COMPLIANCE</title>
-      <link>https://echo3.co/portfolio/03_cybersecurity/</link>
+      <link>http://localhost:1313/portfolio/03_cybersecurity/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://echo3.co/portfolio/03_cybersecurity/</guid>
-      <description>🔒 Cyber Security and Compliance: Safeguarding Your Digital World! Navigating the complex world of cyber security can feel like trying to solve a puzzle without all the pieces. I’m here to help you put those pieces together. My focus is on setting up your IT systems with the robust Cyber Essentials framework in mind, ensuring your digital assets are well-protected and compliant.
-Here&amp;rsquo;s how I can be your cyber security ally:</description>
+      <guid>http://localhost:1313/portfolio/03_cybersecurity/</guid>
+      <description>&lt;h1 id=&#34;-cyber-security-and-compliance-safeguarding-your-digital-world&#34;&gt;🔒 Cyber Security and Compliance: Safeguarding Your Digital World!&lt;/h1&gt;
+&lt;p&gt;Navigating the complex world of cyber security can feel like trying to solve a puzzle without all the pieces. I’m here to help you put those pieces together. My focus is on setting up your IT systems with the robust &lt;a href=&#34;https://www.ncsc.gov.uk/cyberessentials/overview&#34;&gt;Cyber Essentials&lt;/a&gt; framework in mind, ensuring your digital assets are well-protected and compliant.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Here&amp;rsquo;s how I can be your cyber security ally:&lt;/strong&gt;&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;-cyber-security-and-compliance-safeguarding-your-digital-world&#34;&gt;🔒 Cyber Security and Compliance: Safeguarding Your Digital World!&lt;/h1&gt;
-&lt;p&gt;Navigating the complex world of cyber security can feel like trying to solve a puzzle without all the pieces. I’m here to help you put those pieces together. My focus is on setting up your IT systems with the robust Cyber Essentials framework in mind, ensuring your digital assets are well-protected and compliant.&lt;/p&gt;
+&lt;p&gt;Navigating the complex world of cyber security can feel like trying to solve a puzzle without all the pieces. I’m here to help you put those pieces together. My focus is on setting up your IT systems with the robust &lt;a href=&#34;https://www.ncsc.gov.uk/cyberessentials/overview&#34;&gt;Cyber Essentials&lt;/a&gt; framework in mind, ensuring your digital assets are well-protected and compliant.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Here&amp;rsquo;s how I can be your cyber security ally:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Tailored Cyber Essentials Setup:&lt;/strong&gt; I’ll work with you to tailor your IT systems in alignment with Cyber Essentials requirements. This isn’t about one-size-fits-all solutions; it’s about what works best for your unique business.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Guidance on Certification:&lt;/strong&gt; Looking to get Cyber Essentials certified? I’ve got you covered. Whether it&amp;rsquo;s assisting with self-evaluation questionnaires for the basic level or collaborating with an auditor for the Cyber Essentials Plus certification, I’m here every step of the way.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Guidance on Certification:&lt;/strong&gt; Seeking Cyber Essentials certification? Whether you need assistance with self-assessment questionnaires for the basic level or collaboration with an auditor for Cyber Essentials Plus, I’ll provide the support necessary to ensure successful certification.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Simplified Compliance:&lt;/strong&gt; The world of IT security compliance can be daunting, but I make it simple. I&amp;rsquo;ll guide you through the process, ensuring that you not only understand the steps but also why they&amp;rsquo;re important for your business.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;IT Process Documentation:&lt;/strong&gt; Comprehensive and well-structured IT process documentation is crucial for achieving certifications like Cyber Essentials and ISO 27001. I can create detailed documentation that outlines your IT processes, policies, and procedures. This includes everything from access control and data management to incident response and recovery plans. By ensuring that all necessary documentation is in place, I help you meet the stringent requirements of these certifications, providing a clear roadmap for compliance and ongoing security management.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Getting Cyber Essentials certified isn’t just about ticking boxes; it’s about genuinely safeguarding your business in the digital landscape. And that’s exactly what I aim to help you achieve. Whether you&amp;rsquo;re taking your first steps towards cyber security or looking to enhance your existing measures, I&amp;rsquo;m here to make the process as seamless and stress-free as possible.&lt;/p&gt;
+&lt;p&gt;Getting Cyber Essentials certified isn’t just about ticking boxes; it’s about genuinely safeguarding your business in the digital landscape. And that’s exactly what I aim to help you achieve.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Ready to step up your cyber security game and achieve peace of mind?&lt;/strong&gt; Let’s chat about how I can help you navigate the path to Cyber Essentials certification and beyond!&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://wa.me/447413678040&#34;&gt;WhatsApp&lt;/a&gt;
 &lt;a href=&#34;mailto:jude@echo3.co&#34;&gt;jude@echo3.co&lt;/a&gt;&lt;/p&gt;
@@ -79,11 +83,13 @@ Here&amp;rsquo;s how I can be your cyber security ally:</description>
     
     <item>
       <title>[04] CLOUD SERVICES HUB</title>
-      <link>https://echo3.co/portfolio/04_cloud_services/</link>
+      <link>http://localhost:1313/portfolio/04_cloud_services/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://echo3.co/portfolio/04_cloud_services/</guid>
-      <description>🌐 Cloud Services Hub: Simplifying Your Digital Experience TL;DR: My Cloud Services Hub offers a convenient one-stop solution for all your cloud needs with a single monthly bill. Services include productivity tools like Microsoft 365, Teams, and email signature customization, as well as BitTitan MigrationWiz for easy data transfer. Transform your business with secure and scalable cloud infrastructure solutions, such as transitioning to Microsoft Azure. Additionally, robust web content filtering ensures online safety, and third-party cloud backup services provide a safety net for your data.</description>
+      <guid>http://localhost:1313/portfolio/04_cloud_services/</guid>
+      <description>&lt;h1 id=&#34;-cloud-services-hub-simplifying-your-digital-experience&#34;&gt;🌐 Cloud Services Hub: Simplifying Your Digital Experience&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;TL;DR:&lt;/strong&gt; My Cloud Services Hub offers a convenient one-stop solution for all your cloud needs with a single monthly bill. Services include productivity tools like Microsoft 365, Teams, and email signature customization, as well as BitTitan MigrationWiz for easy data transfer. Transform your business with secure and scalable cloud infrastructure solutions, such as transitioning to Microsoft Azure. Additionally, robust web content filtering ensures online safety, and third-party cloud backup services provide a safety net for your data. Enjoy the convenience, customization, and expert support that come with these comprehensive digital solutions.&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;-cloud-services-hub-simplifying-your-digital-experience&#34;&gt;🌐 Cloud Services Hub: Simplifying Your Digital Experience&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;TL;DR:&lt;/strong&gt; My Cloud Services Hub offers a convenient one-stop solution for all your cloud needs with a single monthly bill. Services include productivity tools like Microsoft 365, Teams, and email signature customization, as well as BitTitan MigrationWiz for easy data transfer. Transform your business with secure and scalable cloud infrastructure solutions, such as transitioning to Microsoft Azure. Additionally, robust web content filtering ensures online safety, and third-party cloud backup services provide a safety net for your data. Enjoy the convenience, customization, and expert support that come with these comprehensive digital solutions.&lt;/p&gt;
@@ -120,13 +126,18 @@ Here&amp;rsquo;s how I can be your cyber security ally:</description>
     
     <item>
       <title>[05] SYSTEM ADMIN</title>
-      <link>https://echo3.co/portfolio/05_sysadmin/</link>
+      <link>http://localhost:1313/portfolio/05_sysadmin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://echo3.co/portfolio/05_sysadmin/</guid>
-      <description>System Admin: Your Tech Command Center Welcome to your very own Tech Command Center! As your dedicated System Admin, here&amp;rsquo;s what I bring to the table:
-Seamless Onboarding &amp;amp; Offboarding: I&amp;rsquo;ll manage the arrival of new team members and the departure of others, ensuring a smooth transition in both cases. Your team&amp;rsquo;s digital setup will be ready to go from day one, and securely wrapped up when they leave.
-Vigilant Security Monitoring: I&amp;rsquo;ll keep an eye on security alerts like risky sign-ins, acting as your first line of defense against potential threats.</description>
+      <guid>http://localhost:1313/portfolio/05_sysadmin/</guid>
+      <description>&lt;h1 id=&#34;system-admin-your-tech-command-center&#34;&gt;System Admin: Your Tech Command Center&lt;/h1&gt;
+&lt;p&gt;Welcome to your very own Tech Command Center! As your dedicated System Admin, here&amp;rsquo;s what I bring to the table:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Seamless Onboarding &amp;amp; Offboarding:&lt;/strong&gt; I&amp;rsquo;ll manage the arrival of new team members and the departure of others, ensuring a smooth transition in both cases. Your team&amp;rsquo;s digital setup will be ready to go from day one, and securely wrapped up when they leave.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Vigilant Security Monitoring:&lt;/strong&gt; I&amp;rsquo;ll keep an eye on security alerts like risky sign-ins, acting as your first line of defense against potential threats. Your digital security is my top priority.&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;system-admin-your-tech-command-center&#34;&gt;System Admin: Your Tech Command Center&lt;/h1&gt;
 &lt;p&gt;Welcome to your very own Tech Command Center! As your dedicated System Admin, here&amp;rsquo;s what I bring to the table:&lt;/p&gt;
 &lt;ol&gt;
@@ -154,13 +165,18 @@ Vigilant Security Monitoring: I&amp;rsquo;ll keep an eye on security alerts like
     
     <item>
       <title>[06] NETWORKING</title>
-      <link>https://echo3.co/portfolio/06_networking/</link>
+      <link>http://localhost:1313/portfolio/06_networking/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://echo3.co/portfolio/06_networking/</guid>
-      <description>🌐 Networking: Your Connection to a Smoother Operation In the world of business, a reliable network is like the veins of your operation, keeping everything connected and running smoothly. Here&amp;rsquo;s what I offer in networking services:
-Set Up and Installation: Whether it&amp;rsquo;s wired networks for steadfast connections or wireless for flexibility and ease, I&amp;rsquo;ve got the expertise to set up your network infrastructure from the ground up.
-Firewall Implementation: I&amp;rsquo;ll ensure your network&amp;rsquo;s first line of defense is rock-solid, protecting your digital assets from external threats.</description>
+      <guid>http://localhost:1313/portfolio/06_networking/</guid>
+      <description>&lt;h1 id=&#34;-networking-your-connection-to-a-smoother-operation&#34;&gt;🌐 Networking: Your Connection to a Smoother Operation&lt;/h1&gt;
+&lt;p&gt;In the world of business, a reliable network is like the veins of your operation, keeping everything connected and running smoothly. Here&amp;rsquo;s what I offer in networking services:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Set Up and Installation:&lt;/strong&gt; Whether it&amp;rsquo;s wired networks for steadfast connections or wireless for flexibility and ease, I&amp;rsquo;ve got the expertise to set up your network infrastructure from the ground up.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Firewall Implementation:&lt;/strong&gt; I&amp;rsquo;ll ensure your network&amp;rsquo;s first line of defense is rock-solid, protecting your digital assets from external threats.&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;-networking-your-connection-to-a-smoother-operation&#34;&gt;🌐 Networking: Your Connection to a Smoother Operation&lt;/h1&gt;
 &lt;p&gt;In the world of business, a reliable network is like the veins of your operation, keeping everything connected and running smoothly. Here&amp;rsquo;s what I offer in networking services:&lt;/p&gt;
 &lt;ul&gt;
@@ -183,13 +199,18 @@ Firewall Implementation: I&amp;rsquo;ll ensure your network&amp;rsquo;s first li
     
     <item>
       <title>[07] WEB &amp; CONTENT MANAGEMENT</title>
-      <link>https://echo3.co/portfolio/07_web_and_content_management/</link>
+      <link>http://localhost:1313/portfolio/07_web_and_content_management/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://echo3.co/portfolio/07_web_and_content_management/</guid>
-      <description>🌟 Web &amp;amp; Content Management: Tailoring Your Digital Space As your web and content manager, I bring a creative touch and technical know-how to website design. My ability lies in skillfully using and adapting templates across platforms like Wix, WordPress, or Hugo (for static sites), to create visually appealing and user-friendly websites.
-Template Transformation: I’ll take a template and turn it into a masterpiece that perfectly reflects your brand.
-Content Development and Photography: Beyond just layout and design, I can assist in crafting compelling website content and sourcing the right imagery.</description>
+      <guid>http://localhost:1313/portfolio/07_web_and_content_management/</guid>
+      <description>&lt;h1 id=&#34;-web--content-management-tailoring-your-digital-space&#34;&gt;🌟 Web &amp;amp; Content Management: Tailoring Your Digital Space&lt;/h1&gt;
+&lt;p&gt;As your web and content manager, I bring a creative touch and technical know-how to website design. My ability lies in skillfully using and adapting templates across platforms like Wix, WordPress, or Hugo (for static sites), to create visually appealing and user-friendly websites.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Template Transformation:&lt;/strong&gt; I’ll take a template and turn it into a masterpiece that perfectly reflects your brand.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Content Development and Photography:&lt;/strong&gt; Beyond just layout and design, I can assist in crafting compelling website content and sourcing the right imagery. If needed, I can even capture original photographs to add a unique, personal touch to your site.&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;-web--content-management-tailoring-your-digital-space&#34;&gt;🌟 Web &amp;amp; Content Management: Tailoring Your Digital Space&lt;/h1&gt;
 &lt;p&gt;As your web and content manager, I bring a creative touch and technical know-how to website design. My ability lies in skillfully using and adapting templates across platforms like Wix, WordPress, or Hugo (for static sites), to create visually appealing and user-friendly websites.&lt;/p&gt;
 &lt;ul&gt;
@@ -205,9 +226,10 @@ Content Development and Photography: Beyond just layout and design, I can assist
 &lt;/ul&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Example sites I&amp;rsquo;ve deployed and manage:&lt;/strong&gt; &lt;br&gt;
-&lt;a href=&#34;https://www.rushmonhomes.co.uk&#34;&gt;Rushmon Homes (a Wix Editor X site)&lt;/a&gt;&lt;br&gt;
-&lt;a href=&#34;https://silburyfinance.com&#34;&gt;Silbury Finance (a Wix Editor X site)&lt;/a&gt;&lt;br&gt;
-&lt;a href=&#34;https://www.intertypestudio.com&#34;&gt;Intertype Studio (a Wordpress site)&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&#34;https://www.rushmonhomes.co.uk&#34;&gt;Rushmon Homes&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://silburyfinance.com&#34;&gt;Silbury Finance&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://www.intertypestudio.com&#34;&gt;Intertype Studio&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://quantumdf.com&#34;&gt;Quantum Development Finance&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;a href=&#34;https://wa.me/447413678040&#34;&gt;WhatsApp&lt;/a&gt;
 &lt;a href=&#34;mailto:jude@echo3.co&#34;&gt;jude@echo3.co&lt;/a&gt;&lt;/p&gt;
@@ -216,20 +238,26 @@ Content Development and Photography: Beyond just layout and design, I can assist
     
     <item>
       <title>[08] PROCESS STREAMLINING</title>
-      <link>https://echo3.co/portfolio/08_process_streamlining/</link>
+      <link>http://localhost:1313/portfolio/08_process_streamlining/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://echo3.co/portfolio/08_process_streamlining/</guid>
-      <description>🔄 Streamlining Processes: Your Path to Smarter Workflows Hey there! I&amp;rsquo;m all about making things easier and smarter in your business. Sometimes, it&amp;rsquo;s easy to get stuck in the &amp;lsquo;we&amp;rsquo;ve always done it this way&amp;rsquo; mindset. That’s where I come in – think of me as your efficiency detective, here to spot those time-consuming habits and give them a modern twist.
-A Fresh Take on Old Habits: I&amp;rsquo;ll dive into your current routines and find those sneaky inefficiencies.</description>
-      <content>&lt;h1 id=&#34;-streamlining-processes-your-path-to-smarter-workflows&#34;&gt;🔄 Streamlining Processes: Your Path to Smarter Workflows&lt;/h1&gt;
-&lt;p&gt;Hey there! I&amp;rsquo;m all about making things easier and smarter in your business. Sometimes, it&amp;rsquo;s easy to get stuck in the &amp;lsquo;we&amp;rsquo;ve always done it this way&amp;rsquo; mindset. That’s where I come in – think of me as your efficiency detective, here to spot those time-consuming habits and give them a modern twist.&lt;/p&gt;
+      <guid>http://localhost:1313/portfolio/08_process_streamlining/</guid>
+      <description>&lt;h1 id=&#34;-streamlining-processes-your-path-to-smarter-workflows&#34;&gt;🔄 Streamlining Processes: Your Path to Smarter Workflows&lt;/h1&gt;
+&lt;p&gt;I’m dedicated to helping you make your business operations more efficient and effective. It’s easy to fall into the routine of doing things the way they’ve always been done, but that’s where I come in. Think of me as your efficiency expert, here to identify time-consuming habits and introduce modern solutions.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;A Fresh Take on Old Habits:&lt;/strong&gt; I&amp;rsquo;ll dive into your current routines and find those sneaky inefficiencies.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Tech to the Rescue:&lt;/strong&gt; By bringing in just the right tech tools, I&amp;rsquo;ll transform how things are done.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Automate and Innovate:&lt;/strong&gt; With neat tricks like MS Flow or Zapier, and maybe a dash of custom coding, I’ll turn repetitive tasks into automated, smooth operations.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A Fresh Perspective:&lt;/strong&gt; I’ll review your current workflows to uncover hidden inefficiencies.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Technology Solutions:&lt;/strong&gt; I’ll implement the right technological tools to enhance your processes.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Automation and Innovation:&lt;/strong&gt; Using tools like MS Flow or Zapier, and perhaps some custom coding, I’ll automate repetitive tasks to create seamless operations.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Let&amp;rsquo;s make your business processes slick, quick, and a whole lot more fun. Ready to revamp the way you work? 🚀&lt;/p&gt;
+&lt;p&gt;Let’s work together to make your business processes more streamlined, efficient, and enjoyable. Ready to transform the way you work? 🚀&lt;/p&gt;</description>
+      <content>&lt;h1 id=&#34;-streamlining-processes-your-path-to-smarter-workflows&#34;&gt;🔄 Streamlining Processes: Your Path to Smarter Workflows&lt;/h1&gt;
+&lt;p&gt;I’m dedicated to helping you make your business operations more efficient and effective. It’s easy to fall into the routine of doing things the way they’ve always been done, but that’s where I come in. Think of me as your efficiency expert, here to identify time-consuming habits and introduce modern solutions.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;A Fresh Perspective:&lt;/strong&gt; I’ll review your current workflows to uncover hidden inefficiencies.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Technology Solutions:&lt;/strong&gt; I’ll implement the right technological tools to enhance your processes.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Automation and Innovation:&lt;/strong&gt; Using tools like MS Flow or Zapier, and perhaps some custom coding, I’ll automate repetitive tasks to create seamless operations.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Let’s work together to make your business processes more streamlined, efficient, and enjoyable. Ready to transform the way you work? 🚀&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://wa.me/447413678040&#34;&gt;WhatsApp&lt;/a&gt;
 &lt;a href=&#34;mailto:jude@echo3.co&#34;&gt;jude@echo3.co&lt;/a&gt;&lt;/p&gt;
 </content>
@@ -237,13 +265,18 @@ A Fresh Take on Old Habits: I&amp;rsquo;ll dive into your current routines and f
     
     <item>
       <title>[09] PROJECT MANAGEMENT</title>
-      <link>https://echo3.co/portfolio/09_project_management/</link>
+      <link>http://localhost:1313/portfolio/09_project_management/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://echo3.co/portfolio/09_project_management/</guid>
-      <description>📋 Project Management: Traditional Approach for Modern Success
-Need a hand in managing your projects? I&amp;rsquo;m available for small-scale project management, bringing a traditional yet effective approach.
-Structured and Steady: I use tools like MS Project and Smartsheets, depending on collaboration preferences, to keep your projects on track. Think of it as a well-planned road trip with a clear map. Focused Management: My style aligns with the traditional (sometimes called &amp;lsquo;waterfall&amp;rsquo;) approach, which means we&amp;rsquo;ll plan things out step-by-step, making sure every detail is accounted for.</description>
+      <guid>http://localhost:1313/portfolio/09_project_management/</guid>
+      <description>&lt;p&gt;📋 &lt;strong&gt;Project Management: Traditional Approach for Modern Success&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Need a hand in managing your projects? I&amp;rsquo;m available for small-scale project management, bringing a traditional yet effective approach.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Structured and Steady:&lt;/strong&gt; I use tools like MS Project and Smartsheets, depending on collaboration preferences, to keep your projects on track. Think of it as a well-planned road trip with a clear map.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Focused Management:&lt;/strong&gt; My style aligns with the traditional (sometimes called &amp;lsquo;waterfall&amp;rsquo;) approach, which means we&amp;rsquo;ll plan things out step-by-step, making sure every detail is accounted for.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;No-Nonsense Execution:&lt;/strong&gt; While I appreciate the fluidity of methodologies like Agile and Kanban, I find a structured approach brings clarity and predictability, which works well for most projects.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ready to see your projects managed with precision and care? Let’s get started!&lt;/p&gt;</description>
       <content>&lt;p&gt;📋 &lt;strong&gt;Project Management: Traditional Approach for Modern Success&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Need a hand in managing your projects? I&amp;rsquo;m available for small-scale project management, bringing a traditional yet effective approach.&lt;/p&gt;
 &lt;ul&gt;
@@ -259,11 +292,14 @@ Structured and Steady: I use tools like MS Project and Smartsheets, depending on
     
     <item>
       <title>[10] IT TRAINING</title>
-      <link>https://echo3.co/portfolio/10_training/</link>
+      <link>http://localhost:1313/portfolio/10_training/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://echo3.co/portfolio/10_training/</guid>
-      <description>Customized One-on-One Training: Your Path to Tech Proficiency Personalized Tech Coaching: My forte is in guiding those who find technology challenging, helping them become adept and self-assured in its use. The digital world is vast, filled with various software packages, mobile and desktop apps, and web-based SaaS platforms. While some, like me, can quickly adapt to new software, I understand that not everyone shares this ease. Many people, talented in other areas, might find technology a bit daunting, especially when it&amp;rsquo;s an essential part of their job.</description>
+      <guid>http://localhost:1313/portfolio/10_training/</guid>
+      <description>&lt;h1 id=&#34;customized-one-on-one-training-your-path-to-tech-proficiency&#34;&gt;Customized One-on-One Training: Your Path to Tech Proficiency&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Personalized Tech Coaching:&lt;/strong&gt; My forte is in guiding those who find technology challenging, helping them become adept and self-assured in its use. The digital world is vast, filled with various software packages, mobile and desktop apps, and web-based SaaS platforms. While some, like me, can quickly adapt to new software, I understand that not everyone shares this ease. Many people, talented in other areas, might find technology a bit daunting, especially when it&amp;rsquo;s an essential part of their job. My strength lies in rapidly absorbing new tech knowledge and effectively passing it on to others.&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;customized-one-on-one-training-your-path-to-tech-proficiency&#34;&gt;Customized One-on-One Training: Your Path to Tech Proficiency&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -283,13 +319,18 @@ Structured and Steady: I use tools like MS Project and Smartsheets, depending on
     
     <item>
       <title>[11] DASHBOARDING</title>
-      <link>https://echo3.co/portfolio/11_dashboards/</link>
+      <link>http://localhost:1313/portfolio/11_dashboards/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://echo3.co/portfolio/11_dashboards/</guid>
-      <description>Dashboarding: Unifying Your Data for Clear Insights I&amp;rsquo;m here to help you gather and visualize your data from various sources, creating clear and insightful dashboards.
-Data Aggregation: I can pull together data from multiple sources. Whether it&amp;rsquo;s sales figures, customer metrics, or operational stats, I&amp;rsquo;ll compile it all into one accessible place.
-Power BI: For those in the Microsoft ecosystem, I can craft bespoke, interactive dashboards in Power BI. This tool not only brings your data to life but also allows you to discover trends and insights that can drive strategic decisions.</description>
+      <guid>http://localhost:1313/portfolio/11_dashboards/</guid>
+      <description>&lt;h1 id=&#34;dashboarding-unifying-your-data-for-clear-insights&#34;&gt;Dashboarding: Unifying Your Data for Clear Insights&lt;/h1&gt;
+&lt;p&gt;I&amp;rsquo;m here to help you gather and visualize your data from various sources, creating clear and insightful dashboards.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Data Aggregation:&lt;/strong&gt; I can pull together data from multiple sources. Whether it&amp;rsquo;s sales figures, customer metrics, or operational stats, I&amp;rsquo;ll compile it all into one accessible place.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Power BI:&lt;/strong&gt; For those in the Microsoft ecosystem, I can craft bespoke, interactive dashboards in Power BI. This tool not only brings your data to life but also allows you to discover trends and insights that can drive strategic decisions.&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;dashboarding-unifying-your-data-for-clear-insights&#34;&gt;Dashboarding: Unifying Your Data for Clear Insights&lt;/h1&gt;
 &lt;p&gt;I&amp;rsquo;m here to help you gather and visualize your data from various sources, creating clear and insightful dashboards.&lt;/p&gt;
 &lt;ul&gt;
@@ -313,13 +354,18 @@ Check out &lt;a href=&#34;https://alibrashipping.com/data/&#34;&gt;Alibra Shippi
     
     <item>
       <title>[12] SETUP &amp; INSTALLATION</title>
-      <link>https://echo3.co/portfolio/12_setup_installation/</link>
+      <link>http://localhost:1313/portfolio/12_setup_installation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://echo3.co/portfolio/12_setup_installation/</guid>
-      <description>🛠️ Hands-On Services: Practical Tech Installations Alongside my digital expertise, I also bring a practical touch to physical tech installations.
-Meeting Room Setup: For conferencing, my preference is for Logitech equipment. It strikes a good balance between price and performance and is compatible with all mainstream platforms such as Meet, Teams and Zoom. I can wall mount TVs, cameras and neatly cable all necessary equipment.
-Security Installations: My services extend to setting up small-scale security solutions.</description>
+      <guid>http://localhost:1313/portfolio/12_setup_installation/</guid>
+      <description>&lt;h1 id=&#34;-hands-on-services-practical-tech-installations&#34;&gt;🛠️ Hands-On Services: Practical Tech Installations&lt;/h1&gt;
+&lt;p&gt;Alongside my digital expertise, I also bring a practical touch to physical tech installations.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Meeting Room Setup:&lt;/strong&gt; For conferencing, my preference is for Logitech equipment. It strikes a good balance between price and performance and is compatible with all mainstream platforms such as Meet, Teams and Zoom. I can wall mount TVs, cameras and neatly cable all necessary equipment.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Security Installations:&lt;/strong&gt; My services extend to setting up small-scale security solutions. This includes the installation of smart doorbells and network video cameras.&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;-hands-on-services-practical-tech-installations&#34;&gt;🛠️ Hands-On Services: Practical Tech Installations&lt;/h1&gt;
 &lt;p&gt;Alongside my digital expertise, I also bring a practical touch to physical tech installations.&lt;/p&gt;
 &lt;ul&gt;
@@ -344,13 +390,18 @@ Security Installations: My services extend to setting up small-scale security so
     
     <item>
       <title>[13] VoIP</title>
-      <link>https://echo3.co/portfolio/13_voip/</link>
+      <link>http://localhost:1313/portfolio/13_voip/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://echo3.co/portfolio/13_voip/</guid>
-      <description>📞 VoIP: Expertly Setting Up and Managing 3CX Telephony Systems I offer comprehensive setup and management services centered around the versatile and efficient 3CX system. Here&amp;rsquo;s why 3CX is an excellent choice for your business:
-Advanced Call Management: 3CX provides sophisticated call handling capabilities, including routing, queuing, and recording, all through a user-friendly interface. This elevates your ability to manage customer interactions and business communications effectively.
-Cost-Effective Solution: Opting for 3CX can lead to significant savings.</description>
+      <guid>http://localhost:1313/portfolio/13_voip/</guid>
+      <description>&lt;h1 id=&#34;-voip-expertly-setting-up-and-managing-3cx-telephony-systems&#34;&gt;📞 VoIP: Expertly Setting Up and Managing 3CX Telephony Systems&lt;/h1&gt;
+&lt;p&gt;I offer comprehensive setup and management services centered around the versatile and efficient 3CX system. Here&amp;rsquo;s why 3CX is an excellent choice for your business:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Advanced Call Management:&lt;/strong&gt; 3CX provides sophisticated call handling capabilities, including routing, queuing, and recording, all through a user-friendly interface. This elevates your ability to manage customer interactions and business communications effectively.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Cost-Effective Solution:&lt;/strong&gt; Opting for 3CX can lead to significant savings. It&amp;rsquo;s a software-based system compatible with existing hardware, reducing setup costs. Plus, with internet-based calls, you can enjoy reduced call charges.&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;-voip-expertly-setting-up-and-managing-3cx-telephony-systems&#34;&gt;📞 VoIP: Expertly Setting Up and Managing 3CX Telephony Systems&lt;/h1&gt;
 &lt;p&gt;I offer comprehensive setup and management services centered around the versatile and efficient 3CX system. Here&amp;rsquo;s why 3CX is an excellent choice for your business:&lt;/p&gt;
 &lt;ul&gt;
@@ -381,12 +432,15 @@ Cost-Effective Solution: Opting for 3CX can lead to significant savings.</descri
     
     <item>
       <title>[14] IT ASSET TRACKING</title>
-      <link>https://echo3.co/portfolio/14_asset_tracking/</link>
+      <link>http://localhost:1313/portfolio/14_asset_tracking/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://echo3.co/portfolio/14_asset_tracking/</guid>
-      <description>🛠️ IT Asset Tracking: Keeping Tabs on Your Technology I provide IT asset tracking services to ensure you always know where your technology is and how it&amp;rsquo;s being used. Here&amp;rsquo;s how I can help:
-Inventory Management: I&amp;rsquo;ll create a detailed inventory of all your IT assets, including hardware, software, and any other technology-related equipment. This inventory will be your go-to resource for understanding what you have, where it is, and its current status.</description>
+      <guid>http://localhost:1313/portfolio/14_asset_tracking/</guid>
+      <description>&lt;h1 id=&#34;-it-asset-tracking-keeping-tabs-on-your-technology&#34;&gt;🛠️ IT Asset Tracking: Keeping Tabs on Your Technology&lt;/h1&gt;
+&lt;p&gt;I provide IT asset tracking services to ensure you always know where your technology is and how it&amp;rsquo;s being used. Here&amp;rsquo;s how I can help:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Inventory Management:&lt;/strong&gt; I&amp;rsquo;ll create a detailed inventory of all your IT assets, including hardware, software, and any other technology-related equipment. This inventory will be your go-to resource for understanding what you have, where it is, and its current status.&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;-it-asset-tracking-keeping-tabs-on-your-technology&#34;&gt;🛠️ IT Asset Tracking: Keeping Tabs on Your Technology&lt;/h1&gt;
 &lt;p&gt;I provide IT asset tracking services to ensure you always know where your technology is and how it&amp;rsquo;s being used. Here&amp;rsquo;s how I can help:&lt;/p&gt;
 &lt;ul&gt;
@@ -411,12 +465,15 @@ Inventory Management: I&amp;rsquo;ll create a detailed inventory of all your IT 
     
     <item>
       <title>[15] MUSIC PRODUCTION</title>
-      <link>https://echo3.co/portfolio/15_music_production/</link>
+      <link>http://localhost:1313/portfolio/15_music_production/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://echo3.co/portfolio/15_music_production/</guid>
-      <description>🎶 Music Production: Crafting Your Sound Welcome to my world of music production, where creativity meets technology to create audio magic. Whether you&amp;rsquo;re looking for personalized songwriting or professional audio editing, I&amp;rsquo;ve got you covered.
-State-of-the-Art Tools: I use a blend of modern digital software like Logic and Presonus Studio One, complemented by the warm textures of outboard analogue gear from Drawmer. To add that unique analogue warmth to my productions, I also incorporate a Revox B77 reel-to-reel tape machine.</description>
+      <guid>http://localhost:1313/portfolio/15_music_production/</guid>
+      <description>&lt;h1 id=&#34;-music-production-crafting-your-sound&#34;&gt;🎶 Music Production: Crafting Your Sound&lt;/h1&gt;
+&lt;p&gt;Welcome to my world of music production, where creativity meets technology to create audio magic. Whether you&amp;rsquo;re looking for personalized songwriting or professional audio editing, I&amp;rsquo;ve got you covered.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;State-of-the-Art Tools:&lt;/strong&gt; I use a blend of modern digital software like Logic and Presonus Studio One, complemented by the warm textures of outboard analogue gear from Drawmer. To add that unique analogue warmth to my productions, I also incorporate a Revox B77 reel-to-reel tape machine.&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;-music-production-crafting-your-sound&#34;&gt;🎶 Music Production: Crafting Your Sound&lt;/h1&gt;
 &lt;p&gt;Welcome to my world of music production, where creativity meets technology to create audio magic. Whether you&amp;rsquo;re looking for personalized songwriting or professional audio editing, I&amp;rsquo;ve got you covered.&lt;/p&gt;
 &lt;ul&gt;
@@ -441,12 +498,15 @@ State-of-the-Art Tools: I use a blend of modern digital software like Logic and 
     
     <item>
       <title>[16] EVERYTHING ELSE</title>
-      <link>https://echo3.co/portfolio/16_everything_else/</link>
+      <link>http://localhost:1313/portfolio/16_everything_else/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://echo3.co/portfolio/16_everything_else/</guid>
-      <description>🤝 &amp;ldquo;Everything Else&amp;rdquo;: Your Go-To for Impartial Opinion and Solutions Sometimes you just need a fresh set of eyes, or an impartial 3rd party to look at a situation or problem you might face during the course of running a business. I offer unbiased opinions, task assistance, and thoughtful solutions for those odd or unexpected challenges you might face.
-Objective Insights: Whether it&amp;rsquo;s interpreting an official-looking email or navigating a complex situation, I bring an impartial perspective to help you understand and respond effectively.</description>
+      <guid>http://localhost:1313/portfolio/16_everything_else/</guid>
+      <description>&lt;h1 id=&#34;-everything-else-your-go-to-for-impartial-opinion-and-solutions&#34;&gt;🤝 &amp;ldquo;Everything Else&amp;rdquo;: Your Go-To for Impartial Opinion and Solutions&lt;/h1&gt;
+&lt;p&gt;Sometimes you just need a fresh set of eyes, or an impartial 3rd party to look at a situation or problem you might face during the course of running a business. I offer unbiased opinions, task assistance, and thoughtful solutions for those odd or unexpected challenges you might face.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Objective Insights:&lt;/strong&gt; Whether it&amp;rsquo;s interpreting an official-looking email or navigating a complex situation, I bring an impartial perspective to help you understand and respond effectively.&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;-everything-else-your-go-to-for-impartial-opinion-and-solutions&#34;&gt;🤝 &amp;ldquo;Everything Else&amp;rdquo;: Your Go-To for Impartial Opinion and Solutions&lt;/h1&gt;
 &lt;p&gt;Sometimes you just need a fresh set of eyes, or an impartial 3rd party to look at a situation or problem you might face during the course of running a business. I offer unbiased opinions, task assistance, and thoughtful solutions for those odd or unexpected challenges you might face.&lt;/p&gt;
 &lt;ul&gt;
