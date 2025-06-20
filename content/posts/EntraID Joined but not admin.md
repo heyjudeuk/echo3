@@ -24,13 +24,8 @@ The root cause is nearly always Entra ID device settings or Intune policies that
 ✅ Check This Setting:
 Go to Entra ID Admin Centre → Devices → Device Settings
 
-Ensure this is enabled:
+Under "Local administrator settings", ensure 'Registering user is added as local administrator on the device during Microsoft Entra join' is set to All and 'Global administrator role is added as local administrator on the device during Microsoft Entra join' is set to Yes (this is useful).
 
-"Additional local administrators on Azure AD joined devices"
-
-✔️ User performing the Azure AD join → should be allowed
-
-❌ If this is blank, users won’t be added to the local Administrators group
 
 ![Screen shot of EntraID Entra join settings under devices](/20250620/entra-id-join-as-admin.png)
 

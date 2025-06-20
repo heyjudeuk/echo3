@@ -25,10 +25,7 @@
 &lt;p&gt;The root cause is nearly always Entra ID device settings or Intune policies that block or fail to assign local admin rights. Specifically:&lt;/p&gt;
 &lt;p&gt;✅ Check This Setting:
 Go to Entra ID Admin Centre → Devices → Device Settings&lt;/p&gt;
-&lt;p&gt;Ensure this is enabled:&lt;/p&gt;
-&lt;p&gt;&amp;ldquo;Additional local administrators on Azure AD joined devices&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;✔️ User performing the Azure AD join → should be allowed&lt;/p&gt;
-&lt;p&gt;❌ If this is blank, users won’t be added to the local Administrators group&lt;/p&gt;
+&lt;p&gt;Under &amp;ldquo;Local administrator settings&amp;rdquo;, ensure &amp;lsquo;Registering user is added as local administrator on the device during Microsoft Entra join&amp;rsquo; is set to All and &amp;lsquo;Global administrator role is added as local administrator on the device during Microsoft Entra join&amp;rsquo; is set to Yes (this is useful).&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://echo3.co/20250620/entra-id-join-as-admin.png&#34; alt=&#34;Screen shot of EntraID Entra join settings under devices&#34;&gt;&lt;/p&gt;
 &lt;h4 id=&#34;-how-to-fix-it&#34;&gt;🛠️ How to Fix It&lt;/h4&gt;
 &lt;p&gt;If you already have a device in this broken state — i.e. no admin users — you have a few options.&lt;/p&gt;
