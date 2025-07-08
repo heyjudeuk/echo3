@@ -6,7 +6,72 @@
     <description>Recent content in Posts on echo3.co</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 20 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://echo3.co/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 07 Jul 2025 14:00:00 +0100</lastBuildDate><atom:link href="https://echo3.co/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Stop Spam Meeting Invites from Cluttering Your Outlook Calendar</title>
+      <link>https://echo3.co/posts/how-to-stop-spam-meeting-invites/</link>
+      <pubDate>Mon, 07 Jul 2025 14:00:00 +0100</pubDate>
+      
+      <guid>https://echo3.co/posts/how-to-stop-spam-meeting-invites/</guid>
+      <description>&lt;p&gt;If you’ve been getting spammy meeting invitations appearing in your Outlook calendar, you’re not alone.&lt;/p&gt;
+&lt;p&gt;This is a growing nuisance: spammers have discovered that sending calendar invitations can bypass traditional email filters and force their junk straight onto your schedule. Worse, if you decline these invitations, you confirm your email address is valid, potentially inviting more spam.&lt;/p&gt;
+&lt;p&gt;So how do you prevent this in Microsoft 365? It’s surprisingly tricky—Outlook’s default behaviour is to automatically add new meeting requests as tentative appointments, whether you accept them or not. For most people, this feature was meant to be helpful. But recently, it has become a liability.&lt;/p&gt;</description>
+      <content>&lt;p&gt;If you’ve been getting spammy meeting invitations appearing in your Outlook calendar, you’re not alone.&lt;/p&gt;
+&lt;p&gt;This is a growing nuisance: spammers have discovered that sending calendar invitations can bypass traditional email filters and force their junk straight onto your schedule. Worse, if you decline these invitations, you confirm your email address is valid, potentially inviting more spam.&lt;/p&gt;
+&lt;p&gt;So how do you prevent this in Microsoft 365? It’s surprisingly tricky—Outlook’s default behaviour is to automatically add new meeting requests as tentative appointments, whether you accept them or not. For most people, this feature was meant to be helpful. But recently, it has become a liability.&lt;/p&gt;
+&lt;p&gt;Let’s look at why this happens, what you can (and can’t) configure, and the cleanest way to stop it.&lt;/p&gt;
+&lt;h2 id=&#34;why-do-invitations-automatically-appear-in-my-calendar&#34;&gt;Why Do Invitations Automatically Appear in My Calendar?&lt;/h2&gt;
+&lt;p&gt;This behaviour comes from Outlook’s &lt;code&gt;AutomateProcessing&lt;/code&gt; setting. In simple terms:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;AutoUpdate&lt;/strong&gt; (the default) means new meeting requests create tentative appointments in your calendar.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AutoAccept&lt;/strong&gt; means the system will automatically accept or decline based on availability (mostly used for resource mailboxes like meeting rooms).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;None&lt;/strong&gt; disables automatic processing entirely, leaving the invitations as emails you must accept manually.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Unfortunately, there is no separate toggle just to turn off tentative entries for normal user mailboxes—Microsoft never implemented that. You either get automatic processing (and auto-added tentative meetings) or you don’t.&lt;/p&gt;
+&lt;h2 id=&#34;can-i-turn-off-auto-adding-invitations-in-outlook-settings&#34;&gt;Can I Turn Off Auto-Adding Invitations in Outlook Settings?&lt;/h2&gt;
+&lt;p&gt;In classic Outlook and older versions of Outlook Web App (OWA), there used to be a checkbox called “Automatically add invitations to my calendar.”&lt;/p&gt;
+&lt;p&gt;However, in the modern Outlook on the web and the “New Outlook” experience, this option often no longer appears in settings.&lt;/p&gt;
+&lt;p&gt;This has led many administrators and users to assume it’s impossible to change, but the good news is that you can still disable it via PowerShell.&lt;/p&gt;
+&lt;h2 id=&#34;the-solution-disabling-automatic-processing-via-powershell&#34;&gt;The Solution: Disabling Automatic Processing via PowerShell&lt;/h2&gt;
+&lt;p&gt;If you’re an Office 365 administrator, you can run a simple command to stop spam invites from appearing in calendars automatically. Here’s how:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Connect to Exchange Online PowerShell&lt;/strong&gt;
+Open PowerShell and run:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Connect-ExchangeOnline -UserPrincipalName youradmin@yourdomain.com
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Disable automatic processing for the user mailbox&lt;/strong&gt;
+Replace &lt;code&gt;user@yourdomain.com&lt;/code&gt; with the affected mailbox:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Set-CalendarProcessing -Identity user@yourdomain.com -AutomateProcessing None
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Verify&lt;/strong&gt;
+Run:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Get-CalendarProcessing -Identity user@yourdomain.com | fl AutomateProcessing
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You should see:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;AutomateProcessing : None
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Disconnect your session&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Disconnect-ExchangeOnline
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;what-changes-when-you-disable-automateprocessing&#34;&gt;What Changes When You Disable AutomateProcessing?&lt;/h2&gt;
+&lt;p&gt;When you set &lt;code&gt;AutomateProcessing&lt;/code&gt; to &lt;code&gt;None&lt;/code&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;No more tentative appointments—meeting invites stay as emails until the user accepts them.&lt;/li&gt;
+&lt;li&gt;No auto-accept or decline—the user decides.&lt;/li&gt;
+&lt;li&gt;No automatic updates or cancellations—the user must process all meeting changes manually.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This is the trade-off: you gain control over what goes on the calendar, but you lose automatic updates to existing events.&lt;/p&gt;
+&lt;h2 id=&#34;why-doesnt-microsoft-just-let-us-turn-off-tentative-entries&#34;&gt;Why Doesn’t Microsoft Just Let Us Turn Off Tentative Entries?&lt;/h2&gt;
+&lt;p&gt;This is a common frustration. The short answer is: historical design decisions. The “auto-tentative” feature was meant to help users avoid missing meetings. Over time, Microsoft has never split this into a separate toggle for user mailboxes. If you want to avoid tentative spam, disabling &lt;code&gt;AutomateProcessing&lt;/code&gt; entirely remains the only supported method.&lt;/p&gt;
+&lt;h2 id=&#34;final-thoughts&#34;&gt;Final Thoughts&lt;/h2&gt;
+&lt;p&gt;If your users are seeing a flood of calendar spam, this simple PowerShell command can bring relief. Just be sure they understand the side-effect: everything must be processed manually from their Inbox. For most people, this is a small price to pay for keeping their schedule clean.&lt;/p&gt;
+</content>
+    </item>
+    
     <item>
       <title>Entra ID Joined, But Not an Admin? Fixing the “SID with a Question Mark” Issue on Windows 11</title>
       <link>https://echo3.co/posts/entraid-joined-but-not-admin/</link>
