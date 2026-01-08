@@ -1,11 +1,11 @@
 {
     "Name": "echo3.co",
-    "Description": "AKA Jude Sudbury",
+    "Description": "AKA Jude Elliot",
     "Image": "../kind_of_like_me.webp",
     "Socials": [
 	
 		{
-            "Link": "https://linkedin.com/in/jude-sudbury-9074a743",
+            "Link": "https://linkedin.com/",
             "Icon": "/icon/linkedin.svg",
             "AltText": "LinkedIn"
         },
