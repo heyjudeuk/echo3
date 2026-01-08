@@ -1,9 +1,8 @@
 ---
 title: "Starting a Record Label!"
-date: 2026-01-08
+date: 2025-11-08
 cover: "images/nextwave.webp"
 draft: false
-tags: ["Music Industry", "Project Plan", "Budgeting", "Pitch Deck"]
 ---
 
 # What If Someone Offered Me a Bunch of Money to Start a Record Label?
@@ -16,350 +15,896 @@ This is my answer.
 
 ---
 
-## The Plan
+# Project Plan: Releasing a Mini-Album by One Emerging Band
 
-### 1. Project Overview
-This project involves identifying, signing, producing, and releasing a mini-album by one emerging band over a three-month period. The record label will manage artist discovery, selection, recording, marketing, distribution, and release activities using current industry-standard platforms and methods.
+![pixelart](/images/projectplan.webp)
 
-### 2. Artist Discovery and Selection Process
-The band will be identified through a structured artist discovery process combining social media scouting and an open submission campaign. An open call for submissions will be launched across TikTok and Instagram for a two-week period. These platforms are selected because they are the primary discovery tools for new music in 2026 and are widely used by young bands to promote original material.
+## 1. Project Overview
 
-Artists will be invited to submit:
-* A short self-taped live performance video (home recording or rehearsal space).
-* One original recorded track (demo quality acceptable).
-* Links to active social media accounts.
-* A brief artist biography.
+This project involves signing one emerging band and supporting them through the recording, release, and promotion of a mini-album. The project runs over a three-month period and is managed by a small independent record label.
 
-Submissions will be collected using an online form and reviewed by the label team. Shortlisted bands may be invited to submit additional live footage or attend a short audition performance if geographically feasible. Selection will be based on songwriting quality, performance ability, consistency of online engagement, and readiness to commit to the project timeline.
-
-### 3. Project Roles and Responsibilities
-The record label will act as project manager and executive producer, overseeing scheduling, budgeting, production coordination, marketing planning, and distribution. The band will be responsible for delivering original material, attending rehearsals and recording sessions, creating social media content, and participating in promotional activity including live performance and interviews.
-
-### 4. Pre-Production Phase
-Once signed, the band will enter a structured pre-production phase. During this period, the band will rehearse selected songs to a professional standard. A final track list of eight songs will be agreed, and arrangements will be locked to reduce studio inefficiencies. Tempo mapping, structure confirmation, and reference track discussions will take place to ensure clarity before recording begins. A detailed studio schedule will be produced to maximise productivity and control costs.
-
-### 5. Recording and Post-Production
-Recording will take place in a professional studio environment. Core instruments will be tracked first, followed by vocals and overdubs. Sessions will be supervised by a producer or engineer to maintain quality control. After recording, all tracks will undergo editing, mixing, and professional mastering to ensure consistency across streaming platforms and physical formats.
-
-### 6. Marketing Strategy and Promotion Methods
-Marketing activity will follow a digital-first strategy, reflecting how new artists are promoted in the current music industry. The band’s primary platforms will be:
-* **TikTok:** short-form performance clips, behind-the-scenes studio footage, song hooks.
-* **Instagram:** Reels, Stories, release announcements, audience interaction.
-* **YouTube Shorts:** performance excerpts and music video clips.
-
-A content schedule will be created to ensure regular posting during the three-month campaign. The band will be supported in creating authentic, performance-focused content rather than traditional advertising-style posts. Paid social media advertising will be used selectively on TikTok and Instagram to promote singles and drive traffic to streaming platforms. Radio promotion will be limited to targeted independent and online stations that support emerging artists. The focus will be on niche exposure rather than mainstream national radio.
-
-### 7. Release Strategy
-The release strategy will follow a staggered approach:
-* First single released during post-production to introduce the band.
-* Second single released closer to the album launch.
-* Mini-album released digitally at the end of month three.
-
-Physical products including vinyl and merchandise will be offered via pre-order through the band’s website and social media platforms. A launch concert will be held to support the release and generate additional promotional content.
-
-### 8. Distribution and Sales Channels
-Digital distribution will be managed through an online distributor to deliver music to major streaming platforms. Direct-to-fan sales will be prioritised using:
-* Band website.
-* Social media shop features.
-* On-site sales at the launch performance.
-
-This approach allows the label to manage revenue flow and audience data more effectively.
-
-### 9. Project Timeline (Three Months)
-* **Month One:** Artist discovery, signing, rehearsals, and studio recording.
-* **Month Two:** Editing, mixing, mastering, artwork creation, and first single release.
-* **Month Three:** Ongoing promotion, second single release, digital album release, and launch performance.
-
-### 10. Project Completion
-The project concludes when the mini-album has been released digitally, physical products are available, promotional activity has been completed, and the launch performance has taken place.
+The label is responsible for organising the recording process, marketing the release, and making the music available to the public.
 
 ---
 
-## Why this approach? (Rationale)
+## 2. Project Scope
 
-### 1. Introduction
-This rationale explains the reasoning behind the key decisions made in the project plan, including artist selection methods, production approach, marketing strategy, release structure, and overall project scope. The decisions are based on current industry practices for developing emerging artists and releasing music in a digital-first environment.
+The project focuses on one band only. The band will release an eight-track mini-album.
 
-### 2. Rationale for Selecting One Band
-The decision to sign one band rather than multiple artists was made to ensure focus, quality control, and effective use of resources. Managing a single band allows the label to dedicate sufficient time and budget to production, marketing, and artist development. It also reduces complexity and risk, particularly for a first release. Choosing a band rather than a solo artist reduces the need for additional session musicians, lowering recording costs and simplifying scheduling. Bands also offer stronger live performance opportunities, which support promotional activity and audience engagement.
+The project includes:
+- Studio recording  
+- Mixing and mastering  
+- Marketing preparation  
+- Digital distribution  
+- Limited physical products  
+- A launch performance  
 
-### 3. Rationale for Artist Discovery Methods
-Social media platforms, particularly TikTok and Instagram, were selected as the primary artist discovery tools because they are currently the most influential platforms for new music discovery among younger audiences. These platforms allow artists to demonstrate performance ability, originality, and audience engagement without requiring professional-level resources. An open submission process ensures accessibility and fairness while also enabling the label to assess commitment, organisation, and consistency from potential artists. The use of self-recorded performance videos reflects real-world industry practices, where labels increasingly rely on online content to identify talent before arranging live auditions.
+Touring or additional releases are not included in this project.
 
-### 4. Rationale for the Production Approach
-The project uses a professional studio recording process to ensure the final product meets industry standards for streaming and physical formats. Pre-production planning is prioritised to reduce studio time and control costs, which reflects common industry practice for independent labels. Producing a mini-album rather than a full-length album balances creative output with time and budget constraints. An eight-track release provides enough material to establish the band’s identity while remaining realistic within a three-month schedule.
+---
 
-### 5. Rationale for the Marketing Strategy
-The marketing strategy follows a digital-first approach, reflecting how emerging artists are promoted in the current music industry. Short-form video platforms are prioritised because they enable organic discovery, audience interaction, and rapid content distribution. Focusing on performance clips, behind-the-scenes footage, and storytelling content allows the band to present an authentic image rather than relying solely on traditional advertising. Paid social media advertising is used selectively to amplify reach rather than replace organic engagement. Radio promotion is limited to independent and online stations that support new artists. This reflects the reduced influence of traditional radio for emerging acts compared to streaming platforms and social media.
+## 3. How the Band Is Found and Selected
 
-### 6. Rationale for the Release Strategy
-A staggered release strategy is used to maintain audience interest over time. Releasing singles before the full mini-album allows the band to build momentum, test audience response, and generate streaming activity ahead of the main release. Offering limited physical products such as vinyl and merchandise supports direct-to-fan engagement and provides higher-margin revenue opportunities. This approach reflects current trends in independent music releases, where physical formats are often used as collector items rather than mass-market products.
+The band will be found using modern music discovery methods. An open submission will be advertised on **TikTok** and **Instagram** for a two-week period. These platforms are widely used by young musicians and are realistic places to discover new talent.
 
-### 7. Rationale for the Three-Month Timeline
-The three-month timeline balances speed and quality. A shorter timeline maintains momentum and relevance, while structured phases ensure sufficient time for production, promotion, and release preparation. This schedule reflects the fast-paced nature of modern music consumption, where extended release cycles can reduce audience engagement for emerging artists.
+Bands will be asked to submit:
+- A short live performance video (recorded at home or in a rehearsal space)  
+- One original demo track  
+- Links to their social media accounts  
+- A short written introduction  
 
-### 8. Conclusion
-The project plan has been designed to reflect realistic, current industry practices while remaining achievable within the given constraints. The choices made prioritise focus, efficiency, artist development, and audience engagement. This approach provides a practical and sustainable model for launching an emerging band through a modern independent record label.
+Submissions will be reviewed by the label team. The band will be chosen based on:
+- Quality of songwriting  
+- Performance ability  
+- Online activity  
+- Willingness to commit to the project  
+
+---
+
+## 4. Roles and Responsibilities
+
+### Record Label
+
+The record label is responsible for:
+- Planning and managing the project  
+- Booking studio time  
+- Managing the budget  
+- Organising marketing activity  
+- Arranging the release  
+
+### The Band
+
+The band is responsible for:
+- Providing original music  
+- Attending rehearsals and recording sessions  
+- Creating social media content  
+- Taking part in promotional activities such as interviews and live performances  
+
+---
+
+## 5. Pre-Production
+
+Before recording begins, the band will rehearse all selected songs to a professional standard.
+
+The following will be agreed:
+- Final track list of eight songs  
+- Song structures  
+- Tempos  
+- Arrangements  
+
+A recording schedule will be created to ensure studio time is used efficiently.
+
+---
+
+## 6. Recording and Audio Production
+
+Recording will take place in a professional UK recording studio with an experienced engineer. The band will record instruments and vocals across multiple sessions.
+
+After recording:
+- Tracks will be edited and mixed by a professional mixing engineer  
+- Final mixes will be mastered by a professional mastering service  
+
+This ensures the final audio is suitable for streaming and physical formats.
+
+---
+
+## 7. Marketing Preparation
+
+Marketing will focus mainly on social media.
+
+The band will create content for:
+- TikTok  
+- Instagram  
+- YouTube Shorts  
+
+Content will include:
+- Performance clips  
+- Studio footage  
+- Previews of upcoming songs  
+
+The label will plan a content schedule to ensure regular posting. Album artwork, artist photos, and written release information will also be prepared during this stage.
+
+---
+
+## 8. Distribution and Physical Products
+
+The mini-album will be released digitally through a music distribution service so it appears on major streaming platforms.
+
+A limited number of physical products will be produced, including:
+- Vinyl records  
+- T-shirts  
+- Stickers  
+
+These will be sold through:
+- The band’s website  
+- Social media platforms  
+- The launch performance  
+
+---
+
+## 9. Release Plan
+
+The release will be spread out over time to build interest.
+
+The release schedule includes:
+- One single released first  
+- A second single released closer to the album date  
+- Full mini-album digital release at the end of the project  
+
+A small launch concert will support the release and provide additional promotion.
+
+---
+
+## 10. Three-Month Timeline
+
+### Month 1
+- Band selection  
+- Rehearsals  
+- Studio recording  
+
+### Month 2
+- Mixing and mastering  
+- Artwork creation  
+- First single release  
+
+### Month 3
+- Ongoing promotion  
+- Second single release  
+- Digital album release  
+- Launch performance  
+
+---
+
+## 11. Project Completion
+
+The project is complete when:
+- The mini-album has been released digitally  
+- Physical products are available for sale  
+- Promotional activity has finished  
+- The launch performance has taken place  
+
+---
+
+# Rationale: Reasons for Project Choices
+
+![pixelart](/images/rationale.webp)
+
+## 1. Introduction
+
+This document explains the reasons behind the key decisions made in the project plan. These include how the band is chosen, how the music is produced, how it is marketed, and why the project focuses on one band and one release.
+
+The decisions are based on current music industry practices and research into how emerging artists are supported today.
+
+---
+
+## 2. Rationale for Focusing on One Band
+
+The project focuses on signing one band rather than multiple artists in order to keep the project realistic and manageable.
+
+Supporting one band allows the budget to be used more effectively and ensures that enough time and attention is given to recording quality and promotion.
+
+Using a band instead of a solo artist also helps reduce costs, as there is less need to hire session musicians. Bands are also well suited to live performance, which supports promotion and audience engagement.
+
+---
+
+## 3. Rationale for Artist Discovery Methods
+
+**TikTok** and **Instagram** were chosen as the main platforms for discovering the band because they are widely used by young musicians and audiences.
+
+These platforms allow artists to share:
+- Performance videos  
+- Original songs  
+- Behind-the-scenes content  
+
+This can be done without needing professional resources.
+
+An open submission process was chosen to make the opportunity accessible and fair. Asking for self-recorded performance videos reflects how artists are often discovered in the real world, where labels and promoters assess talent online before arranging live performances.
+
+---
+
+## 4. Rationale for the Production Approach
+
+Professional studio recording was chosen to ensure the final release meets industry standards. While home recording is common, studio recording provides:
+- Higher sound quality  
+- Experienced engineering support  
+- A more reliable final result  
+
+Producing a mini-album rather than a full album balances creativity with time and budget limits. An eight-track release provides enough material to introduce the band while remaining realistic within a three-month schedule.
+
+---
+
+## 5. Rationale for the Marketing Strategy
+
+The marketing strategy focuses mainly on social media because this is how new music is commonly discovered today.
+
+Platforms such as:
+- TikTok  
+- Instagram  
+- YouTube Shorts  
+
+allow artists to reach new audiences quickly through short, engaging videos.
+
+The use of performance clips and behind-the-scenes content helps the band appear authentic and relatable, which is important for building a fanbase.
+
+Paid advertising is used in a limited way to support organic reach rather than replace it.
+
+Radio promotion is not a main focus because traditional radio has less influence on emerging artists compared to digital platforms. However, independent and online radio stations can still help reach niche audiences.
+
+---
+
+## 6. Rationale for the Release Strategy
+
+Releasing singles before the full mini-album helps build interest and maintain audience attention.
+
+This approach allows listeners to become familiar with the band before the main release.
+
+Offering limited physical products such as vinyl and merchandise supports direct sales and fan engagement. Physical products are often treated as special or collectible items rather than mass-market products, which helps reduce financial risk.
+
+---
+
+## 7. Rationale for the Three-Month Timeline
+
+A three-month timeline was chosen to keep the project focused and maintain momentum.
+
+Shorter release cycles reflect modern music consumption habits, where audiences expect regular content and updates.
+
+The timeline also allows enough time for recording, promotion, and release preparation without delaying the project unnecessarily.
+
+---
+
+## 8. Conclusion
+
+The decisions made in this project aim to balance creativity, realism, and industry relevance.
+
+By focusing on one band, using modern discovery and marketing platforms, and following a structured release plan, the project reflects how emerging artists are launched in today’s music industry.
 
 ---
 
 ## Budget and Financial Rationale
 
-This document sets out the project budget accompanied by clear reasoning based on actual studio and audio service pricing in the UK music industry in 2026. All figures are researched from publicly available services and representative cost ranges.
+![pixelart](/images/budget.webp)
 
-### 1. Production Budget
+## 1. Introduction
 
-**a) Recording Studio (Professional Tier)**
-To produce a professional-quality album, it is important to select a studio that provides high-quality recording spaces, experienced engineers, and reliable gear.
+This document explains the budget for the project and the reasons for each cost.  
+The budget is based on realistic prices from UK music industry services, including professional recording studios, mixing engineers, and mastering services. The aim is to show an understanding of how much it costs to produce and release music to a professional standard.
 
-* **Option 1 — Mid-range UK studios:** Examples include independent studios that charge daily or hourly rates for recording sessions. Typical UK studios charge between £25 to £150 per hour, with full-day rates typically from £100 to £500 per day depending on quality and location.
-* **Estimated cost for 8 days at a mid-range studio focused on band recording:** 8 days @ £400/day = **£3,200**. This includes use of the recording room, microphones, professional engineer support, and basic tracking. Examples of studios in this category include Arena Recording Studio, which lists full-day recording around £300–£325 with engineer support.
-* **Option 2 — High-tier iconic studio (e.g., Abbey Road):** Abbey Road Studios in London is world-renowned and appropriate for professional finished recordings. Prices vary greatly depending on room and engineer selection, but day rates at top facilities can range from several thousand pounds per day for large rooms and full teams. For budget purposes we do not use Abbey Road daily hire in the base budget but reference it here for context.
+---
 
-**b) Mixing**
-Mixing is usually charged per track by freelance audio engineers or in-studio.
-* Mid-level engineers and small studios typically charge around £150–£350 per track in the UK.
-* Higher-end London services can charge £300–£800+ per track depending on engineer reputation.
-* For an 8-track mini-album, a realistic mid-range budget is: 8 tracks @ £200 = **£1,600**. This ensures a professional mix suitable for both streaming and vinyl masters.
+## 2. Recording Costs
 
-**c) Mastering**
-Mastering prepares the final mix for distribution. Pricing varies based on engineer reputation:
-* High-quality mastering services (including top studios such as Abbey Road’s online mastering) start around £90 per track (excluding VAT).
-* Other professional UK mastering studios (e.g., London Mastering Studio) list rates around £75 per track.
-* For budgeting purposes: 8 tracks @ £90 = **£720**. This allows a high-standard master provided by established mastering engineers.
+The band will record in a professional UK recording studio with an experienced engineer. Using a professional studio helps ensure good sound quality and makes the recording process more efficient.
 
-**d) Artwork and Photography**
-Professional visual assets are important for digital platforms and physical products:
-* Photoshoot with photographer: £500 (approximate market rate for a branded session).
-* Album artwork: £300.
-* **Total artwork & photography** = **£800**.
+A mid-range studio is chosen rather than a very high-end studio to keep costs controlled while still achieving professional results.
 
-**Production Subtotal:**
+**Estimated cost:**
+
+- 8 days of studio recording at approximately £400 per day
+
+**Total recording cost:** **£3,200**
+
+---
+
+## 3. Mixing Costs
+
+After recording, the tracks will be mixed by a professional mixing engineer. Mixing balances the instruments and vocals and prepares the tracks for release.
+
+Professional mixing engineers in the UK typically charge per track. A mid-range rate has been chosen to reflect good quality without using very high-profile engineers.
+
+**Estimated cost:**
+
+- 8 tracks at £200 per track
+
+**Total mixing cost:** **£1,600**
+
+---
+
+## 4. Mastering Costs
+
+Mastering is the final stage of audio production and ensures the music sounds consistent and polished across streaming platforms and physical formats.
+
+A recognised professional mastering service will be used, such as Abbey Road’s online mastering service. This ensures the final audio meets industry standards.
+
+**Estimated cost:**
+
+- 8 tracks at £90 per track
+
+**Total mastering cost:** **£720**
+
+---
+
+## 5. Artwork and Photography Costs
+
+Visual content is important for promoting music online and for physical products. A professional photoshoot and album artwork will be created.
+
+**Estimated cost:**
+
+- Photography: £500  
+- Artwork design: £300  
+
+**Total artwork and photography cost:** **£800**
+
+---
+
+## 6. Marketing and Promotion Costs
+
+Marketing focuses mainly on social media platforms such as TikTok and Instagram.
+
+### Digital Distribution
+
+A music distribution service is required to release the music on streaming platforms.
+
+- Distribution fee: **£50**
+
+### Social Media Advertising
+
+A small budget is set aside for paid advertising to help promote singles and reach new listeners.
+
+- Advertising budget: **£800**
+
+### Press and Playlist Promotion
+
+Some budget is allocated to promote the release through independent radio stations, blogs, and playlists.
+
+- Promotion budget: **£1,000**
+
+---
+
+## 7. Physical Products
+
+### Vinyl Production
+
+A limited run of vinyl records will be produced as a collector item and sold directly to fans.
+
+- Estimated cost for 300 records: **£2,250**
+
+### Merchandise
+
+Basic merchandise such as t-shirts and stickers will be produced for online sales and the launch event.
+
+- Merchandise cost: **£800**
+
+---
+
+## 8. Total Project Budget
 
 | Category | Cost |
-| :--- | :--- |
-| Recording Studio | £3,200 |
+|--------|------|
+| Recording | £3,200 |
 | Mixing | £1,600 |
 | Mastering | £720 |
 | Artwork & Photography | £800 |
-| **Total Production** | **£6,320** |
-
-### 2. Marketing and Release Budget
-
-**a) Digital Distribution**
-A music distributor (e.g., DistroKid, CD Baby or similar) charges a year-fee to release music on streaming platforms.
-* Distribution fee (annual) = **£50**.
-
-**b) Social Media Advertising**
-Paid social campaigns on TikTok, Instagram, and YouTube Shorts support single and album promotion:
-* TikTok & Instagram ads = **£800**. This budget drives pre-saves, streaming traffic, and follower growth using platform-specific ad tools.
-
-**c) PR, Playlist & Press Outreach**
-Targeted outreach to independent radio, blogs, and playlists increases visibility.
-* PR service = **£1,000**.
-
-**d) Vinyl Production (Limited Run)**
-Pressing a limited run of vinyl supports direct-to-fan sales.
-* For example, pressing around 300 copies (basic weight and packaging) is typically in the £2,000–£2,500 range depending on pressing plant and options offered.
-* Vinyl pressing = **£2,250** (mid-point estimate).
-
-**e) Merchandise (T-shirts + Stickers)**
-Basic band merchandise for online and live sales:
-* Merch production = **£800**.
-
-**Marketing & Release Subtotal:**
-
-| Category | Cost |
-| :--- | :--- |
-| Distribution | £50 |
-| Advertising | £800 |
-| PR | £1,000 |
-| Vinyl pressing | £2,250 |
+| Marketing & Promotion | £1,850 |
+| Vinyl Production | £2,250 |
 | Merchandise | £800 |
-| **Total Marketing & Release** | **£4,900** |
+| **Total Budget** | **£11,220** |
 
-### 3. Total Project Budget
+---
 
-| Category | Cost |
-| :--- | :--- |
-| Production | £6,320 |
-| Marketing & Release | £4,900 |
-| **Grand Total** | **£11,220** |
+## 9. Budget Reasoning
 
-### 4. Financial Reasoning
+This budget focuses on spending money where it has the most impact. Professional recording, mixing, and mastering ensure the music meets industry standards. Marketing costs focus on social media, where emerging artists are most likely to be discovered.
 
-* **Realistic Service Costs:** The recording budget reflects professional but not top-tier studio time: studios in the UK typically charge £25–£150 per hour or £100–£500 per day, with more experienced engineer support at the higher end. Mixing and mastering reflect current UK ranges: mixing £150–£350+ per track and mastering £75+ per track from reputable studios (including Abbey Road’s online mastering at approx £90/track).
-* **Balanced Investment:** This budget prioritises professional sound quality and effective marketing, while controlling costs through careful selection of mid-range services rather than premium daily rates at legendary studios (e.g., full Abbey Road room hire at £10,000+ per day).
-* **Direct-to-Fan Revenue Potential:** Physical products such as vinyl and merchandise generate higher margins and support direct sales outside streaming revenue.
+Risk is reduced by:
 
-### 5. Risk Management
-The budget assumes efficient studio scheduling and prioritises online services (e.g., online mastering) where appropriate to deliver professional results with a controlled spend. These cost estimates align with current UK industry ranges and are defensible in an educational or investor context.
+- Working with one band only  
+- Producing a mini-album instead of a full album  
+- Limiting the amount of physical stock produced  
+
+This makes the project realistic and achievable for a first release.
+
+---
+
+## 10. Conclusion
+
+The budget reflects realistic costs for producing and releasing music in today’s industry. It balances quality, promotion, and cost control, and supports the overall aim of launching one emerging band successfully.
 
 ---
 
 ## Investor Pitch: NextWave Records
+If I had to pitch my idea in 'Dragon's Den'. This is how I'd do it: NOT death by PowerPoint!
 
-**SLIDE 1 — TITLE**
-* **NextWave Records:** A modern record label for emerging bands.
-* **Pitch focus:** Launching one high-potential band using a proven, modern release model.
+![pixelart](/images/presentation.webp)
 
-**SLIDE 2 — THE OPPORTUNITY**
-* **The problem:**
-    * Young bands struggle to access professional recording and marketing.
-    * Traditional labels are high-risk and slow to invest in new acts.
-    * Artists often lack industry knowledge and financial support.
-* **The opportunity:**
-    * Digital platforms allow new artists to be discovered quickly.
-    * Fans increasingly support artists directly through vinyl and merch.
-    * A focused, low-risk model can launch new talent effectively.
+## Slide 1 — Title
 
-**SLIDE 3 — THE SOLUTION (OUR MODEL)**
-* NextWave Records offers:
-    * Short-term, project-based deals.
-    * Professional production and release support.
-    * Digital-first marketing with direct-to-fan sales.
-* **Key principle:** Focus on one band, one release, done properly.
-* This reduces risk while maximising quality and impact.
+### NextWave Records  
+*A record label supporting new bands*
 
-**SLIDE 4 — HOW WE FIND TALENT (MODERN A&R)**
-* **Artist discovery is TikTok-first:**
-    * Open submission campaign on TikTok and Instagram.
-    * Self-recorded performance videos and demos.
-    * Active social media presence required.
-* **Why this works:**
-    * Artists prove performance ability and audience engagement.
-    * Low cost, high reach.
-    * Reflects real-world A&R practices in 2026.
+This presentation outlines a plan to sign and release music by one emerging band.
 
-**SLIDE 5 — PROFESSIONAL PRODUCTION (CREDIBILITY)**
-* **Recording:**
-    * Professional UK studio (mid-range band-focused facility).
-    * Experienced engineer and producer oversight.
-* **Mixing:**
-    * Freelance professional mixing engineers.
-    * Typical UK rates: £150–£350 per track.
-* **Mastering:**
-    * Professional mastering services.
-    * Example: Abbey Road Studios online mastering.
-    * Approx. £90 per track (industry-standard quality).
-* **Result:** A release that meets professional industry expectations.
+---
 
-**SLIDE 6 — MARKETING & RELEASE STRATEGY**
-* **Digital-first promotion:**
-    * TikTok, Instagram Reels, YouTube Shorts.
-    * Performance clips, studio footage, storytelling content.
-* **Release structure:**
-    * Two singles before album launch.
-    * Mini-album released digitally.
-    * Limited vinyl and merch for direct sales.
-* **Supporting activity:**
-    * Targeted ads.
-    * Independent radio and playlist outreach.
-    * Live launch performance.
+## Slide 2 — The Idea
 
-**SLIDE 7 — FINANCIAL OVERVIEW**
-* **Total project budget:** £11,220
-* **Cost breakdown:**
-    * Production: £6,320
-    * Marketing & release: £4,900
-* **Key strengths:**
-    * Controlled costs.
-    * No long-term artist contracts.
-    * Physical products increase early revenue.
+Many young bands struggle to:
 
-**SLIDE 8 — REVENUE POTENTIAL**
-* **Primary income streams:**
-    * Vinyl sales (limited run).
-    * Merchandise.
-    * Launch show ticket sales.
-* **Secondary income:**
-    * Streaming (long-term growth).
-    * Brand partnerships and live bookings.
-* **Investor benefit:**
-    * Faster cost recovery.
-    * Scalable model for future releases.
+- Afford professional recording  
+- Understand how to market their music  
+- Reach an audience beyond social media  
 
-**SLIDE 9 — WHY THIS WORKS**
-* Focused investment.
-* Modern discovery methods.
-* Professional production standards.
-* Realistic, industry-aligned costs.
-* Strong artist development without long-term risk.
-* This is not a gamble.
-* It is a controlled launch model.
+**NextWave Records** aims to support one band through a professional first release.
 
-**SLIDE 10 — THE ASK**
-* We are seeking investment to:
-    * Fund production and marketing of the first release.
-    * Establish NextWave Records as a launch platform.
-    * Prove the model for future signings.
-* **Outcome:** A professionally released band with growth potential and a repeatable label framework.
+---
 
+## Slide 3 — Why One Band
 
-## 1. Introduction & Philosophy
-* **The Core Problem:** The author is a musician in his fifties who acknowledges he lacks the "cool" factor and cultural context required for modern success, despite loving to write and record.
-* **The "Frank Farian" Precedent:** References the creator of Boney M and Milli Vanilli, who understood that great songs need the right faces, voices, and machinery to reach an audience.
-* **The Experiment:** A proposal to use serious funding to launch a record label properly built for 2026, releasing music by young, credible musicians rather than the author.
+This project focuses on signing **one band only**.
 
-## 2. The Project Plan (10-Step Execution)
-### Overview & Roles
-* **Objective:** Identify, sign, produce, and release a mini-album by one emerging band over a three-month period.
-* **Label Role:** Project manager and executive producer (scheduling, budgeting, marketing, distribution).
-* **Band Role:** Deliver original material, record, perform, and create social content.
+This allows:
 
-### Artist Discovery (Month 1)
-* **Method:** Structured scouting via social media and an open submission campaign.
-* **Platforms:** TikTok and Instagram (identified as primary discovery tools in 2026).
-* **Submission Requirements:** Self-taped live performance video, one original demo track, social media links, and a bio.
-* **Selection Criteria:** Songwriting quality, performance ability, consistency of engagement, and readiness to commit.
+- Better use of the budget  
+- More time spent on quality recording  
+- Lower financial risk  
 
-### Production (Month 1)
-* **Pre-Production:** Rehearsing selected songs to a professional standard; locking in an 8-song tracklist to reduce studio waste.
-* **Recording:** Professional studio environment; core instruments tracked first, followed by vocals/overdubs.
-* **Post-Production:** Professional editing, mixing, and mastering to ensure consistency across formats.
+Choosing a band instead of a solo artist also reduces the need to hire session musicians.
 
-### Marketing Strategy (Digital-First)
-* **Content:** Focus on short-form video (TikTok, Reels, YouTube Shorts) featuring performance clips and behind-the-scenes footage rather than traditional ads.
-* **Paid Media:** Selective paid ads to drive traffic to streaming.
-* **Radio:** Limited to niche independent/online stations; no mainstream national radio focus.
+---
 
-### Release & Distribution (Months 2 & 3)
-* **Strategy:** Staggered release (Single 1 -> Single 2 -> Mini-Album).
-* **Formats:** Digital distribution to major streaming platforms; physical products (vinyl/merch) sold direct-to-fan.
-* **Channels:** Band website, social media shops, and on-site sales at the launch.
-* **Launch Event:** A live concert to generate promotional content and support the release.
+## Slide 4 — How We Find the Band
 
-## 3. Strategic Rationale
-* **Single Band Focus:** Ensures quality control, maximizes resources, and reduces risk compared to signing multiple acts.
-* **Band vs. Solo Artist:** Bands remove the need for hiring session musicians and offer stronger live performance potential.
-* **Social Media Discovery:** Allows the label to verify performance ability and audience engagement cheaply before investing.
-* **8-Track Mini-Album:** Balances sufficient creative output with time and budget constraints (realistic for a 3-month timeline).
-* **3-Month Timeline:** Short enough to maintain momentum and relevance in a fast-paced market.
+The band will be found using modern music discovery methods.
 
-## 4. Budget Breakdown (Based on 2026 UK Rates)
-* **Total Project Budget:** £11,220
+This includes:
 
-### Production Costs (£6,320)
-* **Recording:** 8 days at a mid-range professional studio (£400/day) = £3,200.
-* **Mixing:** 8 tracks @ £200/track (Freelance engineers) = £1,600.
-* **Mastering:** 8 tracks @ £90/track (e.g., Abbey Road Online) = £720.
-* **Artwork/Photo:** Photoshoot (£500) + Album Art (£300) = £800.
+- An open submission advertised on **TikTok** and **Instagram**
 
-### Marketing & Release Costs (£4,900)
-* **Vinyl:** Limited run of ~300 copies = £2,250.
-* **PR:** Targeted independent outreach = £1,000.
-* **Advertising:** TikTok/Instagram paid campaigns = £800.
-* **Merchandise:** T-shirts and stickers = £800.
-* **Distribution:** Annual fee = £50.
+Bands will submit:
 
-## 5. Investor Pitch Deck (NextWave Records)
-* **Slide 1 (Title):** NextWave Records – Launching one high-potential band using a modern release model.
-* **Slide 2 (Opportunity):** Young bands lack access; traditional labels are slow. Digital platforms + direct-to-fan sales offer a low-risk opening.
-* **Slide 3 (Solution):** Short-term deals, professional production, "One band, one release, done properly."
-* **Slide 4 (Discovery):** TikTok-first A&R to prove engagement before signing.
-* **Slide 5 (Production):** Using professional UK studios and mastering to ensure industry-standard quality.
-* **Slide 6 (Marketing):** Digital-first promotion supported by a staggered release strategy.
-* **Slide 7 (Financials):** Total ask of £11,220 with controlled costs and no long-term contracts.
-* **Slide 8 (Revenue):** Primary income from Vinyl, Merch, and Tickets; Secondary from Streaming.
-* **Slide 9 (Why it works):** Focused investment, modern discovery, and realistic costs.
-* **Slide 10 (The Ask):** Investment to fund the first release and prove the repeatable label framework.
+- A short live performance video (home or rehearsal)  
+- One original demo  
+- Links to social media accounts  
+
+These platforms are commonly used by young artists and are realistic ways to discover new talent.
+
+---
+
+## Slide 5 — Recording & Production
+
+The band will record in a professional UK recording studio.
+
+The process includes:
+
+- Studio recording with an engineer  
+- Mixing by a professional mixing engineer  
+- Mastering by a recognised mastering service (such as Abbey Road’s online mastering)  
+
+This ensures the final release meets professional sound standards.
+
+---
+
+## Slide 6 — Marketing & Promotion
+
+Marketing will focus mainly on social media.
+
+**Key platforms:**
+
+- TikTok  
+- Instagram  
+- YouTube Shorts  
+
+**Content will include:**
+
+- Performance clips  
+- Behind-the-scenes studio footage  
+- Song previews  
+
+Some paid advertising will be used to help reach a wider audience.
+
+---
+
+## Slide 7 — Release Plan
+
+The release will be spread over time.
+
+This includes:
+
+- One single released before the album  
+- A second single closer to release  
+- A digital mini-album release  
+
+Limited vinyl and merchandise will be sold through the band’s website and social media.
+
+A small launch concert will support the release.
+
+---
+
+## Slide 8 — Budget Overview
+
+**Total project budget:** £11,220
+
+This covers:
+
+- Studio recording  
+- Mixing and mastering  
+- Artwork and photography  
+- Marketing and promotion  
+- Vinyl and merchandise production  
+
+The budget is based on real UK studio and service costs.
+
+---
+
+## Slide 9 — How Money Is Made
+
+Income comes from:
+
+- Vinyl sales  
+- Merchandise  
+- Ticket sales from the launch concert  
+
+Streaming income is expected to grow over time rather than immediately.
+
+---
+
+## Slide 10 — Why This Plan Works
+
+This plan:
+
+- Uses realistic industry methods  
+- Controls costs by focusing on one band  
+- Prioritises quality and promotion  
+- Reflects how music is released today  
+
+It provides a strong starting point for launching new artists.
+
+## Slide 1 — Title
+
+### Speaker Notes
+
+This presentation outlines a proposal for a small record label called **NextWave Records**.  
+The idea is to support one emerging band through recording, release, and promotion of a mini-album.  
+The focus is on realistic, modern music industry practices.
+
+---
+
+## Slide 2 — The Idea
+
+### Speaker Notes
+
+Many young bands struggle to get their music heard because professional recording and marketing are expensive.  
+They also often don’t understand how releases are planned or promoted.  
+
+This project aims to give one band a structured and professional first release, with industry support.
+
+---
+
+## Slide 3 — Why One Band
+
+### Speaker Notes
+
+This project focuses on signing one band rather than multiple artists.  
+This keeps the project manageable and allows the budget to be spent on quality rather than quantity.  
+
+Using a band instead of a solo artist also reduces costs because session musicians are not needed.  
+It lowers risk and makes the project more realistic.
+
+---
+
+## Slide 4 — How We Find the Band
+
+### Speaker Notes
+
+The band will be found using platforms that young musicians already use.  
+An open submission will be advertised on **TikTok** and **Instagram**.  
+
+Bands will submit:
+- A short live performance video  
+- An original demo  
+- Links to their social media  
+
+This reflects how artists are often discovered today and allows talent to be assessed fairly.
+
+---
+
+## Slide 5 — Recording & Production
+
+### Speaker Notes
+
+The band will record in a professional UK recording studio with an experienced engineer.  
+Mixing will be carried out by a professional mixing engineer to ensure balance and clarity.  
+
+Mastering will be completed by a recognised mastering service, such as Abbey Road’s online mastering.  
+This ensures the final tracks meet professional industry standards.
+
+---
+
+## Slide 6 — Marketing & Promotion
+
+### Speaker Notes
+
+Marketing will mainly focus on social media, as this is where new music is discovered today.  
+
+The main platforms used will be:
+- TikTok  
+- Instagram  
+- YouTube Shorts  
+
+Content will include short performance clips, behind-the-scenes studio footage, and song previews.  
+A small amount of paid advertising will be used to increase reach.
+
+---
+
+## Slide 7 — Release Plan
+
+### Speaker Notes
+
+The release will be spread out to keep audience interest.  
+
+One single will be released first, followed by a second single closer to the album release.  
+The mini-album will then be released digitally.  
+
+Limited vinyl and merchandise will be sold online, and a launch concert will support the release.
+
+---
+
+## Slide 8 — Budget Overview
+
+### Speaker Notes
+
+The total budget for the project is just over eleven thousand pounds.  
+This includes recording, mixing, mastering, artwork, marketing, vinyl production, and merchandise.  
+
+The figures are based on real UK studio and service costs rather than estimates.
+
+---
+
+## Slide 9 — How Money Is Made
+
+### Speaker Notes
+
+Income will mainly come from:
+- Vinyl sales  
+- Merchandise  
+- Ticket sales from the launch concert  
+
+Streaming income is expected to be smaller at first but may grow over time as the audience increases.  
+This approach prioritises direct-to-fan sales, which are more reliable for new artists.
+
+---
+
+## Slide 10 — Why This Plan Works
+
+### Speaker Notes
+
+This plan works because it focuses on one artist, controls costs, and uses modern promotion methods.  
+It reflects how emerging artists are released today rather than relying on outdated models.  
+
+Overall, it provides a realistic and achievable way to launch a new band.
+
+![pixelart](/images/summary.webp)
+
+# Article Overview:
+TL;DR - here's what you missed!
+
+# Document 1 – Project Plan
+
+## Project Overview
+- Sign and support one emerging band
+- Produce and release an 8-track mini-album
+- Project length: three months
+- Managed by a small independent record label
+
+## Project Scope
+- One band only
+- One mini-album release
+- Includes:
+  - Studio recording
+  - Mixing and mastering
+  - Marketing preparation
+  - Digital release
+  - Limited physical products
+  - Launch performance
+- Does not include touring or further releases
+
+## How the Band Is Found
+- Open submission advertised on:
+  - TikTok
+  - Instagram
+- Submission requirements:
+  - Short live performance video (home or rehearsal space)
+  - One original demo track
+  - Social media links
+  - Short written introduction
+- Band selected based on:
+  - Song quality
+  - Performance ability
+  - Online activity
+  - Commitment to the project
+
+## Roles and Responsibilities
+- **Record label**
+  - Project planning and scheduling
+  - Budget management
+  - Studio booking
+  - Marketing coordination
+  - Distribution and release
+- **Band**
+  - Provide original music
+  - Attend rehearsals and recording sessions
+  - Create social media content
+  - Take part in promotion and live performance
+
+## Pre-Production
+- Rehearse all songs to a professional standard
+- Finalise track list (8 songs)
+- Confirm song structures, tempos, and arrangements
+- Create a detailed recording schedule
+
+## Recording and Production
+- Record in a professional UK studio with an engineer
+- Record instruments and vocals over multiple sessions
+- Tracks edited and mixed by a professional mixing engineer
+- Tracks mastered by a professional mastering service
+
+## Marketing Preparation
+- Focus on social media platforms:
+  - TikTok
+  - Instagram
+  - YouTube Shorts
+- Content includes:
+  - Performance clips
+  - Studio footage
+  - Song previews
+- Create a content schedule
+- Prepare artwork, photos, and release information
+
+## Distribution and Physical Products
+- Digital release via a music distributor
+- Limited vinyl pressing
+- Basic merchandise (t-shirts, stickers)
+- Products sold via:
+  - Band website
+  - Social media
+  - Launch concert
+
+## Release Plan
+- First single released before the album
+- Second single released closer to album launch
+- Mini-album released digitally
+- Launch concert held to support the release
+
+## Timeline
+- **Month 1:** Band selection, rehearsals, recording
+- **Month 2:** Mixing, mastering, artwork, first single
+- **Month 3:** Promotion, second single, album release, launch show
+
+## Project Completion
+- Album released digitally
+- Physical products available
+- Promotion completed
+- Launch performance completed
+
+---
+
+# Document 2 – Rationale
+
+## Purpose
+- Explain why key project decisions were made
+- Based on current music industry practices
+
+## Why One Band
+- Keeps project manageable and realistic
+- Allows better use of budget
+- More focus on quality recording and promotion
+- Reduces need for session musicians
+- Bands are suitable for live performance promotion
+
+## Why TikTok and Instagram for Discovery
+- Widely used by young musicians and audiences
+- Allow artists to show performance and originality
+- Low-cost and accessible platforms
+- Reflect real-world artist discovery methods
+- Self-recorded videos commonly used in scouting
+
+## Why Professional Recording
+- Ensures good sound quality
+- Provides experienced technical support
+- More reliable results than home recording
+- Suitable for streaming and physical formats
+
+## Why a Mini-Album
+- Balances creativity with time and budget
+- Eight tracks introduce the band clearly
+- Achievable within three months
+- Lower risk than a full album
+
+## Why Digital-First Marketing
+- New music mainly discovered online
+- Short-form video effective for emerging artists
+- TikTok, Instagram, and YouTube Shorts suit performance content
+- Paid ads support but do not replace organic reach
+
+## Why Limited Radio Promotion
+- Traditional radio less influential for new artists
+- Independent and online radio useful for niche audiences
+
+## Why the Release Strategy
+- Singles build interest before album release
+- Staggered releases maintain attention
+- Vinyl and merch encourage direct fan support
+- Physical products treated as collector items
+
+## Why a Three-Month Timeline
+- Keeps momentum and focus
+- Reflects modern music consumption habits
+- Allows enough time for quality production and promotion
+
+---
+
+# Document 3 – Budget and Cost Reasoning
+
+## Purpose
+- Show realistic understanding of music industry costs
+- Budget based on real UK studio and service prices
+
+## Recording Costs
+- Professional UK recording studio
+- Experienced recording engineer included
+- 8 days at approximately £400 per day
+- **Total: £3,200**
+
+## Mixing Costs
+- Professional mixing engineer
+- Charged per track
+- 8 tracks at £200 per track
+- **Total: £1,600**
+
+## Mastering Costs
+- Professional mastering service
+- Example: Abbey Road online mastering
+- 8 tracks at £90 per track
+- **Total: £720**
+
+## Artwork and Photography
+- Professional photoshoot
+- Album artwork design
+- **Total: £800**
+
+## Marketing and Promotion
+- Digital distribution fee: £50
+- Social media advertising: £800
+- Press and playlist promotion: £1,000
+- **Total: £1,850**
+
+## Physical Products
+- Vinyl pressing (300 copies): £2,250
+- Merchandise (t-shirts and stickers): £800
+
+## Total Budget
+- Recording: £3,200
+- Mixing: £1,600
+- Mastering: £720
+- Artwork & photography: £800
+- Marketing & promotion: £1,850
+- Vinyl production: £2,250
+- Merchandise: £800
+- **Grand total: £11,220**
+
+## Budget Reasoning
+- Spending focused on sound quality and promotion
+- Social media prioritised over traditional marketing
+- Risk reduced by:
+  - One band only
+  - Mini-album format
+  - Limited physical stock

@@ -55,9 +55,9 @@ theme = "hugo-theme-terminal-extended"
     title = "echo3.co"
 
     [languages.en.params]
-	  subtitle = "Jude Sudbury, an IT freelancer for micro and small business"
+	  subtitle = "Jude Elliot, an IT freelancer for micro and small business"
       keywords = ""
-      copyright = "Jude Sudbury"
+      copyright = "Jude Elliot"
       menuMore = "Show more"
       readMore = "Read more"
       readOtherPosts = "Read other posts"
