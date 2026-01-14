@@ -6,7 +6,142 @@
     <description>Recent content in Home on echo3.co</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 20 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Stop Windows 11 24H2 Forcing You to Use a Microsoft Account</title>
+      <link>http://localhost:1313/posts/how-to-stop-windows-11-24h2-forcing-you-to-use-a-microsoft-account/</link>
+      <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/how-to-stop-windows-11-24h2-forcing-you-to-use-a-microsoft-account/</guid>
+      <description>&lt;h2 id=&#34;how-to-stop-windows-11-24h2-forcing-you-to-use-a-microsoft-account&#34;&gt;How to Stop Windows 11 24H2 Forcing You to Use a Microsoft Account&lt;/h2&gt;
+&lt;p&gt;With the Windows 11 24H2 update, Microsoft has become increasingly aggressive about nudging users toward Microsoft accounts. If you are running a local account, you may have seen a full screen prompt after boot saying something like:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Sign in with a Microsoft account for a better experience&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;You are then given only two options:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Sign in with a Microsoft account&lt;/li&gt;
+&lt;li&gt;Remind me in 3 days&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you are thinking: &lt;em&gt;I don’t want to use a Microsoft account in three days either&lt;/em&gt;, you are not alone. Fortunately, on &lt;strong&gt;Windows 11 Pro&lt;/strong&gt;, there is a clean and supported way to stop this behaviour.&lt;/p&gt;</description>
+      <content>&lt;h2 id=&#34;how-to-stop-windows-11-24h2-forcing-you-to-use-a-microsoft-account&#34;&gt;How to Stop Windows 11 24H2 Forcing You to Use a Microsoft Account&lt;/h2&gt;
+&lt;p&gt;With the Windows 11 24H2 update, Microsoft has become increasingly aggressive about nudging users toward Microsoft accounts. If you are running a local account, you may have seen a full screen prompt after boot saying something like:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Sign in with a Microsoft account for a better experience&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;You are then given only two options:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Sign in with a Microsoft account&lt;/li&gt;
+&lt;li&gt;Remind me in 3 days&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you are thinking: &lt;em&gt;I don’t want to use a Microsoft account in three days either&lt;/em&gt;, you are not alone. Fortunately, on &lt;strong&gt;Windows 11 Pro&lt;/strong&gt;, there is a clean and supported way to stop this behaviour.&lt;/p&gt;
+&lt;h2 id=&#34;why-microsoft-is-pushing-online-accounts&#34;&gt;Why Microsoft Is Pushing Online Accounts&lt;/h2&gt;
+&lt;p&gt;From Microsoft’s perspective, Microsoft accounts enable:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Device synchronisation&lt;/li&gt;
+&lt;li&gt;OneDrive and Microsoft 365 integration&lt;/li&gt;
+&lt;li&gt;Telemetry and usage insights&lt;/li&gt;
+&lt;li&gt;Easier subscription upsell&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;From an IT and operational standpoint, however, this is often unnecessary.&lt;/p&gt;
+&lt;h2 id=&#34;a-real-world-example&#34;&gt;A Real World Example&lt;/h2&gt;
+&lt;p&gt;In a work environment, you may have a Windows 11 Pro machine doing one specific job.&lt;/p&gt;
+&lt;p&gt;For example, one of my clients runs:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;A Windows 11 Pro virtual machine&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Used solely to run Talend jobs&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Pushing data into Salesforce&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Secured with:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A local account&lt;/li&gt;
+&lt;li&gt;Network hardening&lt;/li&gt;
+&lt;li&gt;IP allow listing&lt;/li&gt;
+&lt;li&gt;No interactive user sign in&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In this scenario, forcing a Microsoft account adds:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;No security benefit&lt;/li&gt;
+&lt;li&gt;No functional improvement&lt;/li&gt;
+&lt;li&gt;Additional attack surface&lt;/li&gt;
+&lt;li&gt;Extra administrative overhead&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It is unnecessary and actively unhelpful.&lt;/p&gt;
+&lt;h2 id=&#34;the-correct-fix-on-windows-11-pro&#34;&gt;The Correct Fix on Windows 11 Pro&lt;/h2&gt;
+&lt;p&gt;If you are running &lt;strong&gt;Windows 11 Pro&lt;/strong&gt;, you can explicitly block Microsoft accounts using Local Group Policy.&lt;/p&gt;
+&lt;h3 id=&#34;step-by-step-instructions&#34;&gt;Step by Step Instructions&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Press &lt;strong&gt;Windows key + R&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Type:&lt;/p&gt;
+&lt;p&gt;gpedit.msc&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Navigate to:&lt;/p&gt;
+&lt;p&gt;Computer Configuration
+→ Windows Settings
+→ Security Settings
+→ Local Policies
+→ Security Options&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Locate:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Accounts: Block Microsoft accounts&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Set it to:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Users can’t add Microsoft accounts&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Click &lt;strong&gt;OK&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This prevents:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Adding Microsoft accounts&lt;/li&gt;
+&lt;li&gt;Converting local accounts into Microsoft accounts&lt;/li&gt;
+&lt;li&gt;Microsoft account sign in prompts&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;apply-the-policy-immediately&#34;&gt;Apply the Policy Immediately&lt;/h2&gt;
+&lt;p&gt;Group Policy refreshes automatically, but if you want to apply the change immediately, open &lt;strong&gt;Command Prompt&lt;/strong&gt; as Administrator and run:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;gpupdate /force
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This ensures the policy takes effect straight away without waiting for a reboot or background refresh.&lt;/p&gt;
+&lt;h2 id=&#34;what-this-does-and-does-not-affect&#34;&gt;What This Does and Does Not Affect&lt;/h2&gt;
+&lt;p&gt;This policy &lt;strong&gt;does&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Stop Microsoft account prompts&lt;/li&gt;
+&lt;li&gt;Preserve local only authentication&lt;/li&gt;
+&lt;li&gt;Work well for locked down or single purpose machines&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It &lt;strong&gt;does not&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Break Windows Update&lt;/li&gt;
+&lt;li&gt;Prevent domain or Entra ID joins&lt;/li&gt;
+&lt;li&gt;Affect devices already signed in with Microsoft accounts&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;final-thoughts&#34;&gt;Final Thoughts&lt;/h2&gt;
+&lt;p&gt;Microsoft’s idea of a better experience often ignores legitimate use cases where:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Local accounts are intentional&lt;/li&gt;
+&lt;li&gt;Systems are non interactive&lt;/li&gt;
+&lt;li&gt;Machines are hardened and locked down&lt;/li&gt;
+&lt;li&gt;Stability matters more than consumer features&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you are running Windows 11 Pro in a professional or controlled environment, blocking Microsoft accounts is not a workaround. It is a deliberate administrative choice.&lt;/p&gt;
+&lt;p&gt;Apply this early and Windows will stop asking you the same question every three days.&lt;/p&gt;
+</content>
+    </item>
+    
     <item>
       <title>Entra ID Joined, But Not an Admin? Fixing the “SID with a Question Mark” Issue on Windows 11</title>
       <link>http://localhost:1313/posts/entraid-joined-but-not-admin/</link>
